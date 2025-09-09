@@ -15,7 +15,7 @@ from packaging.version import parse
 
 import requests
 from lxml import html
-from searx.data import data_dir
+from zhensa.data import data_dir
 
 DATA_FILE = data_dir / 'useragents.json'
 

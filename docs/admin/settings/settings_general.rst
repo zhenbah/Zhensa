@@ -8,14 +8,14 @@
 
    general:
      debug: false
-     instance_name:  "SearXNG"
+     instance_name:  "Zhensa"
      privacypolicy_url: false
      donation_url: false
      contact_url: false
      enable_metrics: true
      open_metrics: ''
 
-``debug`` : ``$SEARXNG_DEBUG``
+``debug`` : ``$ZHENSA_DEBUG``
   In debug mode, the server provides an interactive debugger, will reload when
   code is changed and activates a verbose logging.
 

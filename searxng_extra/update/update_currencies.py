@@ -13,9 +13,9 @@ import re
 import unicodedata
 import json
 
-from searx.locales import LOCALE_NAMES, locales_initialize
-from searx.engines import wikidata, set_loggers
-from searx.data.currencies import CurrenciesDB
+from zhensa.locales import LOCALE_NAMES, locales_initialize
+from zhensa.engines import wikidata, set_loggers
+from zhensa.data.currencies import CurrenciesDB
 
 set_loggers(wikidata, 'wikidata')
 locales_initialize()

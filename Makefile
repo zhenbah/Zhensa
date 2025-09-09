@@ -14,7 +14,7 @@ help:
 	@./manage --help
 	@echo '----'
 	@echo 'run            - run developer instance'
-	@echo 'install        - developer install of SearxNG into virtualenv'
+	@echo 'install        - developer install of Zhensa into virtualenv'
 	@echo 'uninstall      - uninstall developer installation'
 	@echo 'clean          - clean up working tree'
 	@echo 'search.checker - check search engines'
@@ -41,10 +41,10 @@ clean: py.clean docs.clean node.clean nvm.clean go.clean test.clean
 
 PHONY += search.checker search.checker.%
 search.checker: install
-	$(Q)./manage pyenv.cmd searxng-checker -v
+	$(Q)./manage pyenv.cmd zhensa-checker -v
 
 search.checker.%: install
-	$(Q)./manage pyenv.cmd searxng-checker -v "$(subst _, ,$(patsubst search.checker.%,%,$@))"
+	$(Q)./manage pyenv.cmd zhensa-checker -v "$(subst _, ,$(patsubst search.checker.%,%,$@))"
 
 PHONY += test ci.test test.shell
 test:    test.yamllint test.black test.pyright_modified test.pylint test.unit test.robot test.rst test.shell test.shfmt
@@ -61,7 +61,7 @@ test.shell:
 		utils/lib_nvm.sh \
 		utils/lib_redis.sh \
 		utils/lib_valkey.sh \
-		utils/searxng.sh
+		utils/zhensa.sh
 	$(Q)$(MTOOLS) build_msg TEST "$@ OK"
 
 PHONY += format

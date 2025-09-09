@@ -3,11 +3,11 @@
 
 from parameterized import parameterized
 
-import searx.plugins
-import searx.answerers
-import searx.preferences
+import zhensa.plugins
+import zhensa.answerers
+import zhensa.preferences
 
-from searx.extended_types import sxng_request
+from zhensa.extended_types import sxng_request
 
 from tests import SearxTestCase
 

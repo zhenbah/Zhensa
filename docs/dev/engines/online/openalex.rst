@@ -21,7 +21,7 @@ Key features
 - Uses the official Works endpoint (JSON)
 - Paging support via ``page`` and ``per-page``
 - Relevance sorting (``sort=relevance_score:desc``)
-- Language filter support (maps SearXNG language to ``filter=language:<iso2>``)
+- Language filter support (maps Zhensa language to ``filter=language:<iso2>``)
 - Maps fields commonly used in scholarly results: title, authors, abstract
   (reconstructed from inverted index), journal/venue, publisher, DOI, tags
   (concepts), PDF/HTML links, pages, volume, issue, published date, and a short

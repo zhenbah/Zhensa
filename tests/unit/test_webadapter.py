@@ -1,12 +1,12 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # pylint: disable=missing-module-docstring,disable=missing-class-docstring,invalid-name
 
-import searx.plugins
+import zhensa.plugins
 
-from searx.engines import engines
-from searx.preferences import Preferences
-from searx.search.models import EngineRef
-from searx.webadapter import validate_engineref_list
+from zhensa.engines import engines
+from zhensa.preferences import Preferences
+from zhensa.search.models import EngineRef
+from zhensa.webadapter import validate_engineref_list
 
 from tests import SearxTestCase
 

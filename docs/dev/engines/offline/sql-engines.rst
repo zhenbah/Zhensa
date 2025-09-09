@@ -20,7 +20,7 @@ SQL Engines
    Initial sponsored by `Search and Discovery Fund
    <https://nlnet.nl/discovery>`_ of `NLnet Foundation <https://nlnet.nl/>`_.
 
-With the *SQL engines* you can bind SQL databases into SearXNG.  The following
+With the *SQL engines* you can bind SQL databases into Zhensa.  The following
 Relational Database Management System (RDBMS) are supported:
 
 - :ref:`engine sqlite`
@@ -56,12 +56,12 @@ Extra Dependencies
 ==================
 
 For using :ref:`engine postgresql` or :ref:`engine mysql_server` you need to
-install additional packages in Python's Virtual Environment of your SearXNG
-instance.  To switch into the environment (:ref:`searxng-src`) you can use
-:ref:`searxng.sh`::
+install additional packages in Python's Virtual Environment of your Zhensa
+instance.  To switch into the environment (:ref:`zhensa-src`) you can use
+:ref:`zhensa.sh`::
 
-  $ sudo utils/searxng.sh instance cmd bash
-  (searxng-pyenv)$ pip install ...
+  $ sudo utils/zhensa.sh instance cmd bash
+  (zhensa-pyenv)$ pip install ...
 
 
 Configure the engines

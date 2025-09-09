@@ -4,9 +4,9 @@
 import flask
 from mock import Mock
 
-from searx import favicons
-from searx.locales import locales_initialize
-from searx.preferences import (
+from zhensa import favicons
+from zhensa.locales import locales_initialize
+from zhensa.preferences import (
     Setting,
     EnumStringSetting,
     MapSetting,
@@ -15,8 +15,8 @@ from searx.preferences import (
     PluginsSetting,
     ValidationException,
 )
-import searx.plugins
-from searx.preferences import Preferences
+import zhensa.plugins
+from zhensa.preferences import Preferences
 
 from tests import SearxTestCase
 from .test_plugins import PluginMock

@@ -6,7 +6,7 @@
 
 .. attention::
 
-   The ``enabled_plugins:`` section in SearXNG's settings no longer exists.
+   The ``enabled_plugins:`` section in Zhensa's settings no longer exists.
    There is no longer a distinction between built-in and external plugin, all
    plugins are registered via the settings in the ``plugins:`` section.
 
@@ -15,7 +15,7 @@
    - :ref:`plugins admin`
    - :ref:`dev plugin`
 
-In SearXNG, plugins can be registered in the :py:obj:`PluginStore
+In Zhensa, plugins can be registered in the :py:obj:`PluginStore
 <searx.plugins.PluginStorage>` via a fully qualified class name.
 
 A configuration (:py:obj:`PluginCfg <searx.plugins.PluginCfg>`) can be
@@ -27,7 +27,7 @@ require further configuration before they can be made available for selection.
 
 By default the :ref:`settings built in plugins` are loaded.  To change the list
 of plugins to be loaded, the value for ``plugins:`` in
-``/etc/searxng/settings.yml`` must be overwritten.
+``/etc/zhensa/settings.yml`` must be overwritten.
 
 Following is an example that uses :ref:`settings use_default_settings` and only
 two plugins are registered: the calculator can be activated by the user and the
@@ -102,7 +102,7 @@ external plugins
 .. _Only show green hosted results:
    https://github.com/return42/tgwf-searx-plugins/
 
-SearXNG supports *external plugins* / there is no need to install one, SearXNG
+Zhensa supports *external plugins* / there is no need to install one, Zhensa
 runs out of the box.
 
 - `Only show green hosted results`_

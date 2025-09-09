@@ -11,15 +11,15 @@ from pathlib import Path
 import pygments
 from pygments.formatters.html import HtmlFormatter
 
-from searx import searx_dir
+from zhensa import zhensa_dir
 
-LESS_FILE = Path(searx_dir).parent / 'client/simple/generated/pygments.less'
+LESS_FILE = Path(zhensa_dir).parent / 'client/simple/generated/pygments.less'
 
 HEADER = f"""\
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 /*
-   this file is generated automatically by searxng_extra/update/update_pygments.py
+   this file is generated automatically by zhensa_extra/update/update_pygments.py
    using pygments version {pygments.__version__}:
 
        ./manage templates.simple.pygments

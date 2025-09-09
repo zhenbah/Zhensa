@@ -3,8 +3,8 @@
 
 from parameterized import parameterized
 from tests import SearxTestCase
-import searx.exceptions
-from searx import get_setting
+import zhensa.exceptions
+from zhensa import get_setting
 
 
 class TestExceptions(SearxTestCase):

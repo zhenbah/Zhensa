@@ -53,7 +53,7 @@
   - ``yandex``
 
 ``favicon_resolver``:
-  To activate favicons in SearXNG's result list select a default
+  To activate favicons in Zhensa's result list select a default
   favicon-resolver, leave blank to turn off the feature.  Don't activate the
   favicons before reading the :ref:`Favicons documentation <favicons>`.
 

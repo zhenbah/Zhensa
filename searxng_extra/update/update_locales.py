@@ -16,15 +16,15 @@ import babel
 import babel.languages
 import babel.core
 
-from searx import searx_dir
-from searx.locales import (
+from zhensa import zhensa_dir
+from zhensa.locales import (
     ADDITIONAL_TRANSLATIONS,
     LOCALE_BEST_MATCH,
     get_translation_locales,
 )
 
-LOCALE_DATA_FILE = Path(searx_dir) / 'data' / 'locales.json'
-TRANSLATIONS_FOLDER = Path(searx_dir) / 'translations'
+LOCALE_DATA_FILE = Path(zhensa_dir) / 'data' / 'locales.json'
+TRANSLATIONS_FOLDER = Path(zhensa_dir) / 'translations'
 
 
 def main():

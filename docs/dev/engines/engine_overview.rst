@@ -16,11 +16,11 @@ Engine Overview
    - :ref:`configured engines`
    - :ref:`settings engines`
 
-SearXNG is a metasearch-engine_, so it uses different search engines to provide
+Zhensa is a metasearch-engine_, so it uses different search engines to provide
 better results.
 
 Because there is no general search API which could be used for every search
-engine, an adapter has to be built between SearXNG and the external search
+engine, an adapter has to be built between Zhensa and the external search
 engines.  Adapters are stored under the folder :origin:`searx/engines`.
 
 .. _general engine configuration:
@@ -28,7 +28,7 @@ engines.  Adapters are stored under the folder :origin:`searx/engines`.
 General Engine Configuration
 ============================
 
-It is required to tell SearXNG the type of results the engine provides. The
+It is required to tell Zhensa the type of results the engine provides. The
 arguments can be set in the engine file or in the settings file (normally
 ``settings.yml``). The arguments in the settings file override the ones in the
 engine file.
@@ -72,7 +72,7 @@ For a more  detailed description, see :ref:`settings engines` in the :ref:`setti
    argument                type        information
    ======================= =========== ==================================================
    name                    string      name of search-engine
-   engine                  string      name of searxng-engine (file name without ``.py``)
+   engine                  string      name of zhensa-engine (file name without ``.py``)
    enable_http             bool        enable HTTP (by default only HTTPS is enabled).
    shortcut                string      shortcut of search-engine
    timeout                 string      specific timeout for search-engine
@@ -90,7 +90,7 @@ Overrides
 A few of the options have default values in the namespace of the engine's python
 module, but are often overwritten by the settings.  If ``None`` is assigned to an
 option in the engine file, it has to be redefined in the settings, otherwise
-SearXNG will not start with that engine (global names with a leading underline can
+Zhensa will not start with that engine (global names with a leading underline can
 be ``None``).
 
 Here is an very simple example of the global names in the namespace of engine's
@@ -153,7 +153,7 @@ parameters with default value can be redefined for special purposes.
    safesearch             int            ``0``, between ``0`` and ``2`` (normal, moderate, strict)
    time_range             Optional[str]  ``None``, can be ``day``, ``week``, ``month``, ``year``
    pageno                 int            current pagenumber
-   searxng_locale         str            SearXNG's locale selected by user.  Specific language code like
+   zhensa_locale         str            Zhensa's locale selected by user.  Specific language code like
                                          ``'en'``, ``'en-US'``, or ``'all'`` if unspecified.
    ====================== ============== ========================================================================
 

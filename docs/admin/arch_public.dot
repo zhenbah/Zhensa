@@ -6,26 +6,26 @@ digraph G {
   browser [label="browser", shape=tab, fillcolor=aliceblue];
   rp      [label="reverse proxy"];
   static  [label="static files", shape=folder, href="url to configure static files", fillcolor=lightgray];
-  uwsgi   [label="uwsgi", shape=parallelogram href="https://docs.searxng.org/utils/searxng.sh.html"]
+  uwsgi   [label="uwsgi", shape=parallelogram href="https://docs.zhensa.org/utils/zhensa.sh.html"]
   valkey  [label="valkey DB", shape=cylinder];
 
-  searxng1  [label="SearXNG #1", fontcolor=blue3];
-  searxng2  [label="SearXNG #2", fontcolor=blue3];
-  searxng3  [label="SearXNG #3", fontcolor=blue3];
-  searxng4  [label="SearXNG #4", fontcolor=blue3];
+  zhensa1  [label="Zhensa #1", fontcolor=blue3];
+  zhensa2  [label="Zhensa #2", fontcolor=blue3];
+  zhensa3  [label="Zhensa #3", fontcolor=blue3];
+  zhensa4  [label="Zhensa #4", fontcolor=blue3];
 
   browser -> rp [label="HTTPS"]
 
-  subgraph cluster_searxng {
-      label = "SearXNG instance" fontname=Sans;
+  subgraph cluster_zhensa {
+      label = "Zhensa instance" fontname=Sans;
       bgcolor="#fafafa";
       { rank=same; static rp };
       rp -> static  [label="optional: reverse proxy serves static files", fillcolor=slategray, fontcolor=slategray];
       rp -> uwsgi [label="http:// (tcp) or unix:// (socket)"];
-      uwsgi -> searxng1 -> valkey;
-      uwsgi -> searxng2 -> valkey;
-      uwsgi -> searxng3 -> valkey;
-      uwsgi -> searxng4 -> valkey;
+      uwsgi -> zhensa1 -> valkey;
+      uwsgi -> zhensa2 -> valkey;
+      uwsgi -> zhensa3 -> valkey;
+      uwsgi -> zhensa4 -> valkey;
   }
 
 }

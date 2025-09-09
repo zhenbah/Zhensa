@@ -1,7 +1,7 @@
 .. _searx.exceptions:
 
 ==================
-SearXNG Exceptions
+Zhensa Exceptions
 ==================
 
 .. automodule:: searx.exceptions

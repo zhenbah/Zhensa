@@ -8,8 +8,8 @@ import os.path
 import time
 from contextlib import contextmanager
 
-from searx import settings, get_setting, locales
-from searx.infopage import InfoPageSet, InfoPage
+from zhensa import settings, get_setting, locales
+from zhensa.infopage import InfoPageSet, InfoPage
 
 _doc_user = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'docs', 'user'))
 
@@ -33,7 +33,7 @@ class OfflinePage(InfoPage):  # pylint: disable=missing-class-docstring
 
     def get_ctx(self):
         """Jinja context to render :py:obj:`DocPage.content` for offline purpose (no
-        links to SearXNG instance)"""
+        links to Zhensa instance)"""
 
         ctx = super().get_ctx()
         ctx['link'] = lambda name, url: '`%s`' % name
@@ -53,7 +53,7 @@ def _instance_infosetset_ctx(base_url):
     # registered in the Flask app.
 
     settings['server']['secret_key'] = ''
-    from searx.webapp import app  # pylint: disable=import-outside-toplevel
+    from zhensa.webapp import app  # pylint: disable=import-outside-toplevel
 
     # Specify base_url so that url_for() works for base_urls.  If base_url is
     # specified, then these values from are given preference over any Flask's
@@ -69,7 +69,7 @@ def _instance_infosetset_ctx(base_url):
     #       requests/responses were still in-flight.
     #
     # Closing network won't help ..
-    #   from searx.network import network
+    #   from zhensa.network import network
     #   network.done()
 
     # waiting some seconds before ending the command line was the only solution I

@@ -13,7 +13,7 @@ Favicons
    :local:
    :backlinks: entry
 
-Activating the favicons in SearXNG is very easy, but this **generates a
+Activating the favicons in Zhensa is very easy, but this **generates a
 significantly higher load** in the client/server communication and increases
 resources needed on the server.
 
@@ -21,7 +21,7 @@ To mitigate these disadvantages, various methods have been implemented,
 including a *cache*.  The cache must be parameterized according to your own
 requirements and maintained regularly.
 
-To activate favicons in SearXNG's result list, set a default
+To activate favicons in Zhensa's result list, set a default
 ``favicon_resolver`` in the :ref:`search <settings search>` settings:
 
 .. code:: yaml
@@ -29,7 +29,7 @@ To activate favicons in SearXNG's result list, set a default
    search:
      favicon_resolver: "duckduckgo"
 
-By default and without any extensions, SearXNG serves these resolvers:
+By default and without any extensions, Zhensa serves these resolvers:
 
 - ``duckduckgo``
 - ``allesedv``
@@ -69,7 +69,7 @@ Setting up the cache
 ====================
 
 To parameterize the *cache* and more settings of the favicons infrastructure, a
-TOML_ configuration is created in the file ``/etc/searxng/favicons.toml``.
+TOML_ configuration is created in the file ``/etc/zhensa/favicons.toml``.
 
 .. code:: toml
 
@@ -79,7 +79,7 @@ TOML_ configuration is created in the file ``/etc/searxng/favicons.toml``.
 
    [favicons.cache]
 
-   db_url = "/var/cache/searxng/faviconcache.db"  # default: "/tmp/faviconcache.db"
+   db_url = "/var/cache/zhensa/faviconcache.db"  # default: "/tmp/faviconcache.db"
    LIMIT_TOTAL_BYTES = 2147483648                 # 2 GB / default: 50 MB
    # HOLD_TIME = 5184000                            # 60 days / default: 30 days
    # BLOB_MAX_BYTES = 40960                         # 40 KB / default 20 KB
@@ -94,18 +94,18 @@ TOML_ configuration is created in the file ``/etc/searxng/favicons.toml``.
   The path to the (SQLite_) database file.  The default path is in the `/tmp`_
   folder, which is deleted on every reboot and is therefore unsuitable for a
   production environment.  The FHS_ provides the folder `/var/cache`_ for the
-  cache of applications, so a suitable storage location of SearXNG's caches is
-  folder ``/var/cache/searxng``.
+  cache of applications, so a suitable storage location of Zhensa's caches is
+  folder ``/var/cache/zhensa``.
 
-  In a standard installation (compare :ref:`create searxng user`), the folder
-  must be created and the user under which the SearXNG process is running must
+  In a standard installation (compare :ref:`create zhensa user`), the folder
+  must be created and the user under which the Zhensa process is running must
   be given write permission to this folder.
 
   .. code:: bash
 
-     $ sudo mkdir /var/cache/searxng
-     $ sudo chown root:searxng /var/cache/searxng/
-     $ sudo chmod g+w /var/cache/searxng/
+     $ sudo mkdir /var/cache/zhensa
+     $ sudo chown root:zhensa /var/cache/zhensa/
+     $ sudo chmod g+w /var/cache/zhensa/
 
   In container systems, a volume should be mounted for this folder.  Check
   whether the process in the container has read/write access to the mounted
@@ -121,7 +121,7 @@ TOML_ configuration is created in the file ``/etc/searxng/favicons.toml``.
      If the maintenance period is too long or maintenance is switched
      off completely, the cache grows uncontrollably.
 
-SearXNG hosters can change other parameters of the cache as required:
+Zhensa hosters can change other parameters of the cache as required:
 
 - :py:obj:`cache.HOLD_TIME <.FaviconCacheConfig.HOLD_TIME>`
 - :py:obj:`cache.BLOB_MAX_BYTES <.FaviconCacheConfig.BLOB_MAX_BYTES>`
@@ -157,7 +157,7 @@ Proxy configuration
 ===================
 
 Most of the options of the :py:obj:`Favicons-Proxy <.favicons.proxy>` are
-already set sensibly with settings from the :ref:`settings.yml <searxng
+already set sensibly with settings from the :ref:`settings.yml <zhensa
 settings.yml>` and should not normally be adjusted.
 
 .. code:: toml
@@ -171,7 +171,7 @@ settings.yml>` and should not normally be adjusted.
   The `HTTP Cache-Control max-age`_ response directive indicates that the
   response remains fresh until N seconds after the response is generated.  This
   setting therefore determines how long a favicon remains in the client's cache.
-  As a rule, in the favicons infrastructure of SearXNG's this setting only
+  As a rule, in the favicons infrastructure of Zhensa's this setting only
   affects favicons whose byte size exceeds :ref:`BLOB_MAX_BYTES <favicon cache
   setup>` (the other favicons that are already in the cache are embedded as
   `data URL`_ in the :py:obj:`generated HTML <.favicons.proxy.favicon_url>`,
@@ -187,8 +187,8 @@ from an external source.  The resolver functions available to the user are
 registered with their fully qualified name (FQN_) in a ``resolver_map``.
 
 If no ``resolver_map`` is defined in the ``favicon.toml``, the favicon
-infrastructure of SearXNG generates this ``resolver_map`` automatically
-depending on the ``settings.yml``.  SearXNG would automatically generate the
+infrastructure of Zhensa generates this ``resolver_map`` automatically
+depending on the ``settings.yml``.  Zhensa would automatically generate the
 following TOML configuration from the following YAML configuration:
 
 .. code:: yaml
@@ -224,7 +224,7 @@ The number of resolvers increases:
 - the number of incoming/outgoing requests and
 - the number of favicons to be stored in the cache.
 
-In the following we list the resolvers available in the core of SearXNG, but via
+In the following we list the resolvers available in the core of Zhensa, but via
 the FQN_ it is also possible to implement your own resolvers and integrate them
 into the *proxy*:
 

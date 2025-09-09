@@ -7,8 +7,8 @@ from unittest.mock import Mock
 from requests import HTTPError
 from parameterized import parameterized
 
-import searx.search
-import searx.engines
+import zhensa.search
+import zhensa.engines
 from tests import SearxTestCase
 
 

@@ -4,13 +4,13 @@
 import babel
 from mock import Mock
 
-import searx
-import searx.plugins
-import searx.preferences
-import searx.results
+import zhensa
+import zhensa.plugins
+import zhensa.preferences
+import zhensa.results
 
-from searx.result_types import Result
-from searx.extended_types import sxng_request
+from zhensa.result_types import Result
+from zhensa.extended_types import sxng_request
 
 from tests import SearxTestCase
 

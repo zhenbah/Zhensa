@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # SPDX-License-Identifier: AGPL-3.0-or-later
-"""Script to run SearXNG from terminal.
+"""Script to run Zhensa from terminal.
 
   DON'T USE THIS SCRIPT!!
 
@@ -8,22 +8,22 @@
 
    Be warned, using the ``standalone_searx.py`` won't give you privacy!
 
-   On the contrary, this script behaves like a SearXNG server: your IP is
+   On the contrary, this script behaves like a Zhensa server: your IP is
    exposed and tracked by all active engines (google, bing, qwant, ... ), with
    every query!
 
 .. note::
 
-   This is an old and grumpy hack / SearXNG is a Flask application with
+   This is an old and grumpy hack / Zhensa is a Flask application with
    client/server structure, which can't be turned into a command line tool the
    way it was done here.
 
 Getting categories without initiate the engine will only return `['general']`
 
->>> import searx.engines
+>>> import zhensa.engines
 ... list(searx.engines.categories.keys())
 ['general']
->>> import searx.search
+>>> import zhensa.search
 ... searx.search.initialize()
 ... list(searx.engines.categories.keys())
 ['general', 'it', 'science', 'images', 'news', 'videos', 'music', 'files', 'social media', 'map']
@@ -32,7 +32,7 @@ Example to use this script:
 
 .. code::  bash
 
-    $ python3 searxng_extra/standalone_searx.py rain
+    $ python3 zhensa_extra/standalone_searx.py rain
 
 """  # pylint: disable=line-too-long
 
@@ -42,12 +42,12 @@ from datetime import datetime
 from json import dumps
 from typing import Any, Dict, List, Optional
 
-import searx
-import searx.preferences
-import searx.query
-import searx.search
-import searx.search.models
-import searx.webadapter
+import zhensa
+import zhensa.preferences
+import zhensa.query
+import zhensa.search
+import zhensa.search.models
+import zhensa.webadapter
 
 EngineCategoriesVar = Optional[List[str]]
 

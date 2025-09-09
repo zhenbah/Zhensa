@@ -6,9 +6,9 @@ from unittest.mock import Mock
 from urllib.parse import urlparse
 from parameterized import parameterized
 
-import searx.engines
+import zhensa.engines
 from tests import SearxTestCase
-from searx.result_types import EngineResults
+from zhensa.result_types import EngineResults
 
 
 class GithubCodeTests(SearxTestCase):

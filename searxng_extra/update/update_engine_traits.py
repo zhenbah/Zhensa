@@ -8,7 +8,7 @@
 :origin:`searx/languages.py`
   Is generated  from intersecting each engine's supported traits.
 
-The script :origin:`searxng_extra/update/update_engine_traits.py` is called in
+The script :origin:`zhensa_extra/update/update_engine_traits.py` is called in
 the :origin:`CI Update data ... <.github/workflows/data-update.yml>`
 
 """
@@ -19,16 +19,16 @@ from pathlib import Path
 from pprint import pformat
 import babel
 
-from searx import settings, searx_dir
-from searx import network
-from searx.engines import load_engines
-from searx.enginelib.traits import EngineTraitsMap
+from zhensa import settings, zhensa_dir
+from zhensa import network
+from zhensa.engines import load_engines
+from zhensa.enginelib.traits import EngineTraitsMap
 
 # Output files.
-languages_file = Path(searx_dir) / 'sxng_locales.py'
+languages_file = Path(zhensa_dir) / 'sxng_locales.py'
 languages_file_header = """\
 # SPDX-License-Identifier: AGPL-3.0-or-later
-'''List of SearXNG's locale codes used for the search language/region.
+'''List of Zhensa's locale codes used for the search language/region.
 
 .. hint::
 
@@ -44,12 +44,12 @@ languages_file_footer = """,
 '''
 A list of five-digit tuples:
 
-0. SearXNG's internal locale tag (a language or region tag)
+0. Zhensa's internal locale tag (a language or region tag)
 1. Name of the language (:py:obj:`babel.core.Locale.get_language_name`)
 2. For region tags the name of the region (:py:obj:`babel.core.Locale.get_territory_name`).
    Empty string for language tags.
 3. English language name (from :py:obj:`babel.core.Locale.english_name`)
-4. Unicode flag (emoji) that fits to SearXNG's internal region tag. Languages
+4. Unicode flag (emoji) that fits to Zhensa's internal region tag. Languages
    are represented by a globe (\U0001F310)
 
 .. code:: python

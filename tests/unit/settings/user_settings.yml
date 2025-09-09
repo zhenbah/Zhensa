@@ -1,6 +1,6 @@
 general:
   debug: false
-  instance_name: "SearXNG"
+  instance_name: "Zhensa"
 
 search:
   safe_search: 0

@@ -1,4 +1,4 @@
-FROM ghcr.io/searxng/base:searxng-builder AS builder
+FROM ghcr.io/zhensa/base:zhensa-builder AS builder
 
 COPY ./requirements*.txt ./
 
@@ -20,5 +20,5 @@ RUN set -eux; \
         -exec brotli -9 -k {} + \
         -exec gzip --test {}.gz + \
         -exec brotli --test {}.br +; \
-    # Move always changing files to /usr/local/searxng/
+    # Move always changing files to /usr/local/zhensa/
     mv ./searx/version_frozen.py ./

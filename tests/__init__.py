@@ -6,8 +6,8 @@ import os
 import aiounittest
 
 
-os.environ.pop('SEARXNG_SETTINGS_PATH', None)
-os.environ['SEARXNG_DISABLE_ETC_SETTINGS'] = '1'
+os.environ.pop('ZHENSA_SETTINGS_PATH', None)
+os.environ['ZHENSA_DISABLE_ETC_SETTINGS'] = '1'
 
 
 class SearxTestLayer:
@@ -55,19 +55,19 @@ class SearxTestCase(aiounittest.AsyncTestCase):
         setattr(obj, attr, value)
 
     def init_test_settings(self):
-        """Sets ``SEARXNG_SETTINGS_PATH`` environment variable an initialize
+        """Sets ``ZHENSA_SETTINGS_PATH`` environment variable an initialize
         global ``settings`` variable and the ``logger`` from a test config in
         :origin:`tests/unit/settings/`.
         """
 
-        os.environ['SEARXNG_SETTINGS_PATH'] = str(self.SETTINGS_FOLDER / self.TEST_SETTINGS)
+        os.environ['ZHENSA_SETTINGS_PATH'] = str(self.SETTINGS_FOLDER / self.TEST_SETTINGS)
 
         # pylint: disable=import-outside-toplevel
-        import searx
-        import searx.locales
-        import searx.plugins
-        import searx.search
-        import searx.webapp
+        import zhensa
+        import zhensa.locales
+        import zhensa.plugins
+        import zhensa.search
+        import zhensa.webapp
 
         # https://flask.palletsprojects.com/en/stable/config/#builtin-configuration-values
         # searx.webapp.app.config["DEBUG"] = True

@@ -4,16 +4,16 @@ import  sys, os
 from pathlib import Path
 from pallets_sphinx_themes import ProjectLink
 
-from searx import get_setting
-from searx.version import VERSION_STRING, GIT_URL, GIT_BRANCH
+from zhensa import get_setting
+from zhensa.version import VERSION_STRING, GIT_URL, GIT_BRANCH
 
 # Project --------------------------------------------------------------
 
-project = 'SearXNG'
-copyright = 'SearXNG team'
-author = 'SearXNG team'
+project = 'Zhensa'
+copyright = 'Zhensa team'
+author = 'Zhensa team'
 release, version = VERSION_STRING, VERSION_STRING
-SEARXNG_URL = get_setting('server.base_url') or 'https://example.org/searxng'
+ZHENSA_URL = get_setting('server.base_url') or 'https://example.org/zhensa'
 ISSUE_URL = get_setting('brand.issue_url')
 DOCS_URL = get_setting('brand.docs_url')
 PUBLIC_INSTANCES = get_setting('brand.public_instances')
@@ -40,14 +40,14 @@ numfig = True
 
 exclude_patterns = ['build-templates/*.rst', 'user/*.md']
 
-import searx.engines
-import searx.plugins
-import searx.webutils
+import zhensa.engines
+import zhensa.plugins
+import zhensa.webutils
 
-# import searx.webapp is needed to init the engines & plugins, to init a
+# import zhensa.webapp is needed to init the engines & plugins, to init a
 # (empty) secret_key is needed.
 searx.settings['server']['secret_key'] = ''
-import searx.webapp
+import zhensa.webapp
 
 searx.engines.load_engines(searx.settings['engines'])
 
@@ -90,8 +90,8 @@ def setup(app):
 extlinks = {}
 
 # upstream links
-extlinks['wiki'] = ('https://github.com/searxng/searxng/wiki/%s', ' %s')
-extlinks['pull'] = ('https://github.com/searxng/searxng/pull/%s', 'PR %s')
+extlinks['wiki'] = ('https://github.com/zhensa/zhensa/wiki/%s', ' %s')
+extlinks['pull'] = ('https://github.com/zhensa/zhensa/pull/%s', 'PR %s')
 extlinks['pull-searx'] = ('https://github.com/searx/searx/pull/%s', 'PR %s')
 
 # links to custom brand
@@ -154,18 +154,18 @@ intersphinx_mapping = {
     "lxml": ('https://lxml.de/apidoc', None),
 }
 
-issues_github_path = "searxng/searxng"
+issues_github_path = "zhensa/zhensa"
 
 # HTML -----------------------------------------------------------------
 
-# https://searxng.github.io/searxng --> '/searxng/'
-# https://docs.searxng.org --> '/'
+# https://zhensa.github.io/zhensa --> '/zhensa/'
+# https://docs.zhensa.org --> '/'
 notfound_urls_prefix = '/'
 
 sys.path.append(os.path.abspath('_themes'))
 sys.path.insert(0, os.path.abspath("../"))
 html_theme_path = ['_themes']
-html_theme = "searxng"
+html_theme = "zhensa"
 
 # sphinx.ext.imgmath setup
 html_math_renderer = 'imgmath'
@@ -199,12 +199,12 @@ html_sidebars = {
     ],
 }
 singlehtml_sidebars = {"index": ["project.html", "localtoc.html"]}
-html_logo = "../client/simple/src/brand/searxng-wordmark.svg"
-html_title = "SearXNG Documentation ({})".format(VERSION_STRING)
+html_logo = "../client/simple/src/brand/zhensa-wordmark.svg"
+html_title = "Zhensa Documentation ({})".format(VERSION_STRING)
 html_show_sourcelink = True
 
 # LaTeX ----------------------------------------------------------------
 
 latex_documents = [
-    (master_doc, "searxng-{}.tex".format(VERSION_STRING), html_title, author, "manual")
+    (master_doc, "zhensa-{}.tex".format(VERSION_STRING), html_title, author, "manual")
 ]

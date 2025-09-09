@@ -3,13 +3,13 @@ general:
   instance_name: "searx_test"
 
 brand:
-  git_url: https://github.com/searxng/searxng
+  git_url: https://github.com/zhensa/zhensa
   git_branch: master
-  issue_url: https://github.com/searxng/searxng/issues
-  new_issue_url: https://github.com/searxng/searxng/issues/new
-  docs_url: https://docs.searxng.org
+  issue_url: https://github.com/zhensa/zhensa/issues
+  new_issue_url: https://github.com/zhensa/zhensa/issues/new
+  docs_url: https://docs.zhensa.org
   public_instances: https://searx.space
-  wiki_url: https://github.com/searxng/searxng/wiki
+  wiki_url: https://github.com/zhensa/zhensa/wiki
 
 search:
   language: "all"

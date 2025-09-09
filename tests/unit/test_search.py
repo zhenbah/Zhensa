@@ -3,9 +3,9 @@
 
 from copy import copy
 
-import searx.search
-from searx.search.models import SearchQuery, EngineRef
-from searx import settings
+import zhensa.search
+from zhensa.search.models import SearchQuery, EngineRef
+from zhensa import settings
 from tests import SearxTestCase
 
 

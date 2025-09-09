@@ -1,4 +1,4 @@
-module searxng.org/devtools
+module zhensa.org/devtools
 
 go 1.24.5
 

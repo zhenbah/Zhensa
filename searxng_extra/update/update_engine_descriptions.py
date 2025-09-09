@@ -15,14 +15,14 @@ from os.path import join
 
 from lxml.html import fromstring
 
-from searx.engines import wikidata, set_loggers
-from searx.utils import extract_text, searxng_useragent
-from searx.locales import LOCALE_NAMES, locales_initialize, match_locale
-from searx import searx_dir
-from searx.utils import gen_useragent, detect_language
-import searx.search
-import searx.network
-from searx.data import data_dir
+from zhensa.engines import wikidata, set_loggers
+from zhensa.utils import extract_text, zhensa_useragent
+from zhensa.locales import LOCALE_NAMES, locales_initialize, match_locale
+from zhensa import zhensa_dir
+from zhensa.utils import gen_useragent, detect_language
+import zhensa.search
+import zhensa.network
+from zhensa.data import data_dir
 
 DATA_FILE = data_dir / 'engine_descriptions.json'
 
@@ -109,14 +109,14 @@ def update_description(engine_name, lang, description, source, replace=True):
         descriptions[engine_name][lang] = [description, source]
 
 
-def get_wikipedia_summary(wikipedia_url, searxng_locale):
+def get_wikipedia_summary(wikipedia_url, zhensa_locale):
     # get the REST API URL from the HTML URL
 
     # Headers
-    headers = {'User-Agent': searxng_useragent()}
+    headers = {'User-Agent': zhensa_useragent()}
 
-    if searxng_locale in WIKIPEDIA_LANGUAGE_VARIANTS:
-        headers['Accept-Language'] = WIKIPEDIA_LANGUAGE_VARIANTS.get(searxng_locale)
+    if zhensa_locale in WIKIPEDIA_LANGUAGE_VARIANTS:
+        headers['Accept-Language'] = WIKIPEDIA_LANGUAGE_VARIANTS.get(zhensa_locale)
 
     # URL path : from HTML URL to REST API URL
     parsed_url = urlparse(wikipedia_url)
@@ -217,14 +217,14 @@ def fetch_wikidata_descriptions():
             wikidata_lang = binding['itemDescription']['xml:lang']
             desc = binding['itemDescription']['value']
             for engine_name in wd_to_engine_name[wikidata_id]:
-                for searxng_locale in LOCALE_NAMES:
-                    if WIKIPEDIA_LANGUAGES[searxng_locale] != wikidata_lang:
+                for zhensa_locale in LOCALE_NAMES:
+                    if WIKIPEDIA_LANGUAGES[zhensa_locale] != wikidata_lang:
                         continue
                     print(
                         f"    engine: {engine_name:20} / wikidata_lang: {wikidata_lang:5}",
                         f"/ len(wikidata_desc): {len(desc)}",
                     )
-                    update_description(engine_name, searxng_locale, desc, 'wikidata')
+                    update_description(engine_name, zhensa_locale, desc, 'wikidata')
 
 
 def fetch_wikipedia_descriptions():
@@ -238,17 +238,17 @@ def fetch_wikipedia_descriptions():
             wikidata_lang = binding['name']['xml:lang']
             wikipedia_url = binding['article']['value']  # for example the URL https://de.wikipedia.org/wiki/PubMed
             for engine_name in wd_to_engine_name[wikidata_id]:
-                for searxng_locale in LOCALE_NAMES:
-                    if WIKIPEDIA_LANGUAGES[searxng_locale] != wikidata_lang:
+                for zhensa_locale in LOCALE_NAMES:
+                    if WIKIPEDIA_LANGUAGES[zhensa_locale] != wikidata_lang:
                         continue
-                    desc = get_wikipedia_summary(wikipedia_url, searxng_locale)
+                    desc = get_wikipedia_summary(wikipedia_url, zhensa_locale)
                     if not desc:
                         continue
                     print(
                         f"    engine: {engine_name:20} / wikidata_lang: {wikidata_lang:5}",
                         f"/ len(wikipedia_desc): {len(desc)}",
                     )
-                    update_description(engine_name, searxng_locale, desc, 'wikipedia')
+                    update_description(engine_name, zhensa_locale, desc, 'wikipedia')
 
 
 def normalize_url(url):
@@ -324,7 +324,7 @@ def fetch_website_descriptions():
 
 
 def get_engine_descriptions_filename():
-    return join(join(searx_dir, "data"), "engine_descriptions.json")
+    return join(join(zhensa_dir, "data"), "engine_descriptions.json")
 
 
 def get_output():

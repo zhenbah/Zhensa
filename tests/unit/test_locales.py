@@ -4,8 +4,8 @@
 """Test some code from module :py:obj:`searx.locales`"""
 
 from parameterized import parameterized
-from searx import locales
-from searx.sxng_locales import sxng_locales
+from zhensa import locales
+from zhensa.sxng_locales import sxng_locales
 from tests import SearxTestCase
 
 
@@ -27,7 +27,7 @@ class TestLocales(SearxTestCase):
         ]
     )
     def test_locale_languages(self, locale: str):
-        # Test SearXNG search languages
+        # Test Zhensa search languages
         self.assertEqual(locales.match_locale(locale, self.locale_tag_list), locale)
 
     @parameterized.expand(
@@ -44,7 +44,7 @@ class TestLocales(SearxTestCase):
         ]
     )
     def test_match_region(self, locale: str, expected_locale: str):
-        # Test SearXNG search regions
+        # Test Zhensa search regions
         self.assertEqual(locales.match_locale(locale, self.locale_tag_list), expected_locale)
 
     @parameterized.expand(

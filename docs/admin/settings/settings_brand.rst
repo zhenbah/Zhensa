@@ -7,10 +7,10 @@
 .. code:: yaml
 
    brand:
-     issue_url: https://github.com/searxng/searxng/issues
-     docs_url: https://docs.searxng.org
+     issue_url: https://github.com/zhensa/zhensa/issues
+     docs_url: https://docs.zhensa.org
      public_instances: https://searx.space
-     wiki_url: https://github.com/searxng/searxng/wiki
+     wiki_url: https://github.com/zhensa/zhensa/wiki
 
 ``issue_url`` :
   If you host your own issue tracker change this URL.

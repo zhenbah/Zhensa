@@ -28,7 +28,7 @@ class SearxRobotLayer:
         exe = 'python'
 
         # set robot settings path
-        os.environ['SEARXNG_SETTINGS_PATH'] = str(tests_path / 'robot' / 'settings_robot.yml')
+        os.environ['ZHENSA_SETTINGS_PATH'] = str(tests_path / 'robot' / 'settings_robot.yml')
 
         # run the server
         self.server = subprocess.Popen(  # pylint: disable=consider-using-with
@@ -40,7 +40,7 @@ class SearxRobotLayer:
     def tearDown(self):
         os.kill(self.server.pid, 9)
         # remove previously set environment variable
-        del os.environ['SEARXNG_SETTINGS_PATH']
+        del os.environ['ZHENSA_SETTINGS_PATH']
 
 
 def run_robot_tests(tests):

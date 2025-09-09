@@ -18,7 +18,7 @@ Google API
 .. _Query Parameter Definitions:
    https://developers.google.com/custom-search/docs/xml_results#WebSearch_Query_Parameter_Definitions
 
-SearXNG's implementation of the Google API is mainly done in
+Zhensa's implementation of the Google API is mainly done in
 :py:obj:`get_google_info <searx.engines.google.get_google_info>`.
 
 For detailed description of the *REST-full* API see: `Query Parameter

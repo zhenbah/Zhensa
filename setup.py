@@ -1,10 +1,10 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
-"""Installer for SearXNG package."""
+"""Installer for Zhensa package."""
 
 from setuptools import setup, find_packages
 
-from searx.version import VERSION_TAG, GIT_URL
-from searx import get_setting
+from zhensa.version import VERSION_TAG, GIT_URL
+from zhensa import get_setting
 
 with open('README.rst', encoding='utf-8') as f:
     long_description = f.read()
@@ -16,7 +16,7 @@ with open('requirements-dev.txt') as f:
     dev_requirements = [ l.strip() for l in f.readlines()]
 
 setup(
-    name='searxng',
+    name='zhensa',
     python_requires=">=3.8",
     version=VERSION_TAG,
     description="A privacy-respecting, hackable metasearch engine",
@@ -34,8 +34,8 @@ setup(
         'License :: OSI Approved :: GNU Affero General Public License v3'
     ],
     keywords='metasearch searchengine search web http',
-    author='SearXNG dev team',
-    author_email='contact@searxng.org',
+    author='Zhensa dev team',
+    author_email='contact@zhensa.org',
     license='GNU Affero General Public License',
     packages=find_packages(
         include=[
@@ -48,8 +48,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'searxng-run = searx.webapp:run',
-            'searxng-checker = searx.search.checker.__main__:main'
+            'zhensa-run = searx.webapp:run',
+            'zhensa-checker = searx.search.checker.__main__:main'
         ]
     },
     package_data={

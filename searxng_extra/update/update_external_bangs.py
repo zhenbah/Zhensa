@@ -9,9 +9,9 @@ from :py:obj:`BANGS_URL`.
 
 import json
 
-from searx.external_bang import LEAF_KEY
-from searx.data import data_dir
-from searx.network import get as http_get
+from zhensa.external_bang import LEAF_KEY
+from zhensa.data import data_dir
+from zhensa.network import get as http_get
 
 DATA_FILE = data_dir / 'external_bangs.json'
 

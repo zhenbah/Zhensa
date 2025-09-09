@@ -10,7 +10,7 @@ Offline Concept
    - :ref:`nosql engines`
    - :py:obj:`searx.search.processors.offline`
 
-To extend the functionality of SearXNG, offline engines are going to be
+To extend the functionality of Zhensa, offline engines are going to be
 introduced.  An offline engine is an engine which does not need Internet
 connection to perform a search and does not use HTTP to communicate.
 
@@ -45,18 +45,18 @@ Engine representation in ``/config``
 Extra Dependencies
 ==================
 
-If an offline engine depends on an external tool, SearXNG does not install it by
+If an offline engine depends on an external tool, Zhensa does not install it by
 default.  When an administrator configures such engine and starts the instance,
 the process returns an error with the list of missing dependencies.  Also,
 required dependencies will be added to the comment/description of the engine, so
 admins can install packages in advance.
 
 If there is a need to install additional packages in *Python's Virtual
-Environment* of your SearXNG instance you need to switch into the environment
-(:ref:`searxng-src`) first, for this you can use :ref:`searxng.sh`::
+Environment* of your Zhensa instance you need to switch into the environment
+(:ref:`zhensa-src`) first, for this you can use :ref:`zhensa.sh`::
 
-  $ sudo utils/searxng.sh instance cmd bash
-  (searxng-pyenv)$ pip install ...
+  $ sudo utils/zhensa.sh instance cmd bash
+  (zhensa-pyenv)$ pip install ...
 
 
 Private engines (Security)
@@ -64,6 +64,6 @@ Private engines (Security)
 
 To limit the access to offline engines, if an instance is available publicly,
 administrators can set token(s) for each of the :ref:`private engines`.  If a
-query contains a valid token, then SearXNG performs the requested private
+query contains a valid token, then Zhensa performs the requested private
 search.  If not, requests from an offline engines return errors.
 

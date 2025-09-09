@@ -6,7 +6,7 @@ List of plugins
 
 Further reading ..
 
-- :ref:`SearXNG settings <settings plugins>`
+- :ref:`Zhensa settings <settings plugins>`
 - :ref:`dev plugin`
 
 .. _configured plugins:

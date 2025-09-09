@@ -5,13 +5,13 @@ from parameterized.parameterized import parameterized
 
 from flask_babel import gettext
 
-import searx.plugins
-import searx.preferences
-import searx.limiter
-import searx.botdetection
+import zhensa.plugins
+import zhensa.preferences
+import zhensa.limiter
+import zhensa.botdetection
 
-from searx.extended_types import sxng_request
-from searx.result_types import Answer
+from zhensa.extended_types import sxng_request
+from zhensa.result_types import Answer
 
 from tests import SearxTestCase
 from .test_plugins import do_post_search
