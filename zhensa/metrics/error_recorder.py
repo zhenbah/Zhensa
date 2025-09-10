@@ -8,10 +8,10 @@ from json import JSONDecodeError
 from urllib.parse import urlparse
 from httpx import HTTPError, HTTPStatusError
 from zhensa.exceptions import (
-    SearxXPathSyntaxException,
-    SearxEngineXPathException,
-    SearxEngineAPIException,
-    SearxEngineAccessDeniedException,
+    ZhensaXPathSyntaxException,
+    ZhensaEngineXPathException,
+    ZhensaEngineAPIException,
+    ZhensaEngineAccessDeniedException,
 )
 from zhensa import zhensa_parent_dir, settings
 from zhensa.engines import engines
@@ -148,13 +148,13 @@ def get_messages(exc, filename) -> tuple[str, ...]:  # pylint: disable=too-many-
         return (str(exc),)
     if isinstance(exc, HTTPError):
         return get_request_exception_messages(exc)
-    if isinstance(exc, SearxXPathSyntaxException):
+    if isinstance(exc, ZhensaXPathSyntaxException):
         return (exc.xpath_str, exc.message)
-    if isinstance(exc, SearxEngineXPathException):
+    if isinstance(exc, ZhensaEngineXPathException):
         return (exc.xpath_str, exc.message)
-    if isinstance(exc, SearxEngineAPIException):
+    if isinstance(exc, ZhensaEngineAPIException):
         return (str(exc.args[0]),)
-    if isinstance(exc, SearxEngineAccessDeniedException):
+    if isinstance(exc, ZhensaEngineAccessDeniedException):
         return (exc.message,)
     return ()
 

@@ -6,11 +6,11 @@ import typing as t
 from lxml.etree import XPath
 
 
-class SearxException(Exception):
+class ZhensaException(Exception):
     """Base Zhensa exception."""
 
 
-class SearxParameterException(SearxException):
+class ZhensaParameterException(ZhensaException):
     """Raised when query miss a required parameter"""
 
     def __init__(self, name: str, value: t.Any):
@@ -25,7 +25,7 @@ class SearxParameterException(SearxException):
 
 
 @t.final
-class SearxSettingsException(SearxException):
+class ZhensaSettingsException(ZhensaException):
     """Error while loading the settings"""
 
     def __init__(self, message: str | Exception, filename: str | None):
@@ -34,11 +34,11 @@ class SearxSettingsException(SearxException):
         self.filename = filename
 
 
-class SearxEngineException(SearxException):
+class ZhensaEngineException(ZhensaException):
     """Error inside an engine"""
 
 
-class SearxXPathSyntaxException(SearxEngineException):
+class ZhensaXPathSyntaxException(ZhensaEngineException):
     """Syntax error in a XPATH"""
 
     def __init__(self, xpath_spec: str | XPath, message: str):
@@ -48,18 +48,18 @@ class SearxXPathSyntaxException(SearxEngineException):
         self.xpath_str: str = str(xpath_spec)
 
 
-class SearxEngineResponseException(SearxEngineException):
+class ZhensaEngineResponseException(ZhensaEngineException):
     """Impossible to parse the result of an engine"""
 
 
-class SearxEngineAPIException(SearxEngineResponseException):
+class ZhensaEngineAPIException(ZhensaEngineResponseException):
     """The website has returned an application error"""
 
 
-class SearxEngineAccessDeniedException(SearxEngineResponseException):
+class ZhensaEngineAccessDeniedException(ZhensaEngineResponseException):
     """The website is blocking the access"""
 
-    SUSPEND_TIME_SETTING: str = "search.suspended_times.SearxEngineAccessDenied"
+    SUSPEND_TIME_SETTING: str = "search.suspended_times.ZhensaEngineAccessDenied"
     """This settings contains the default suspended time (default 86400 sec / 1
     day)."""
 
@@ -84,10 +84,10 @@ class SearxEngineAccessDeniedException(SearxEngineResponseException):
         return get_setting(self.SUSPEND_TIME_SETTING)
 
 
-class SearxEngineCaptchaException(SearxEngineAccessDeniedException):
+class ZhensaEngineCaptchaException(ZhensaEngineAccessDeniedException):
     """The website has returned a CAPTCHA."""
 
-    SUSPEND_TIME_SETTING: str = "search.suspended_times.SearxEngineCaptcha"
+    SUSPEND_TIME_SETTING: str = "search.suspended_times.ZhensaEngineCaptcha"
     """This settings contains the default suspended time (default 86400 sec / 1
     day)."""
 
@@ -95,13 +95,13 @@ class SearxEngineCaptchaException(SearxEngineAccessDeniedException):
         super().__init__(message=message, suspended_time=suspended_time)
 
 
-class SearxEngineTooManyRequestsException(SearxEngineAccessDeniedException):
+class ZhensaEngineTooManyRequestsException(ZhensaEngineAccessDeniedException):
     """The website has returned a Too Many Request status code
 
     By default, Zhensa stops sending requests to this engine for 1 hour.
     """
 
-    SUSPEND_TIME_SETTING: str = "search.suspended_times.SearxEngineTooManyRequests"
+    SUSPEND_TIME_SETTING: str = "search.suspended_times.ZhensaEngineTooManyRequests"
     """This settings contains the default suspended time (default 3660 sec / 1
     hour)."""
 
@@ -109,7 +109,7 @@ class SearxEngineTooManyRequestsException(SearxEngineAccessDeniedException):
         super().__init__(message=message, suspended_time=suspended_time)
 
 
-class SearxEngineXPathException(SearxEngineResponseException):
+class ZhensaEngineXPathException(ZhensaEngineResponseException):
     """Error while getting the result of an XPath expression"""
 
     def __init__(self, xpath_spec: str | XPath, message: str):

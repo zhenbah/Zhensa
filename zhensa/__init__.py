@@ -24,7 +24,7 @@ zhensa_parent_dir: str = abspath(dirname(dirname(__file__)))
 settings: dict[str, t.Any] = {}
 
 sxng_debug: bool = False
-logger = logging.getLogger('searx')
+logger = logging.getLogger('zhensa')
 
 _unset = object()
 

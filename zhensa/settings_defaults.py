@@ -17,7 +17,7 @@ from .sxng_locales import sxng_locales
 
 zhensa_dir = abspath(dirname(__file__))
 
-logger = logging.getLogger('searx')
+logger = logging.getLogger('zhensa')
 OUTPUT_FORMATS = ['html', 'csv', 'json', 'rss']
 SXNG_LOCALE_TAGS = ['all', 'auto'] + list(l[0] for l in sxng_locales)
 SIMPLE_STYLE = ('auto', 'light', 'dark', 'black')
@@ -184,12 +184,12 @@ SCHEMA: dict[str, t.Any] = {
         'ban_time_on_fail': SettingsValue(numbers.Real, 5),
         'max_ban_time_on_fail': SettingsValue(numbers.Real, 120),
         'suspended_times': {
-            'SearxEngineAccessDenied': SettingsValue(numbers.Real, 86400),
-            'SearxEngineCaptcha': SettingsValue(numbers.Real, 86400),
-            'SearxEngineTooManyRequests': SettingsValue(numbers.Real, 3600),
-            'cf_SearxEngineCaptcha': SettingsValue(numbers.Real, 1296000),
-            'cf_SearxEngineAccessDenied': SettingsValue(numbers.Real, 86400),
-            'recaptcha_SearxEngineCaptcha': SettingsValue(numbers.Real, 604800),
+            'ZhensaEngineAccessDenied': SettingsValue(numbers.Real, 86400),
+            'ZhensaEngineCaptcha': SettingsValue(numbers.Real, 86400),
+            'ZhensaEngineTooManyRequests': SettingsValue(numbers.Real, 3600),
+            'cf_ZhensaEngineCaptcha': SettingsValue(numbers.Real, 1296000),
+            'cf_ZhensaEngineAccessDenied': SettingsValue(numbers.Real, 86400),
+            'recaptcha_ZhensaEngineCaptcha': SettingsValue(numbers.Real, 604800),
         },
         'formats': SettingsValue(list, OUTPUT_FORMATS),
         'max_page': SettingsValue(int, 0),

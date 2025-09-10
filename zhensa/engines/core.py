@@ -32,7 +32,7 @@ Implementations
 from datetime import datetime
 from urllib.parse import urlencode
 
-from zhensa.exceptions import SearxEngineAPIException
+from zhensa.exceptions import ZhensaEngineAPIException
 
 about = {
     "website": 'https://core.ac.uk',
@@ -55,7 +55,7 @@ base_url = 'https://api.core.ac.uk/v3/search/works/'
 
 def request(query, params):
     if api_key == 'unset':
-        raise SearxEngineAPIException('missing CORE API key')
+        raise ZhensaEngineAPIException('missing CORE API key')
 
     # API v3 uses different parameters
     search_params = {

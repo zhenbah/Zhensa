@@ -27,7 +27,7 @@ from zhensa import settings
 from zhensa.data import USER_AGENTS, data_dir
 from zhensa.version import VERSION_TAG
 from zhensa.sxng_locales import sxng_locales
-from zhensa.exceptions import SearxXPathSyntaxException, SearxEngineXPathException
+from zhensa.exceptions import ZhensaXPathSyntaxException, ZhensaEngineXPathException
 from zhensa import logger
 
 if t.TYPE_CHECKING:
@@ -533,7 +533,7 @@ def get_xpath(xpath_spec: XPathSpecType) -> XPath:
       Raised when ``xpath_spec`` is neither a :py:obj:`str` nor a
       :py:obj:`lxml.etree.XPath`.
 
-    ``SearxXPathSyntaxException``:
+    ``ZhensaXPathSyntaxException``:
       Raised when there is a syntax error in the *XPath* selector (``str``).
     """
     if isinstance(xpath_spec, str):
@@ -542,7 +542,7 @@ def get_xpath(xpath_spec: XPathSpecType) -> XPath:
             try:
                 result = XPath(xpath_spec)
             except XPathSyntaxError as e:
-                raise SearxXPathSyntaxException(xpath_spec, str(e.msg)) from e
+                raise ZhensaXPathSyntaxException(xpath_spec, str(e.msg)) from e
             _XPATH_CACHE[xpath_spec] = result
         return result
 
@@ -564,10 +564,10 @@ def eval_xpath(element: ElementBase, xpath_spec: XPathSpecType) -> t.Any:
       Raised when ``xpath_spec`` is neither a :py:obj:`str` nor a
       :py:obj:`lxml.etree.XPath`.
 
-    ``SearxXPathSyntaxException``:
+    ``ZhensaXPathSyntaxException``:
       Raised when there is a syntax error in the *XPath* selector (``str``).
 
-    ``SearxEngineXPathException:``
+    ``ZhensaEngineXPathException:``
       Raised when the XPath can't be evaluated (masked
       :py:obj:`lxml.etree..XPathError`).
     """
@@ -577,7 +577,7 @@ def eval_xpath(element: ElementBase, xpath_spec: XPathSpecType) -> t.Any:
         return xpath(element)
     except XPathError as e:
         arg = ' '.join([str(i) for i in e.args])
-        raise SearxEngineXPathException(xpath_spec, arg) from e
+        raise ZhensaEngineXPathException(xpath_spec, arg) from e
 
 
 def eval_xpath_list(element: ElementBase, xpath_spec: XPathSpecType, min_len: int | None = None) -> list[t.Any]:
@@ -587,9 +587,9 @@ def eval_xpath_list(element: ElementBase, xpath_spec: XPathSpecType, min_len: in
 
     result = eval_xpath(element, xpath_spec)
     if not isinstance(result, list):
-        raise SearxEngineXPathException(xpath_spec, 'the result is not a list')
+        raise ZhensaEngineXPathException(xpath_spec, 'the result is not a list')
     if min_len is not None and min_len > len(result):
-        raise SearxEngineXPathException(xpath_spec, 'len(xpath_str) < ' + str(min_len))
+        raise ZhensaEngineXPathException(xpath_spec, 'len(xpath_str) < ' + str(min_len))
     return result
 
 
@@ -611,9 +611,9 @@ def eval_xpath_getindex(
     if -len(result) <= index < len(result):
         return result[index]
     if default == _NOTSET:
-        # raise an SearxEngineXPathException instead of IndexError to record
+        # raise an ZhensaEngineXPathException instead of IndexError to record
         # xpath_spec
-        raise SearxEngineXPathException(xpath_spec, 'index ' + str(index) + ' not found')
+        raise ZhensaEngineXPathException(xpath_spec, 'index ' + str(index) + ' not found')
     return default
 
 

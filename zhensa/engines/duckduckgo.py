@@ -25,7 +25,7 @@ from zhensa.utils import (
 from zhensa.network import get  # see https://github.com/zhensa/zhensa/issues/762
 from zhensa.enginelib.traits import EngineTraits
 from zhensa.enginelib import EngineCache
-from zhensa.exceptions import SearxEngineCaptchaException
+from zhensa.exceptions import ZhensaEngineCaptchaException
 from zhensa.result_types import EngineResults
 
 about = {
@@ -339,7 +339,7 @@ def response(resp) -> EngineResults:
 
     if is_ddg_captcha(doc):
         # set suspend time to zero is OK --> ddg does not block the IP
-        raise SearxEngineCaptchaException(suspended_time=0, message=f"CAPTCHA ({resp.search_params['data'].get('kl')})")
+        raise ZhensaEngineCaptchaException(suspended_time=0, message=f"CAPTCHA ({resp.search_params['data'].get('kl')})")
 
     form = eval_xpath(doc, '//input[@name="vqd"]/..')
     if len(form):

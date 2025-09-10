@@ -7,7 +7,7 @@ import re
 import json
 
 from zhensa.utils import html_to_text
-from zhensa.exceptions import SearxEngineAPIException, SearxEngineCaptchaException
+from zhensa.exceptions import ZhensaEngineAPIException, ZhensaEngineCaptchaException
 
 # Metadata
 about = {
@@ -45,7 +45,7 @@ def is_alibaba_captcha(html):
 
 def init(_):
     if quark_category not in ('general', 'images'):
-        raise SearxEngineAPIException(f"Unsupported category: {quark_category}")
+        raise ZhensaEngineAPIException(f"Unsupported category: {quark_category}")
 
 
 def request(query, params):
@@ -85,7 +85,7 @@ def response(resp):
     text = resp.text
 
     if is_alibaba_captcha(text):
-        raise SearxEngineCaptchaException(
+        raise ZhensaEngineCaptchaException(
             suspended_time=900, message="Alibaba CAPTCHA detected. Please try again later."
         )
 

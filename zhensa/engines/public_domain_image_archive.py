@@ -6,7 +6,7 @@ from json import dumps
 
 from zhensa.network import get
 from zhensa.utils import extr
-from zhensa.exceptions import SearxEngineAccessDeniedException, SearxEngineException
+from zhensa.exceptions import ZhensaEngineAccessDeniedException, ZhensaEngineException
 
 THUMBNAIL_SUFFIX = "?fit=max&h=360&w=360"
 """
@@ -113,10 +113,10 @@ def response(resp):
 
     if resp.status_code == 403:
         _clear_cached_api_url()
-        raise SearxEngineAccessDeniedException()
+        raise ZhensaEngineAccessDeniedException()
 
     if resp.status_code != 200:
-        raise SearxEngineException()
+        raise ZhensaEngineException()
 
     if 'results' not in json_data:
         return []

@@ -14,7 +14,7 @@ from zhensa import settings, logger
 from zhensa.engines import engines
 from zhensa.network import get_time_for_thread, get_network
 from zhensa.metrics import histogram_observe, counter_inc, count_exception, count_error
-from zhensa.exceptions import SearxEngineAccessDeniedException, SearxEngineResponseException
+from zhensa.exceptions import ZhensaEngineAccessDeniedException, ZhensaEngineResponseException
 from zhensa.utils import get_engine_from_settings
 
 if t.TYPE_CHECKING:
@@ -76,7 +76,7 @@ class EngineProcessor(ABC):
     def initialize(self):
         try:
             self.engine.init(get_engine_from_settings(self.engine_name))
-        except SearxEngineResponseException as exc:
+        except ZhensaEngineResponseException as exc:
             self.logger.warning('Fail to initialize // %s', exc)
         except Exception:  # pylint: disable=broad-except
             self.logger.exception('Fail to initialize')
@@ -106,7 +106,7 @@ class EngineProcessor(ABC):
         # suspend the engine ?
         if suspend:
             suspended_time = None
-            if isinstance(exception_or_message, SearxEngineAccessDeniedException):
+            if isinstance(exception_or_message, ZhensaEngineAccessDeniedException):
                 suspended_time = exception_or_message.suspended_time
             self.suspended_status.suspend(suspended_time, error_message)  # pylint: disable=no-member
 

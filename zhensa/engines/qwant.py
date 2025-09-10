@@ -50,9 +50,9 @@ import babel
 import lxml
 
 from zhensa.exceptions import (
-    SearxEngineAPIException,
-    SearxEngineTooManyRequestsException,
-    SearxEngineCaptchaException,
+    ZhensaEngineAPIException,
+    ZhensaEngineTooManyRequestsException,
+    ZhensaEngineCaptchaException,
 )
 from zhensa.network import raise_for_httperror
 from zhensa.enginelib.traits import EngineTraits
@@ -192,11 +192,11 @@ def parse_web_api(resp):
     if search_results.get('status') != 'success':
         error_code = data.get('error_code')
         if error_code == 24:
-            raise SearxEngineTooManyRequestsException()
+            raise ZhensaEngineTooManyRequestsException()
         if search_results.get("data", {}).get("error_data", {}).get("captchaUrl") is not None:
-            raise SearxEngineCaptchaException()
+            raise ZhensaEngineCaptchaException()
         msg = ",".join(data.get('message', ['unknown']))
-        raise SearxEngineAPIException(f"{msg} ({error_code})")
+        raise ZhensaEngineAPIException(f"{msg} ({error_code})")
 
     # raise for other errors
     raise_for_httperror(resp)

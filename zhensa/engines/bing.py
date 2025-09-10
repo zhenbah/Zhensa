@@ -37,7 +37,7 @@ import babel.languages
 from zhensa.utils import eval_xpath, extract_text, eval_xpath_list, eval_xpath_getindex
 from zhensa.locales import language_tag, region_tag
 from zhensa.enginelib.traits import EngineTraits
-from zhensa.exceptions import SearxEngineAPIException
+from zhensa.exceptions import ZhensaEngineAPIException
 
 about = {
     "website": 'https://www.bing.com',
@@ -180,7 +180,7 @@ def response(resp):
             # Sometimes Bing will send back the first result page instead of the requested page as a rate limiting
             # measure.
             msg = f"Expected results to start at {expected_start}, but got results starting at {start}"
-            raise SearxEngineAPIException(msg)
+            raise ZhensaEngineAPIException(msg)
 
     results.append({'number_of_results': result_len})
     return results

@@ -2,7 +2,7 @@
 """Cloudflare AI engine"""
 
 from json import loads, dumps
-from zhensa.exceptions import SearxEngineAPIException
+from zhensa.exceptions import ZhensaEngineAPIException
 
 about = {
     "website": 'https://ai.cloudflare.com',
@@ -55,7 +55,7 @@ def response(resp):
     json = loads(resp.text)
 
     if 'error' in json:
-        raise SearxEngineAPIException('Cloudflare AI error: ' + json['error'])
+        raise ZhensaEngineAPIException('Cloudflare AI error: ' + json['error'])
 
     if 'result' in json:
         results.append(

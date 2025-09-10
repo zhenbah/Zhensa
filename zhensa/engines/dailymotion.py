@@ -17,7 +17,7 @@ import babel
 
 from zhensa.network import get, raise_for_httperror  # see https://github.com/zhensa/zhensa/issues/762
 from zhensa.utils import html_to_text
-from zhensa.exceptions import SearxEngineAPIException
+from zhensa.exceptions import ZhensaEngineAPIException
 from zhensa.locales import region_tag, language_tag
 from zhensa.enginelib.traits import EngineTraits
 
@@ -144,7 +144,7 @@ def response(resp):
 
     # check for an API error
     if 'error' in search_res:
-        raise SearxEngineAPIException(search_res['error'].get('message'))
+        raise ZhensaEngineAPIException(search_res['error'].get('message'))
 
     raise_for_httperror(resp)
 

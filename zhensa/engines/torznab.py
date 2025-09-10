@@ -53,7 +53,7 @@ from datetime import datetime
 from urllib.parse import quote
 from lxml import etree  # type: ignore
 
-from zhensa.exceptions import SearxEngineAPIException
+from zhensa.exceptions import ZhensaEngineAPIException
 from zhensa.utils import humanize_bytes
 
 if t.TYPE_CHECKING:
@@ -112,7 +112,7 @@ def response(resp: "SXNG_Response") -> list[dict[str, t.Any]]:
 
     # handle errors:  https://newznab.readthedocs.io/en/latest/misc/api/#newznab-error-codes
     if search_results.tag == "error":
-        raise SearxEngineAPIException(search_results.get("description"))
+        raise ZhensaEngineAPIException(search_results.get("description"))
 
     channel: etree.Element = search_results[0]
 

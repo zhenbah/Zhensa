@@ -7,7 +7,7 @@ from datetime import datetime
 from json import loads
 from urllib.parse import urlencode
 
-from zhensa.exceptions import SearxEngineAPIException
+from zhensa.exceptions import ZhensaEngineAPIException
 
 about = {
     "website": 'https://www.springernature.com/',
@@ -28,7 +28,7 @@ base_url = 'https://api.springernature.com/metadata/json?'
 
 def request(query, params):
     if api_key == 'unset':
-        raise SearxEngineAPIException('missing Springer-Nature API key')
+        raise ZhensaEngineAPIException('missing Springer-Nature API key')
     args = urlencode({'q': query, 's': nb_per_page * (params['pageno'] - 1), 'p': nb_per_page, 'api_key': api_key})
     params['url'] = base_url + args
     logger.debug("query_url --> %s", params['url'])

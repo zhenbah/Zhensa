@@ -41,7 +41,7 @@ from lxml.etree import ElementBase
 from zhensa.utils import extract_text, eval_xpath, eval_xpath_getindex, eval_xpath_list
 from zhensa.enginelib.traits import EngineTraits
 from zhensa.data import ENGINE_TRAITS
-from zhensa.exceptions import SearxEngineXPathException
+from zhensa.exceptions import ZhensaEngineXPathException
 
 from zhensa.result_types import EngineResults
 
@@ -132,7 +132,7 @@ def response(resp: "SXNG_Response") -> EngineResults:
     for item in eval_xpath_list(dom, '//main//div[contains(@class, "js-aarecord-list-outer")]/div'):
         try:
             kwargs: dict[str, t.Any] = _get_result(item)
-        except SearxEngineXPathException:
+        except ZhensaEngineXPathException:
             continue
         res.add(res.types.LegacyResult(**kwargs))
     return res

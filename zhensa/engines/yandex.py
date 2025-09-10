@@ -5,7 +5,7 @@ from json import loads
 from urllib.parse import urlencode
 from html import unescape
 from lxml import html
-from zhensa.exceptions import SearxEngineCaptchaException
+from zhensa.exceptions import ZhensaEngineCaptchaException
 from zhensa.utils import humanize_bytes, eval_xpath, eval_xpath_list, extract_text, extr
 
 
@@ -36,7 +36,7 @@ content_xpath = './/div[@class="b-serp-item__content"]//div[@class="b-serp-item_
 
 def catch_bad_response(resp):
     if resp.url.path.startswith('/showcaptcha'):
-        raise SearxEngineCaptchaException()
+        raise ZhensaEngineCaptchaException()
 
 
 def request(query, params):

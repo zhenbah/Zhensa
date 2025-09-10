@@ -11,9 +11,9 @@ class TestExceptions(SearxTestCase):
 
     @parameterized.expand(
         [
-            searx.exceptions.SearxEngineAccessDeniedException,
-            searx.exceptions.SearxEngineCaptchaException,
-            searx.exceptions.SearxEngineTooManyRequestsException,
+            zhensa.exceptions.ZhensaEngineAccessDeniedException,
+            zhensa.exceptions.ZhensaEngineCaptchaException,
+            zhensa.exceptions.ZhensaEngineTooManyRequestsException,
         ]
     )
     def test_default_suspend_time(self, exception):
@@ -26,9 +26,9 @@ class TestExceptions(SearxTestCase):
 
     @parameterized.expand(
         [
-            searx.exceptions.SearxEngineAccessDeniedException,
-            searx.exceptions.SearxEngineCaptchaException,
-            searx.exceptions.SearxEngineTooManyRequestsException,
+            zhensa.exceptions.ZhensaEngineAccessDeniedException,
+            zhensa.exceptions.ZhensaEngineCaptchaException,
+            zhensa.exceptions.ZhensaEngineTooManyRequestsException,
         ]
     )
     def test_custom_suspend_time(self, exception):

@@ -39,7 +39,7 @@ setup(
     license='GNU Affero General Public License',
     packages=find_packages(
         include=[
-            'searx', 'searx.*', 'searx.*.*', 'searx.*.*.*',
+            'zhensa', 'zhensa.*', 'zhensa.*.*', 'zhensa.*.*.*',
         ]
     ),
     install_requires=requirements,
@@ -48,12 +48,12 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'zhensa-run = searx.webapp:run',
-            'zhensa-checker = searx.search.checker.__main__:main'
+            'zhensa-run = zhensa.webapp:run',
+            'zhensa-checker = zhensa.search.checker.__main__:main'
         ]
     },
     package_data={
-        'searx': [
+        'zhensa': [
             'settings.yml',
             '*.toml',
             '*.msg',

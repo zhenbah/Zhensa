@@ -12,9 +12,9 @@ import httpx
 import zhensa.network
 from zhensa.utils import gen_useragent
 from zhensa.exceptions import (
-    SearxEngineAccessDeniedException,
-    SearxEngineCaptchaException,
-    SearxEngineTooManyRequestsException,
+    ZhensaEngineAccessDeniedException,
+    ZhensaEngineCaptchaException,
+    ZhensaEngineTooManyRequestsException,
 )
 from zhensa.metrics.error_recorder import count_error
 from .abstract import EngineProcessor
@@ -179,13 +179,13 @@ class OnlineProcessor(EngineProcessor):
                     default_timer() - start_time, timeout_limit, e
                 )
             )
-        except SearxEngineCaptchaException as e:
+        except ZhensaEngineCaptchaException as e:
             self.handle_exception(result_container, e, suspend=True)
             self.logger.exception('CAPTCHA')
-        except SearxEngineTooManyRequestsException as e:
+        except ZhensaEngineTooManyRequestsException as e:
             self.handle_exception(result_container, e, suspend=True)
             self.logger.exception('Too many requests')
-        except SearxEngineAccessDeniedException as e:
+        except ZhensaEngineAccessDeniedException as e:
             self.handle_exception(result_container, e, suspend=True)
             self.logger.exception('Zhensa is blocked')
         except Exception as e:  # pylint: disable=broad-except

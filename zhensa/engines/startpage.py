@@ -93,7 +93,7 @@ import babel.localedata
 
 from zhensa.utils import extr, extract_text, eval_xpath, gen_useragent, html_to_text, humanize_bytes, remove_pua_from_str
 from zhensa.network import get  # see https://github.com/zhensa/zhensa/issues/762
-from zhensa.exceptions import SearxEngineCaptchaException
+from zhensa.exceptions import ZhensaEngineCaptchaException
 from zhensa.locales import region_tag
 from zhensa.enginelib.traits import EngineTraits
 from zhensa.enginelib import EngineCache
@@ -215,7 +215,7 @@ def get_sc_code(zhensa_locale, params):
     # ?? ping-back URL: https://www.startpage.com/sp/pb?sc=TLsB0oITjZ8F21
 
     if str(resp.url).startswith('https://www.startpage.com/sp/captcha'):  # type: ignore
-        raise SearxEngineCaptchaException(
+        raise ZhensaEngineCaptchaException(
             message="get_sc_code: got redirected to https://www.startpage.com/sp/captcha",
         )
 
@@ -225,7 +225,7 @@ def get_sc_code(zhensa_locale, params):
         sc_code = eval_xpath(dom, search_form_xpath + '//input[@name="sc"]/@value')[0]
     except IndexError as exc:
         logger.debug("suspend startpage API --> https://github.com/zhensa/zhensa/pull/695")
-        raise SearxEngineCaptchaException(
+        raise ZhensaEngineCaptchaException(
             message="get_sc_code: [PR-695] querying new sc timestamp failed! (%s)" % resp.url,  # type: ignore
         ) from exc
 

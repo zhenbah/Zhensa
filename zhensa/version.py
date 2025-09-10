@@ -8,14 +8,14 @@ import shlex
 import subprocess
 
 # fallback values
-# if there is searx.version_frozen module, and it is not possible to get the git tag
+# if there is zhensa.version_frozen module, and it is not possible to get the git tag
 VERSION_STRING: str = "1.0.0"
 VERSION_TAG: str = "1.0.0"
 DOCKER_TAG: str = "1.0.0"
 GIT_URL: str = "unknown"
 GIT_BRANCH: str = "unknown"
 
-logger = logging.getLogger("searx")
+logger = logging.getLogger("zhensa")
 
 SUBPROCESS_RUN_ENV = {
     "PATH": os.environ["PATH"],
@@ -74,7 +74,7 @@ def get_git_version() -> tuple[str, str, str]:
     git_version: str = git_commit_date_hash
     docker_tag: str = git_commit_date_hash.replace("+", "-")
 
-    # add "+dirty" suffix if there are uncommitted changes except searx/settings.yml
+    # add "+dirty" suffix if there are uncommitted changes except zhensa/settings.yml
     try:
         subprocess_run("git diff --quiet -- . ':!searx/settings.yml' ':!utils/brand.env'")
     except subprocess.CalledProcessError as e:
@@ -106,7 +106,7 @@ def get_information() -> tuple[str, str, str, str, str]:
 
 
 try:
-    vf = importlib.import_module('searx.version_frozen')
+    vf = importlib.import_module('zhensa.version_frozen')
     VERSION_STRING, VERSION_TAG, DOCKER_TAG, GIT_URL, GIT_BRANCH = (
         str(vf.VERSION_STRING),
         str(vf.VERSION_TAG),
@@ -146,7 +146,7 @@ GIT_BRANCH = "{GIT_BRANCH}"
         os.utime(path, (commit_timestamp, commit_timestamp))
     else:
         # output shell code to set the variables
-        # usage: eval "$(python -m searx.version)"
+        # usage: eval "$(python -m zhensa.version)"
         shell_code = f"""
 VERSION_STRING="{VERSION_STRING}"
 VERSION_TAG="{VERSION_TAG}"

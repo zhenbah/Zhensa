@@ -5,7 +5,7 @@
 from urllib.parse import urlencode
 from datetime import datetime
 
-from zhensa.exceptions import SearxEngineAPIException
+from zhensa.exceptions import ZhensaEngineAPIException
 from zhensa.utils import html_to_text, get_embeded_stream_url
 
 about = {
@@ -33,11 +33,11 @@ def response(resp):
     try:
         data = resp.json()
     except Exception as e:
-        raise SearxEngineAPIException(f"Invalid response: {e}") from e
+        raise ZhensaEngineAPIException(f"Invalid response: {e}") from e
     results = []
 
     if "data" not in data or "result" not in data["data"]:
-        raise SearxEngineAPIException("Invalid response")
+        raise ZhensaEngineAPIException("Invalid response")
 
     for entry in data["data"]["result"]:
         if not entry.get("title") or not entry.get("play_url"):

@@ -24,7 +24,7 @@ import babel.languages
 from zhensa.utils import extract_text, eval_xpath, eval_xpath_list, eval_xpath_getindex
 from zhensa.locales import language_tag, region_tag, get_official_locales
 from zhensa.network import get  # see https://github.com/zhensa/zhensa/issues/762
-from zhensa.exceptions import SearxEngineCaptchaException
+from zhensa.exceptions import ZhensaEngineCaptchaException
 from zhensa.enginelib.traits import EngineTraits
 from zhensa.result_types import EngineResults
 
@@ -270,7 +270,7 @@ def get_google_info(params, eng_traits):
 
 def detect_google_sorry(resp):
     if resp.url.host == 'sorry.google.com' or resp.url.path.startswith('/sorry'):
-        raise SearxEngineCaptchaException()
+        raise ZhensaEngineCaptchaException()
 
 
 def request(query, params):

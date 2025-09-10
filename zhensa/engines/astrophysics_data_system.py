@@ -12,7 +12,7 @@ The engine is adapted from the solr engine.
 from datetime import datetime
 from json import loads
 from urllib.parse import urlencode
-from zhensa.exceptions import SearxEngineAPIException
+from zhensa.exceptions import ZhensaEngineAPIException
 
 about = {
     "website": 'https://ui.adsabs.harvard.edu/',
@@ -36,7 +36,7 @@ api_key = 'unset'
 
 def init(_):
     if api_key == 'unset':
-        raise SearxEngineAPIException('missing ADS API key')
+        raise ZhensaEngineAPIException('missing ADS API key')
 
 
 def request(query, params):
@@ -62,10 +62,10 @@ def response(resp):
     try:
         resp_json = loads(resp.text)
     except Exception as e:
-        raise SearxEngineAPIException("failed to parse response") from e
+        raise ZhensaEngineAPIException("failed to parse response") from e
 
     if 'error' in resp_json:
-        raise SearxEngineAPIException(resp_json['error']['msg'])
+        raise ZhensaEngineAPIException(resp_json['error']['msg'])
 
     resp_json = resp_json["response"]
     result_len = resp_json["numFound"]

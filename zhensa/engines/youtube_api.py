@@ -7,7 +7,7 @@ from json import loads
 from urllib.parse import urlencode
 
 from dateutil import parser
-from zhensa.exceptions import SearxEngineAPIException
+from zhensa.exceptions import ZhensaEngineAPIException
 
 # about
 about = {
@@ -48,7 +48,7 @@ def response(resp):
     search_results = loads(resp.text)
 
     if 'error' in search_results and 'message' in search_results['error']:
-        raise SearxEngineAPIException(search_results['error']['message'])
+        raise ZhensaEngineAPIException(search_results['error']['message'])
 
     # return empty array if there are no results
     if 'items' not in search_results:

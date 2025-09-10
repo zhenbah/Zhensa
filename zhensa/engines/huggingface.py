@@ -36,7 +36,7 @@ Implementations
 from urllib.parse import urlencode
 from datetime import datetime
 
-from zhensa.exceptions import SearxEngineAPIException
+from zhensa.exceptions import ZhensaEngineAPIException
 from zhensa.utils import html_to_text
 from zhensa.result_types import EngineResults, MainResult
 
@@ -64,7 +64,7 @@ huggingface_endpoint = 'models'
 
 def init(_):
     if huggingface_endpoint not in ('datasets', 'models', 'spaces'):
-        raise SearxEngineAPIException(f"Unsupported Hugging Face endpoint: {huggingface_endpoint}")
+        raise ZhensaEngineAPIException(f"Unsupported Hugging Face endpoint: {huggingface_endpoint}")
 
 
 def request(query, params):

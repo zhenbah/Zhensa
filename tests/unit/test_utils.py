@@ -7,7 +7,7 @@ import lxml.etree
 from lxml import html
 from parameterized.parameterized import parameterized
 
-from zhensa.exceptions import SearxXPathSyntaxException, SearxEngineXPathException
+from zhensa.exceptions import ZhensaXPathSyntaxException, SearxEngineXPathException
 from zhensa import utils
 from tests import SearxTestCase
 
@@ -138,7 +138,7 @@ class TestXPathUtils(SearxTestCase):  # pylint: disable=missing-class-docstring
 
     def test_get_xpath_invalid(self):
         invalid_xpath = '//a[0].text'
-        with self.assertRaises(SearxXPathSyntaxException) as context:
+        with self.assertRaises(ZhensaXPathSyntaxException) as context:
             utils.get_xpath(invalid_xpath)
 
         self.assertEqual(context.exception.message, 'Invalid expression')

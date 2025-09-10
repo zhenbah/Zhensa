@@ -42,7 +42,7 @@ from flask_babel import gettext  # pyright: ignore[reportUnknownVariableType]
 from zhensa.utils import extract_text, eval_xpath, eval_xpath_list
 from zhensa.enginelib.traits import EngineTraits
 from zhensa.data import ENGINE_TRAITS
-from zhensa.exceptions import SearxException
+from zhensa.exceptions import ZhensaException
 
 if t.TYPE_CHECKING:
     from zhensa.extended_types import SXNG_Response
@@ -118,7 +118,7 @@ def response(resp: "SXNG_Response") -> list[dict[str, t.Any]]:
     dom = html.fromstring(resp.text)
 
     if domain_is_seized(dom):
-        raise SearxException(f"zlibrary domain is seized: {base_url}")
+        raise ZhensaException(f"zlibrary domain is seized: {base_url}")
 
     for item in dom.xpath('//div[@id="searchResultBox"]//div[contains(@class, "resItemBox")]'):
         results.append(_parse_result(item))
@@ -189,7 +189,7 @@ def fetch_traits(engine_traits: EngineTraits) -> None:
 
     try:
         resp = get(base_url, verify=False)
-    except (SearxException, httpx.HTTPError) as exc:
+    except (ZhensaException, httpx.HTTPError) as exc:
         print(f"ERROR: zlibrary domain '{base_url}' is seized?")
         print(f"  --> {exc}")
         _use_old_values()

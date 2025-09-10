@@ -12,7 +12,7 @@ import valkey.exceptions
 
 from zhensa import logger, settings, sxng_debug
 from zhensa.valkeydb import client as get_valkey_client
-from zhensa.exceptions import SearxSettingsException
+from zhensa.exceptions import ZhensaSettingsException
 from zhensa.search.processors import PROCESSORS
 from zhensa.search.checker import Checker
 from zhensa.search.checker.scheduler import scheduler_function
@@ -72,7 +72,7 @@ def _get_interval(every: Any, error_msg: str) -> Tuple[int, int]:
         or not isinstance(every[0], int)
         or not isinstance(every[1], int)
     ):
-        raise SearxSettingsException(error_msg, None)
+        raise ZhensaSettingsException(error_msg, None)
     return (every[0], every[1])
 
 

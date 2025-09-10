@@ -16,7 +16,7 @@ import msgspec
 from zhensa import get_setting
 
 from zhensa.webutils import new_hmac, is_hmac_of
-from zhensa.exceptions import SearxEngineResponseException
+from zhensa.exceptions import ZhensaEngineResponseException
 from zhensa.extended_types import sxng_request
 
 from .resolvers import DEFAULT_RESOLVER_MAP
@@ -185,7 +185,7 @@ def search_favicon(resolver: str, authority: str) -> tuple[None | bytes, None | 
         if data is None or mime is None:
             data, mime = (None, None)
 
-    except (HTTPError, SearxEngineResponseException):
+    except (HTTPError, ZhensaEngineResponseException):
         pass
 
     cache.CACHE.set(resolver, authority, mime, data)

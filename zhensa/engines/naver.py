@@ -5,7 +5,7 @@
 from urllib.parse import urlencode
 from lxml import html
 
-from zhensa.exceptions import SearxEngineAPIException, SearxEngineXPathException
+from zhensa.exceptions import ZhensaEngineAPIException, ZhensaEngineXPathException
 from zhensa.result_types import EngineResults, MainResult
 from zhensa.utils import (
     eval_xpath_getindex,
@@ -68,7 +68,7 @@ naver_category_dict = {
 
 def init(_):
     if naver_category not in ('general', 'images', 'news', 'videos'):
-        raise SearxEngineAPIException(f"Unsupported category: {naver_category}")
+        raise ZhensaEngineAPIException(f"Unsupported category: {naver_category}")
 
 
 def request(query, params):
@@ -102,7 +102,7 @@ def parse_general(data):
         thumbnail = None
         try:
             thumbnail = eval_xpath_getindex(item, ".//div[contains(@class, 'thumb_single')]//img/@data-lazysrc", 0)
-        except (ValueError, TypeError, SearxEngineXPathException):
+        except (ValueError, TypeError, ZhensaEngineXPathException):
             pass
 
         results.add(
@@ -163,7 +163,7 @@ def parse_news(data):
                 ".//div[contains(@class, 'sds-comps-image') and contains(@class, 'sds-rego-thumb-overlay')]//img[@src]/@src",
                 0,
             )
-        except (ValueError, TypeError, SearxEngineXPathException):
+        except (ValueError, TypeError, ZhensaEngineXPathException):
             pass
 
         if title and content and url:
@@ -188,7 +188,7 @@ def parse_videos(data):
         thumbnail = None
         try:
             thumbnail = eval_xpath_getindex(item, ".//img[contains(@class, 'thumb')]/@src", 0)
-        except (ValueError, TypeError, SearxEngineXPathException):
+        except (ValueError, TypeError, ZhensaEngineXPathException):
             pass
 
         length = None

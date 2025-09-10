@@ -18,7 +18,7 @@ from zhensa.utils import (
     extract_text,
 )
 
-from zhensa.exceptions import SearxEngineCaptchaException
+from zhensa.exceptions import ZhensaEngineCaptchaException
 
 from zhensa.engines.google import fetch_traits  # pylint: disable=unused-import
 from zhensa.engines.google import (
@@ -79,7 +79,7 @@ def detect_google_captcha(dom):
     not redirected to ``sorry.google.com``.
     """
     if eval_xpath(dom, "//form[@id='gs_captcha_f']"):
-        raise SearxEngineCaptchaException()
+        raise ZhensaEngineCaptchaException()
 
 
 def request(query, params):

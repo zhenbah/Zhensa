@@ -6,7 +6,7 @@
 from urllib.parse import urlencode
 from lxml import html
 from zhensa.network import get
-from zhensa.exceptions import SearxEngineAccessDeniedException
+from zhensa.exceptions import ZhensaEngineAccessDeniedException
 from zhensa.utils import (
     extract_text,
     eval_xpath_list,
@@ -48,7 +48,7 @@ def request(query, params):
 
 def response(resp):
     if resp.url.path.startswith('/verify'):
-        raise SearxEngineAccessDeniedException()
+        raise ZhensaEngineAccessDeniedException()
 
     results = []
 

@@ -30,7 +30,7 @@ This is an example configuration for searching in the collection
 # pylint: disable=global-statement
 
 from urllib.parse import urlencode
-from zhensa.exceptions import SearxEngineAPIException
+from zhensa.exceptions import ZhensaEngineAPIException
 from zhensa.result_types import EngineResults
 from zhensa.extended_types import SXNG_Response
 
@@ -77,10 +77,10 @@ def response(resp: SXNG_Response) -> EngineResults:
     try:
         resp_json = resp.json()
     except Exception as e:
-        raise SearxEngineAPIException("failed to parse response") from e
+        raise ZhensaEngineAPIException("failed to parse response") from e
 
     if "error" in resp_json:
-        raise SearxEngineAPIException(resp_json["error"]["msg"])
+        raise ZhensaEngineAPIException(resp_json["error"]["msg"])
 
     res = EngineResults()
 

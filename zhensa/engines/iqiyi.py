@@ -4,7 +4,7 @@
 from urllib.parse import urlencode
 from datetime import datetime
 
-from zhensa.exceptions import SearxEngineAPIException
+from zhensa.exceptions import ZhensaEngineAPIException
 from zhensa.utils import parse_duration_string
 
 about = {
@@ -39,11 +39,11 @@ def response(resp):
     try:
         data = resp.json()
     except Exception as e:
-        raise SearxEngineAPIException(f"Invalid response: {e}") from e
+        raise ZhensaEngineAPIException(f"Invalid response: {e}") from e
     results = []
 
     if "data" not in data or "templates" not in data["data"]:
-        raise SearxEngineAPIException("Invalid response")
+        raise ZhensaEngineAPIException("Invalid response")
 
     for entry in data["data"]["templates"]:
         album_info = entry.get("albumInfo", {})

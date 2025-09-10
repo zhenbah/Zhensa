@@ -62,7 +62,7 @@ from zhensa.data import ENGINE_DESCRIPTIONS
 from zhensa.result_types import Answer
 from zhensa.settings_defaults import OUTPUT_FORMATS
 from zhensa.settings_loader import DEFAULT_SETTINGS_FILE
-from zhensa.exceptions import SearxParameterException
+from zhensa.exceptions import ZhensaParameterException
 from zhensa.engines import (
     DEFAULT_CATEGORY,
     categories,
@@ -650,8 +650,8 @@ def search():
         search_obj = zhensa.search.SearchWithPlugins(search_query, sxng_request, sxng_request.user_plugins)
         result_container = search_obj.search()
 
-    except SearxParameterException as e:
-        logger.exception('search error: SearxParameterException')
+    except ZhensaParameterException as e:
+        logger.exception('search error: ZhensaParameterException')
         return index_error(output_format, e.message), 400
     except Exception as e:  # pylint: disable=broad-except
         logger.exception(e, exc_info=True)

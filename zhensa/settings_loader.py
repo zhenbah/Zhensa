@@ -25,7 +25,7 @@ from pathlib import Path
 
 import yaml
 
-from zhensa.exceptions import SearxSettingsException
+from zhensa.exceptions import ZhensaSettingsException
 
 JSONType: t.TypeAlias = dict[str, "JSONType"] | list["JSONType"] | str | int | float | bool | None
 SettingsType: t.TypeAlias = dict[str, JSONType]
@@ -43,9 +43,9 @@ def load_yaml(file_name: str | Path) -> SettingsType:
         with open(file_name, 'r', encoding='utf-8') as settings_yaml:
             return yaml.safe_load(settings_yaml) or {}
     except IOError as e:
-        raise SearxSettingsException(e, str(file_name)) from e
+        raise ZhensaSettingsException(e, str(file_name)) from e
     except yaml.YAMLError as e:
-        raise SearxSettingsException(e, str(file_name)) from e
+        raise ZhensaSettingsException(e, str(file_name)) from e
 
 
 def get_yaml_cfg(file_name: str | Path) -> SettingsType:

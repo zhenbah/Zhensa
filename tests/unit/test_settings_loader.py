@@ -8,7 +8,7 @@ from unittest.mock import patch
 
 from parameterized import parameterized
 
-from zhensa.exceptions import SearxSettingsException
+from zhensa.exceptions import ZhensaSettingsException
 from zhensa import settings_loader
 from tests import SearxTestCase
 
@@ -20,10 +20,10 @@ def _settings(f_name):
 class TestLoad(SearxTestCase):
 
     def test_load_zero(self):
-        with self.assertRaises(SearxSettingsException):
+        with self.assertRaises(ZhensaSettingsException):
             settings_loader.load_yaml('/dev/zero')
 
-        with self.assertRaises(SearxSettingsException):
+        with self.assertRaises(ZhensaSettingsException):
             settings_loader.load_yaml(_settings("syntaxerror_settings.yml"))
 
         self.assertEqual(settings_loader.load_yaml(_settings("empty_settings.yml")), {})
