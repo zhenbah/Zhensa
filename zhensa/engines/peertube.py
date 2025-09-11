@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Peertube and :py:obj:`SepiaSearch <searx.engines.sepiasearch>` do share
 (more or less) the same REST API and the schema of the JSON result is identical.
 

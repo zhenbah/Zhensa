@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Bing-News: description see :py:obj:`searx.engines.bing`.
 
 .. hint::

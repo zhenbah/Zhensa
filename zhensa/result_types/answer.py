@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """
 Typification of the *answer* results.  Results of this type are rendered in
 the :origin:`answers.html <searx/templates/simple/elements/answers.html>`

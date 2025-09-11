@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Pixabay provides royalty-free media (images, videos)"""
 
 from datetime import timedelta

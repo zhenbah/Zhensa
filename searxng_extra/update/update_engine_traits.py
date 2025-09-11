@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Update :py:obj:`searx.enginelib.traits.EngineTraitsMap` and :origin:`searx/languages.py`
 
 :py:obj:`searx.enginelib.traits.EngineTraitsMap.ENGINE_TRAITS_FILE`:
@@ -27,7 +27,7 @@ from zhensa.enginelib.traits import EngineTraitsMap
 # Output files.
 languages_file = Path(zhensa_dir) / 'sxng_locales.py'
 languages_file_header = """\
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 '''List of Zhensa's locale codes used for the search language/region.
 
 .. hint::

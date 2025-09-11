@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """The Art Institute of Chicago
 
 Explore thousands of artworks from The Art Institute of Chicago.

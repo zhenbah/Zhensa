@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Engine for Microsoft Learn, Microsoft's technical knowledge base.
 
 To use this engine add the following entry to your engines list

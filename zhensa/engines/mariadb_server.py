@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """MariaDB is a community driven fork of MySQL. Before enabling MariaDB engine,
 you must the install the pip package ``mariadb`` along with the necessary
 prerequities.

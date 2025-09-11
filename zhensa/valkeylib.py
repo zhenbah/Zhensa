@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """A collection of convenient functions and valkey/lua scripts.
 
 This code was partial inspired by the `Bullet-Proofing Lua Scripts in ValkeyPy`_

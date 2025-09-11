@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """MySQL is said to be the most popular open source database.  Before enabling
 MySQL engine, you must install the package ``mysql-connector-python``.
 

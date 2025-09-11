@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Sogou-WeChat search engine for retrieving WeChat Article from Sogou"""
 
 from urllib.parse import urlencode

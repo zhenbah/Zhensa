@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 # pylint: disable=missing-module-docstring, too-few-public-methods
 
 # the public namespace has not yet been finally defined ..

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """.. sidebar:: info
 
 The Astrophysics Data System (ADS) is a digital library portal for researchers in astronomy and physics,

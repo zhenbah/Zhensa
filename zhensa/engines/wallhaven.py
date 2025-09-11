@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Wallhaven_ is a site created by and for people who like wallpapers.
 
 .. _Wallhaven: https://wallhaven.cc/about#Copyright

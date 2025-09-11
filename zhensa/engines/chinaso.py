@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """ChinaSo_, a search engine for the chinese language area.
 
 .. attention::

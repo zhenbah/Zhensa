@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Engine to search in collaborative software platforms based on GitLab_ with
 the `GitLab REST API`_.
 

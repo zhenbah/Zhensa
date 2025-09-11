@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """`Tube Archivist`_ - *Your self hosted YouTube media server.*
 
 .. _Tube Archivist: https://www.tubearchivist.com

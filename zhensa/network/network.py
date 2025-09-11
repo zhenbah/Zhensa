@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 # pylint: disable=global-statement
 # pylint: disable=missing-module-docstring, missing-class-docstring
 import typing as t

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Repology_ monitors a huge number of package repositories and other sources
 comparing packages versions across them and gathering other information.
 

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """`Adobe Stock`_ is a service that gives access to millions of royalty-free
 assets. Assets types include photos, vectors, illustrations, templates, 3D
 assets, videos, motion graphics templates and audio tracks.

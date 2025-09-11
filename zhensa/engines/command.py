@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """With *command engines* administrators can run engines to integrate arbitrary
 shell commands.
 

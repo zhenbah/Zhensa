@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Geizhals is a German website to compare the price of a product on the
 most common German shopping sites and find the lowest price.
 

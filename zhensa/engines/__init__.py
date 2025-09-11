@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Load and initialize the ``engines``, see :py:func:`load_engines` and register
 :py:obj:`engine_shortcuts`.
 

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Invidious (Videos)
 
 If you want to use invidious with Zhensa you should setup one locally.

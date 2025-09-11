@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Implementations of the favicon *resolvers* that are available in the favicon
 proxy by default.  A *resolver* is a function that obtains the favicon from an
 external source.  The *resolver* function receives two arguments (``domain,

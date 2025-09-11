@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """BPB refers to ``Bundeszentrale für poltische Bildung``, which is a German
 governmental institution aiming to reduce misinformation by providing resources
 about politics and history.

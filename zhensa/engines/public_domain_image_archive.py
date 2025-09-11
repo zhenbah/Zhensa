@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Public domain image archive"""
 
 from urllib.parse import urlencode, urlparse, urlunparse, parse_qsl

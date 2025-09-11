@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """The JSON engine is a *generic* engine with which it is possible to configure
 engines in the settings.
 

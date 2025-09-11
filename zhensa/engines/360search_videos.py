@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 # pylint: disable=invalid-name
 """360Search-Videos: A search engine for retrieving videos from 360Search."""
 

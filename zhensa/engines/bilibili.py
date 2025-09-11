@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Bilibili is a Chinese video sharing website.
 
 .. _Bilibili: https://www.bilibili.com

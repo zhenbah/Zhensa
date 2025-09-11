@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """A plugin to check if the ip address of the request is a Tor exit-node if the
 user searches for ``tor-check``.  It fetches the tor exit node list from
 :py:obj:`url_exit_list` and parses all the IPs into a list, then checks if the

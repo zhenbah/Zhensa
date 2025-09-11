@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Mullvad Leta is a search engine proxy. Currently Leta only offers text
 search results not image, news or any other types of search result.  Leta acts
 as a proxy to Google and Brave search results. You can select which backend

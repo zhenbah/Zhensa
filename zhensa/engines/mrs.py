@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Matrix Rooms Search - a fully-featured, standalone, matrix rooms search service.
 
 Configuration

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """iQiyi: A search engine for retrieving videos from iQiyi."""
 
 from urllib.parse import urlencode

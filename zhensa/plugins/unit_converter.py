@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """A plugin for converting measured values from one unit to another unit (a
 unit converter).
 

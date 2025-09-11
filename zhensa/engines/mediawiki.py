@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """The MediaWiki engine is a *generic* engine to **query** Wikimedia wikis by
 the `MediaWiki Action API`_.  For a `query action`_ all Wikimedia wikis have
 endpoints that follow this pattern::

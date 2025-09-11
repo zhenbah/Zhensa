@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Within this module we implement a *demo online engine*.  Do not look to
 close to the implementation, its just a simple example which queries `The Art
 Institute of Chicago <https://www.artic.edu>`_

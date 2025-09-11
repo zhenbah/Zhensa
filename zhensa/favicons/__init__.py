@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Implementations for providing the favicons in Zhensa.
 
 There is a command line for developer purposes and for deeper analysis.  Here is

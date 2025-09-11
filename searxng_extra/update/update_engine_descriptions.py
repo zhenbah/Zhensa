@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Fetch website description from websites and from
 :origin:`searx/engines/wikidata.py` engine.
 

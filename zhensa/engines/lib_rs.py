@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """lib.rs (packages)"""
 
 from urllib.parse import quote_plus

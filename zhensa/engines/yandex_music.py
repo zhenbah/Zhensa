@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Yandex Music
 
 .. _Countries where Yandex.Music is available: https://yandex.com/support/music/access.html

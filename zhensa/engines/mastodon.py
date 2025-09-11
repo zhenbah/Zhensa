@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Mastodon_ is an open source alternative to large social media platforms like
 Twitter/X, Facebook, ...
 

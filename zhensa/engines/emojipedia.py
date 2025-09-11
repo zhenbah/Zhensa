@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Emojipedia
 
 Emojipedia is an emoji reference website which documents the meaning and

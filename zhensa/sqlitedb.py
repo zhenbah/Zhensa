@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Implementations to make access to SQLite databases a little more convenient.
 
 :py:obj:`SQLiteAppl`

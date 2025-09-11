@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 # pylint: disable=missing-module-docstring, global-statement
 
 __all__ = ["initialize", "check_network_configuration", "raise_for_httperror"]

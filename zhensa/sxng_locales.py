@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 '''List of Zhensa's locale codes used for the search language/region.
 
 .. hint::

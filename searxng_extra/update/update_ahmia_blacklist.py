@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """This script saves `Ahmia's blacklist`_ for onion sites.
 
 Output file: :origin:`searx/data/ahmia_blacklist.txt` (:origin:`CI Update data

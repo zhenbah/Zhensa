@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """.. _botdetection.ip_lists:
 
 Method ``ip_lists``

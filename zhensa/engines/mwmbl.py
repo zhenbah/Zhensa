@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Mwmbl_ is a non-profit, ad-free, free-libre and free-lunch search engine with
 a focus on useability and speed.
 

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Calculate mathematical expressions using :py:obj:`ast.parse` (mode="eval")."""
 
 import typing

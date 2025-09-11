@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """This module implements the Wikipedia engine.  Some of this implementations
 are shared by other engines:
 

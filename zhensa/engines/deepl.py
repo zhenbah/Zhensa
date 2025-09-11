@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Deepl translation engine"""
 
 from zhensa.result_types import EngineResults

@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Update :origin:`searx/data/external_bangs.json` using the duckduckgo bangs
 from :py:obj:`BANGS_URL`.
 

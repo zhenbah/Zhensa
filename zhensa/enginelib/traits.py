@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Engine's traits are fetched from the origin engines and stored in a JSON file
 in the *data folder*.  Most often traits are languages and region codes and
 their mapping from Zhensa's representation to the representation in the origin

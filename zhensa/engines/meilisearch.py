@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """.. sidebar:: info
 
    - :origin:`meilisearch.py <searx/engines/meilisearch.py>`

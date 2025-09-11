@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """This module implements the type extensions applied by Zhensa.
 
 - :py:obj:`flask.request` is replaced by :py:obj:`sxng_request`

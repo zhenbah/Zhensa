@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Simple implementation to store TrackerPatterns data in a SQL database."""
 
 import typing

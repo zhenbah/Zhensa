@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """The *answerers* give instant answers related to the search query, they
 usually provide answers of type :py:obj:`Answer <searx.result_types.Answer>`.
 

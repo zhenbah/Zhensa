@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 # pylint: disable=missing-module-docstring
 #
 # Engine is documented in: docs/dev/engines/online/openalex.rst

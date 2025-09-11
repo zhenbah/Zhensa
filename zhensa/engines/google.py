@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """This is the implementation of the Google WEB engine.  Some of this
 implementations (manly the :py:obj:`get_google_info`) are shared by other
 engines:

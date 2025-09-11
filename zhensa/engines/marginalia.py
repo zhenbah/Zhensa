@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """`Marginalia Search`_ is an independent open source Internet search engine
 operating out of Sweden. It is principally developed and operated by Viktor
 Lofgren .

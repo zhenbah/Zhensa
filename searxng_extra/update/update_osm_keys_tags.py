@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Fetch OSM keys and tags.
 
 To get the i18n names, the scripts uses `Wikidata Query Service`_ instead of for

@@ -1,4 +1,4 @@
-.. SPDX-License-Identifier: AGPL-3.0-or-later
+.. SPDX-License-Identifier: MIT
 
 ----
 
@@ -19,7 +19,7 @@ A user_, admin_ and developer_ handbook is available on the homepage_.
 |Zhensa install|
 |Zhensa homepage|
 |Zhensa wiki|
-|AGPL License|
+|MIT License|
 |Issues|
 |commits|
 |weblate|
@@ -47,8 +47,8 @@ A user_, admin_ and developer_ handbook is available on the homepage_.
 .. |Zhensa wiki| image:: https://img.shields.io/badge/-wiki-blue
    :target: https://github.com/zhensa/zhensa/wiki
 
-.. |AGPL License|  image:: https://img.shields.io/badge/license-AGPL-blue.svg
-   :target: https://github.com/zhensa/zhensa/blob/master/LICENSE
+.. |MIT License|  image:: https://img.shields.io/badge/license-MIT-blue.svg
+    :target: https://github.com/zhensa/zhensa/blob/master/LICENSE
 
 .. |Issues| image:: https://img.shields.io/github/issues/zhensa/zhensa?color=yellow&label=issues
    :target: https://github.com/zhensa/zhensa/issues

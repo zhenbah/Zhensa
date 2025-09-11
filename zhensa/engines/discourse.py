@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """.. sidebar:: info
 
   - `builtwith.com Discourse <https://trends.builtwith.com/websitelist/Discourse>`_

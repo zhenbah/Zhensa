@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Implementations for loading configurations from YAML files.  This essentially
 includes the configuration of the (:ref:`Zhensa appl <zhensa settings.yml>`)
 server. The default configuration for the application server is loaded from the

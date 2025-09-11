@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Installer for Zhensa package."""
 
 from setuptools import setup, find_packages
@@ -31,12 +31,12 @@ setup(
         "Topic :: Internet",
         "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
         "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
-        'License :: OSI Approved :: GNU Affero General Public License v3'
+        'License :: OSI Approved :: MIT License'
     ],
     keywords='metasearch searchengine search web http',
     author='Zhensa dev team',
     author_email='contact@zhensa.org',
-    license='GNU Affero General Public License',
+    license='MIT License',
     packages=find_packages(
         include=[
             'zhensa', 'zhensa.*', 'zhensa.*.*', 'zhensa.*.*.*',

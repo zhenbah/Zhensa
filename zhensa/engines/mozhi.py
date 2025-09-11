@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Mozhi (alternative frontend for popular translation engines)"""
 
 import random

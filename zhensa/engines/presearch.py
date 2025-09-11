@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Presearch supports the search types listed in :py:obj:`search_type` (general,
 images, videos, news).
 

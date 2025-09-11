@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """
 Typification of the *keyvalue* results.  Results of this type are rendered in
 the :origin:`keyvalue.html <searx/templates/simple/result_templates/keyvalue.html>`

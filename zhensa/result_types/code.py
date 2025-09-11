@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Typification of the *code* results.  Results of this type are rendered in
 the :origin:`code.html <searx/templates/simple/result_templates/code.html>`
 template.  For highlighting the code passages, Pygments_ is used.

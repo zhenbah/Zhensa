@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """
 if setproctitle is installed.
 set Unix thread name with the Python thread name

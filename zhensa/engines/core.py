@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """CORE_ (COnnecting REpositories) provides a comprehensive bibliographic
 database of the world’s scholarly literature, collecting and indexing
 research from repositories and journals.

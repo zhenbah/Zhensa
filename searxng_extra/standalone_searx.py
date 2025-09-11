@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Script to run Zhensa from terminal.
 
   DON'T USE THIS SCRIPT!!

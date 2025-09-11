@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Module providing support for displaying data in OpenMetrics format"""
 
 import typing as t

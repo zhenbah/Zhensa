@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Sogou-Videos: A search engine for retrieving videos from Sogou."""
 
 from urllib.parse import urlencode

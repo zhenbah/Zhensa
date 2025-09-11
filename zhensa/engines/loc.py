@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Library of Congress: query Photo, Print and Drawing from API endpoint_
 ``photos``.
 

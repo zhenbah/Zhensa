@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Search radio stations from RadioBrowser by `Advanced station search API`_.
 
 .. _Advanced station search API:

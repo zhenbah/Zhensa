@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 # pylint: disable=missing-module-docstring,disable=missing-class-docstring,invalid-name
 
 """Test some code from module :py:obj:`searx.locales`"""

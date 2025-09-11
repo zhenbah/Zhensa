@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Valkey is an open source (BSD licensed), in-memory data structure (key value
 based) store.  Before configuring the ``valkey_server`` engine, you must install
 the dependency valkey_.

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """
 
  Openverse (formerly known as: Creative Commons search engine) [Images]

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """`Alpine Linux binary packages`_.  `Alpine Linux`_ is a Linux-based operation
 system designed to be small, simple and secure.  Contrary to many other Linux
 distributions, it uses musl, BusyBox and OpenRC.  Alpine is mostly used on

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 # pylint: disable=invalid-name
 """Bing-Videos: description see :py:obj:`searx.engines.bing`.
 """

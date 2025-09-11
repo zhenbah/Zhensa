@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Yahoo Search (Web)
 
 Languages are supported by mapping the language to a domain.  If domain is not

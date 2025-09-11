@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-License-Identifier: MIT
 
 import { Feature, Map as OlMap, View } from "ol";
 import { createEmpty } from "ol/extent";

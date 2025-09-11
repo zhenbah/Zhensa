@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 # pylint: disable=missing-module-docstring
 """Lame scheduler which use Valkey as a source of truth:
 * the Valkey key Zhensa_checker_next_call_ts contains the next time the embedded checker should run.

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """This is the implementation of the Google News engine.
 
 Google News has a different region handling compared to Google WEB.

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 """Lingva (alternative Google Translate frontend)"""
 
 from zhensa.result_types import EngineResults

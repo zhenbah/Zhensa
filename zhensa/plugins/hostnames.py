@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 # pylint: disable=too-many-branches, unused-argument
 """During the initialization phase, the plugin checks whether a ``hostnames:``
 configuration exists. If this is not the case, the plugin is not included in the
