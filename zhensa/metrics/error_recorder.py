@@ -104,9 +104,9 @@ def add_error_context(engine_name: str, error_context: ErrorContext) -> None:
 def get_trace(traces):
     for trace in reversed(traces):
         split_filename: list[str] = trace.filename.split('/')
-        if '/'.join(split_filename[-3:-1]) == 'searx/engines':
+        if '/'.join(split_filename[-3:-1]) == 'zhensa/engines':
             return trace
-        if '/'.join(split_filename[-4:-1]) == 'searx/search/processors':
+        if '/'.join(split_filename[-4:-1]) == 'zhensa/search/processors':
             return trace
     return traces[-1]
 
@@ -171,13 +171,13 @@ def get_exception_classname(exc: Exception) -> str:
 def get_error_context(
     framerecords, exception_classname, log_message, log_parameters: LogParametersType, secondary: bool
 ) -> ErrorContext:
-    searx_frame = get_trace(framerecords)
-    filename = searx_frame.filename
+    zhensa_frame = get_trace(framerecords)
+    filename = zhensa_frame.filename
     if filename.startswith(zhensa_parent_dir):
         filename = filename[len(zhensa_parent_dir) + 1 :]
-    function = searx_frame.function
-    line_no = searx_frame.lineno
-    code = searx_frame.code_context[0].strip()
+    function = zhensa_frame.function
+    line_no = zhensa_frame.lineno
+    code = zhensa_frame.code_context[0].strip()
     del framerecords
     return ErrorContext(filename, function, line_no, code, exception_classname, log_message, log_parameters, secondary)
 

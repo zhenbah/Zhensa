@@ -4,5 +4,5 @@
 Weather
 =======
 
-.. automodule:: searx.weather
+.. automodule:: zhensa.weather
    :members:

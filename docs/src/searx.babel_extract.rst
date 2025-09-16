@@ -1,8 +1,8 @@
-.. _searx.babel_extract:
+.. _zhensa.babel_extract:
 
 ===============================
 Custom message extractor (i18n)
 ===============================
 
-.. automodule:: searx.babel_extract
+.. automodule:: zhensa.babel_extract
   :members:

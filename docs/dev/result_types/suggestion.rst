@@ -24,7 +24,7 @@ From this simple dict another dict is build up:
    {"url" : "!bang lorem ipsum ..", "title": "lorem ipsum" }
 
 and used in the template :origin:`suggestions.html
-<searx/templates/simple/elements/suggestions.html>`:
+<zhensa/templates/simple/elements/suggestions.html>`:
 
 .. code:: python
 

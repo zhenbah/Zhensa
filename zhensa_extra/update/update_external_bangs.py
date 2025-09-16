@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # SPDX-License-Identifier: MIT
-"""Update :origin:`searx/data/external_bangs.json` using the duckduckgo bangs
+"""Update :origin:`zhensa/data/external_bangs.json` using the duckduckgo bangs
 from :py:obj:`BANGS_URL`.
 
 - :origin:`CI Update data ... <.github/workflows/data-update.yml>`

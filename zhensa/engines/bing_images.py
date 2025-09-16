@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT
-"""Bing-Images: description see :py:obj:`searx.engines.bing`.
+"""Bing-Images: description see :py:obj:`zhensa.engines.bing`.
 """
 # pylint: disable=invalid-name
 import json

@@ -30,7 +30,7 @@ about = {
 }
 
 engine_type = 'online_url_search'
-""":py:obj:`searx.search.processors.online_url_search`"""
+""":py:obj:`zhensa.search.processors.online_url_search`"""
 
 categories = ['general']
 paging = True

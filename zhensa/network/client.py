@@ -23,7 +23,7 @@ uvloop.install()
 CertTypes = str | tuple[str, str] | tuple[str, str, str]
 SslContextKeyType = tuple[str | None, CertTypes | None, bool, bool]
 
-logger = logger.getChild('searx.network.client')
+logger = logger.getChild('zhensa.network.client')
 LOOP: asyncio.AbstractEventLoop = None  # pyright: ignore[reportAssignmentType]
 
 SSLCONTEXTS: dict[SslContextKeyType, SSLContext] = {}

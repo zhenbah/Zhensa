@@ -1,5 +1,5 @@
 ---
-name: Update searx.data
+name: Update zhensa.data
 
 # yamllint disable-line rule:truthy
 on:
@@ -68,14 +68,14 @@ jobs:
         with:
           author: "zhensa-bot <zhensa-bot@users.noreply.github.com>"
           committer: "zhensa-bot <zhensa-bot@users.noreply.github.com>"
-          title: "[data] update searx.data - ${{ matrix.fetch }}"
-          commit-message: "[data] update searx.data - ${{ matrix.fetch }}"
+          title: "[data] update zhensa.data - ${{ matrix.fetch }}"
+          commit-message: "[data] update zhensa.data - ${{ matrix.fetch }}"
           branch: "update_data_${{ matrix.fetch }}"
           delete-branch: "true"
           draft: "false"
           signoff: "false"
           body: |
-            [data] update searx.data - ${{ matrix.fetch }}
+            [data] update zhensa.data - ${{ matrix.fetch }}
           labels: |
             data
 

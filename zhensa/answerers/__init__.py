@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: MIT
 """The *answerers* give instant answers related to the search query, they
-usually provide answers of type :py:obj:`Answer <searx.result_types.Answer>`.
+usually provide answers of type :py:obj:`Answer <zhensa.result_types.Answer>`.
 
 Here is an example of a very simple answerer that adds a "Hello" into the answer
 area:
@@ -32,7 +32,7 @@ area:
 .. autoclass:: AnswerStorage
    :members:
 
-.. autoclass:: searx.answerers._core.ModuleAnswerer
+.. autoclass:: zhensa.answerers._core.ModuleAnswerer
    :members:
    :show-inheritance:
 

@@ -8,28 +8,28 @@ Offline Concept
    - :ref:`engine command`
    - :ref:`sql engines`
    - :ref:`nosql engines`
-   - :py:obj:`searx.search.processors.offline`
+   - :py:obj:`zhensa.search.processors.offline`
 
 To extend the functionality of Zhensa, offline engines are going to be
 introduced.  An offline engine is an engine which does not need Internet
 connection to perform a search and does not use HTTP to communicate.
 
 Offline engines can be configured, by adding those to the `engines` list of
-:origin:`settings.yml <searx/settings.yml>`.  An example skeleton for offline
+:origin:`settings.yml <zhensa/settings.yml>`.  An example skeleton for offline
 engines can be found in :ref:`demo offline engine` (:origin:`demo_offline.py
-<searx/engines/demo_offline.py>`).
+<zhensa/engines/demo_offline.py>`).
 
 
 Programming Interface
 =====================
 
-:py:func:`init(engine_settings=None) <searx.engines.demo_offline.init>`
+:py:func:`init(engine_settings=None) <zhensa.engines.demo_offline.init>`
   All offline engines can have their own init function to setup the engine before
   accepting requests. The function gets the settings from settings.yml as a
   parameter. This function can be omitted, if there is no need to setup anything
   in advance.
 
-:py:func:`search(query, params) <searx.engines.demo_offline.search>`
+:py:func:`search(query, params) <zhensa.engines.demo_offline.search>`
   Each offline engine has a function named ``search``.  This function is
   responsible to perform a search and return the results in a presentable
   format. (Where *presentable* means presentable by the selected result

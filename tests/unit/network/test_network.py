@@ -5,10 +5,10 @@ import httpx
 from mock import patch
 
 from zhensa.network.network import Network, NETWORKS
-from tests import SearxTestCase
+from tests import zhensaTestCase
 
 
-class TestNetwork(SearxTestCase):
+class TestNetwork(zhensaTestCase):
     # pylint: disable=protected-access
 
     def test_simple(self):
@@ -120,7 +120,7 @@ class TestNetwork(SearxTestCase):
             await network.aclose()
 
 
-class TestNetworkRequestRetries(SearxTestCase):
+class TestNetworkRequestRetries(zhensaTestCase):
 
     TEXT = 'Lorem Ipsum'
 
@@ -196,7 +196,7 @@ class TestNetworkRequestRetries(SearxTestCase):
             await network.aclose()
 
 
-class TestNetworkStreamRetries(SearxTestCase):
+class TestNetworkStreamRetries(zhensaTestCase):
 
     TEXT = 'Lorem Ipsum'
 

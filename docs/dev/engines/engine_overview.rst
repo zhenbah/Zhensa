@@ -21,7 +21,7 @@ better results.
 
 Because there is no general search API which could be used for every search
 engine, an adapter has to be built between Zhensa and the external search
-engines.  Adapters are stored under the folder :origin:`searx/engines`.
+engines.  Adapters are stored under the folder :origin:`zhensa/engines`.
 
 .. _general engine configuration:
 
@@ -136,7 +136,7 @@ parameters with default value can be redefined for special purposes.
 .. _engine request online:
 
 .. table:: If the ``engine_type`` is :py:obj:`online
-           <searx.search.processors.online.OnlineProcessor.get_params>`
+           <zhensa.search.processors.online.OnlineProcessor.get_params>`
    :width: 100%
 
    ====================== ============== ========================================================================
@@ -161,7 +161,7 @@ parameters with default value can be redefined for special purposes.
 .. _engine request online_dictionary:
 
 .. table:: If the ``engine_type`` is :py:obj:`online_dictionary
-           <searx.search.processors.online_dictionary.OnlineDictionaryProcessor.get_params>`,
+           <zhensa.search.processors.online_dictionary.OnlineDictionaryProcessor.get_params>`,
            in addition to the :ref:`online <engine request online>` arguments:
    :width: 100%
 
@@ -176,7 +176,7 @@ parameters with default value can be redefined for special purposes.
 .. _engine request online_currency:
 
 .. table:: If the ``engine_type`` is :py:obj:`online_currency
-           <searx.search.processors.online_currency.OnlineCurrencyProcessor.get_params>`,
+           <zhensa.search.processors.online_currency.OnlineCurrencyProcessor.get_params>`,
            in addition to the :ref:`online <engine request online>` arguments:
    :width: 100%
 
@@ -193,7 +193,7 @@ parameters with default value can be redefined for special purposes.
 .. _engine request online_url_search:
 
 .. table:: If the ``engine_type`` is :py:obj:`online_url_search
-           <searx.search.processors.online_url_search.OnlineUrlSearchProcessor.get_params>`,
+           <zhensa.search.processors.online_url_search.OnlineUrlSearchProcessor.get_params>`,
            in addition to the :ref:`online <engine request online>` arguments:
    :width: 100%
 
@@ -215,7 +215,7 @@ Specify Request
 ---------------
 
 The function :py:func:`def request(query, params):
-<searx.engines.demo_online.request>` always returns the ``params`` variable, the
+<zhensa.engines.demo_online.request>` always returns the ``params`` variable, the
 following parameters can be used to specify a search request:
 
 .. table::

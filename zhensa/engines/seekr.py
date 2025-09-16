@@ -30,7 +30,7 @@ This implementation is used by seekr engines in the :ref:`settings.yml
 Known Quirks
 ============
 
-The implementation to support :py:obj:`paging <searx.enginelib.Engine.paging>`
+The implementation to support :py:obj:`paging <zhensa.enginelib.Engine.paging>`
 is based on the *nextpage* method of Seekr's REST API.  This feature is *next
 page driven* and plays well with the :ref:`infinite_scroll <settings ui>`
 setting in Zhensa but it does not really fit into Zhensa's UI to select a page

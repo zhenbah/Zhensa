@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 """
 Typification of the *answer* results.  Results of this type are rendered in
-the :origin:`answers.html <searx/templates/simple/elements/answers.html>`
+the :origin:`answers.html <zhensa/templates/simple/elements/answers.html>`
 template.
 
 ----
@@ -116,7 +116,7 @@ class Translations(BaseAnswer, kw_only=True):
 
     template: str = "answer/translations.html"
     """The template in :origin:`answer/translations.html
-    <searx/templates/simple/answer/translations.html>`"""
+    <zhensa/templates/simple/answer/translations.html>`"""
 
     translations: "list[Translations.Item]"
     """List of translations."""
@@ -155,7 +155,7 @@ class WeatherAnswer(BaseAnswer, kw_only=True):
 
     template: str = "answer/weather.html"
     """The template is located at :origin:`answer/weather.html
-    <searx/templates/simple/answer/weather.html>`"""
+    <zhensa/templates/simple/answer/weather.html>`"""
 
     current: "WeatherAnswer.Item"
     """Current weather at ``location``."""

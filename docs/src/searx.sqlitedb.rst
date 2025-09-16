@@ -4,5 +4,5 @@
 SQLite DB
 =========
 
-.. automodule:: searx.sqlitedb
+.. automodule:: zhensa.sqlitedb
    :members:

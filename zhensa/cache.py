@@ -1,6 +1,6 @@
 """Implementation of caching solutions.
 
-- :py:obj:`searx.cache.ExpireCache` and its :py:obj:`searx.cache.ExpireCacheCfg`
+- :py:obj:`zhensa.cache.ExpireCache` and its :py:obj:`zhensa.cache.ExpireCacheCfg`
 
 ----
 """
@@ -210,7 +210,7 @@ class ExpireCache(abc.ABC):
 class ExpireCacheSQLite(sqlitedb.SQLiteAppl, ExpireCache):
     """Cache that manages key/value pairs in a SQLite DB.  The DB model in the
     SQLite DB is implemented in abstract class :py:obj:`SQLiteAppl
-    <searx.sqlitedb.SQLiteAppl>`.
+    <zhensa.sqlitedb.SQLiteAppl>`.
 
     The following configurations are required / supported:
 

@@ -4,7 +4,7 @@
 """
 
 from json import loads
-from zhensa.engines import categories as searx_categories
+from zhensa.engines import categories as zhensa_categories
 
 # about
 about = {
@@ -16,7 +16,7 @@ about = {
     "results": 'JSON',
 }
 
-categories = searx_categories.keys()
+categories = zhensa_categories.keys()
 
 # search-url
 instance_urls = []

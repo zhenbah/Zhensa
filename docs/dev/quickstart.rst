@@ -42,7 +42,7 @@ into the developer environment and start a python based HTTP server by::
 
     $ ./manage dev.env
     ...
-    (dev.env)$ ZHENSA_DEBUG=1 python -m searx.webapp
+    (dev.env)$ ZHENSA_DEBUG=1 python -m zhensa.webapp
 
 Since this is a pure Python solution, you can set breakpoints in your code with
 ``pdb.set_trace()`` and the debugger will wait for you in the terminal prompt.

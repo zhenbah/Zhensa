@@ -164,7 +164,7 @@ ${fedora_build}
        $ sudo -H -u ${SERVICE_USER} -i
        (${SERVICE_USER})$ cd ${ZHENSA_SRC}
        (${SERVICE_USER})$ export ZHENSA_SETTINGS_PATH=\"${ZHENSA_SETTINGS_PATH}\"
-       (${SERVICE_USER})$ python searx/webapp.py
+       (${SERVICE_USER})$ python zhensa/webapp.py
 
        # disable debug
        $ sudo -H sed -i -e \"s/debug : True/debug : False/g\" \"$ZHENSA_SETTINGS_PATH\"

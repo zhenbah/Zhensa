@@ -76,7 +76,7 @@ def get_git_version() -> tuple[str, str, str]:
 
     # add "+dirty" suffix if there are uncommitted changes except zhensa/settings.yml
     try:
-        subprocess_run("git diff --quiet -- . ':!searx/settings.yml' ':!utils/brand.env'")
+        subprocess_run("git diff --quiet -- . ':!zhensa/settings.yml' ':!utils/brand.env'")
     except subprocess.CalledProcessError as e:
         if e.returncode == 1:
             git_version += "+dirty"
@@ -128,7 +128,7 @@ if __name__ == "__main__":
         # freeze the version (to create an archive outside a git repository)
         python_code = f"""# SPDX-License-Identifier: MIT
 # pylint: disable=missing-module-docstring
-# this file is generated automatically by searx/version.py
+# this file is generated automatically by zhensa/version.py
 
 VERSION_STRING = "{VERSION_STRING}"
 VERSION_TAG = "{VERSION_TAG}"

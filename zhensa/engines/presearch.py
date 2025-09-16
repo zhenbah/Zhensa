@@ -128,7 +128,7 @@ def _get_request_id(query, params):
         # Presearch narrows down the search by region.  In Zhensa when the user
         # does not set a region (e.g. 'en-CA' / canada) we cannot hand over a region.
 
-        # We could possibly use searx.locales.get_official_locales to determine
+        # We could possibly use zhensa.locales.get_official_locales to determine
         # in which regions this language is an official one, but then we still
         # wouldn't know which region should be given more weight / Presearch
         # performs an IP-based geolocation of the user, we don't want that in

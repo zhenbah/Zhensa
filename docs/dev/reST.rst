@@ -1290,8 +1290,8 @@ install` (with Zhensa modules installed).  We use this e.g. to build chapter:
    :language: reST
    :start-after: .. _configured engines:
 
-The context for the template is selected in the line ``.. jinja:: searx``.  In
-sphinx's build configuration (:origin:`docs/conf.py`) the ``searx`` context
+The context for the template is selected in the line ``.. jinja:: zhensa``.  In
+sphinx's build configuration (:origin:`docs/conf.py`) the ``zhensa`` context
 contains the ``engines`` and ``plugins``.
 
 .. code:: py
@@ -1299,11 +1299,11 @@ contains the ``engines`` and ``plugins``.
    import zhensa.search
    import zhensa.engines
    import zhensa.plugins
-   searx.search.initialize()
+   zhensa.search.initialize()
    jinja_contexts = {
-      'searx': {
-         'engines': searx.engines.engines,
-         'plugins': searx.plugins.plugins
+      'zhensa': {
+         'engines': zhensa.engines.engines,
+         'plugins': zhensa.plugins.plugins
       },
    }
 

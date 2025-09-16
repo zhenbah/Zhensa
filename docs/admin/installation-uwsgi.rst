@@ -236,9 +236,9 @@ For example on Fedora (RHEL): If you try to install a valkey DB with socket
 communication and you want to connect to it from the Zhensa uWSGI, you will see a
 *Permission denied* in the log of your instance::
 
-  ERROR:searx.valkeydb: [zhensa (993)] can't connect valkey DB ...
-  ERROR:searx.valkeydb:   Error 13 connecting to unix socket: /usr/local/zhensa-valkey/run/valkey.sock. Permission denied.
-  ERROR:searx.plugins.limiter: init limiter DB failed!!!
+  ERROR:zhensa.valkeydb: [zhensa (993)] can't connect valkey DB ...
+  ERROR:zhensa.valkeydb:   Error 13 connecting to unix socket: /usr/local/zhensa-valkey/run/valkey.sock. Permission denied.
+  ERROR:zhensa.plugins.limiter: init limiter DB failed!!!
 
 Even if your *zhensa* user of the uWSGI process is added to additional groups
 to give access to the socket from the valkey DB::

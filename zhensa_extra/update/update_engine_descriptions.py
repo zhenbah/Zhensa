@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # SPDX-License-Identifier: MIT
 """Fetch website description from websites and from
-:origin:`searx/engines/wikidata.py` engine.
+:origin:`zhensa/engines/wikidata.py` engine.
 
-Output file: :origin:`searx/data/engine_descriptions.json`.
+Output file: :origin:`zhensa/data/engine_descriptions.json`.
 
 """
 
@@ -127,7 +127,7 @@ def get_wikipedia_summary(wikipedia_url, zhensa_locale):
     path = '/api/rest_v1/page/summary/' + encoded_article_name
     wikipedia_rest_url = parsed_url._replace(path=path).geturl()
     try:
-        response = searx.network.get(wikipedia_rest_url, headers=headers, timeout=10)
+        response = zhensa.network.get(wikipedia_rest_url, headers=headers, timeout=10)
         response.raise_for_status()
     except Exception as e:  # pylint: disable=broad-except
         print("     ", wikipedia_url, e)
@@ -151,7 +151,7 @@ def get_website_description(url, lang1, lang2=None):
             lang_list.append(lang2)
         headers['Accept-Language'] = f'{",".join(lang_list)};q=0.8'
     try:
-        response = searx.network.get(url, headers=headers, timeout=10)
+        response = zhensa.network.get(url, headers=headers, timeout=10)
         response.raise_for_status()
     except Exception:  # pylint: disable=broad-except
         return (None, None)
@@ -177,8 +177,8 @@ def get_website_description(url, lang1, lang2=None):
 
 def initialize():
     global IDS, LANGUAGES_SPARQL
-    searx.search.initialize()
-    wikipedia_engine = searx.engines.engines['wikipedia']
+    zhensa.search.initialize()
+    wikipedia_engine = zhensa.engines.engines['wikipedia']
 
     locale2lang = {'nl-BE': 'nl'}
     for sxng_ui_lang in LOCALE_NAMES:
@@ -196,7 +196,7 @@ def initialize():
         WIKIPEDIA_LANGUAGES[sxng_ui_lang] = wiki_lang
 
     LANGUAGES_SPARQL = ', '.join(f"'{l}'" for l in set(WIKIPEDIA_LANGUAGES.values()))
-    for engine_name, engine in searx.engines.engines.items():
+    for engine_name, engine in zhensa.engines.engines.items():
         descriptions[engine_name] = {}
         wikidata_id = getattr(engine, "about", {}).get('wikidata_id')
         if wikidata_id is not None:
@@ -207,7 +207,7 @@ def initialize():
 
 def fetch_wikidata_descriptions():
     print('Fetching wikidata descriptions')
-    searx.network.set_timeout_for_thread(60)
+    zhensa.network.set_timeout_for_thread(60)
     result = wikidata.send_wikidata_query(
         SPARQL_DESCRIPTION.replace('%IDS%', IDS).replace('%LANGUAGES_SPARQL%', LANGUAGES_SPARQL)
     )
@@ -313,7 +313,7 @@ def fetch_website_description(engine_name, website):
 
 def fetch_website_descriptions():
     print('Fetching website descriptions')
-    for engine_name, engine in searx.engines.engines.items():
+    for engine_name, engine in zhensa.engines.engines.items():
         website = getattr(engine, "about", {}).get('website')
         if website is None and hasattr(engine, "search_url"):
             website = normalize_url(getattr(engine, "search_url"))

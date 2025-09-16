@@ -7,18 +7,18 @@ RUN --mount=type=cache,id=pip,target=/root/.cache/pip set -eux; \
     . ./.venv/bin/activate; \
     pip install -r ./requirements.txt -r ./requirements-server.txt
 
-COPY ./searx/ ./searx/
+COPY ./zhensa/ ./zhensa/
 
 ARG TIMESTAMP_SETTINGS="0"
 
 RUN set -eux; \
-    python -m compileall -q ./searx/; \
-    touch -c --date=@$TIMESTAMP_SETTINGS ./searx/settings.yml; \
-    find ./searx/static/ -type f \
+    python -m compileall -q ./zhensa/; \
+    touch -c --date=@$TIMESTAMP_SETTINGS ./zhensa/settings.yml; \
+    find ./zhensa/static/ -type f \
         \( -name "*.html" -o -name "*.css" -o -name "*.js" -o -name "*.svg" \) \
         -exec gzip -9 -k {} + \
         -exec brotli -9 -k {} + \
         -exec gzip --test {}.gz + \
         -exec brotli --test {}.br +; \
     # Move always changing files to /usr/local/zhensa/
-    mv ./searx/version_frozen.py ./
+    mv ./zhensa/version_frozen.py ./

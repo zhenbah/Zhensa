@@ -4,17 +4,17 @@
 import mock
 from parameterized.parameterized import parameterized
 from zhensa import webutils
-from tests import SearxTestCase
+from tests import zhensaTestCase
 
 
-class TestWebUtils(SearxTestCase):
+class TestWebUtils(zhensaTestCase):
 
     @parameterized.expand(
         [
-            ('https://searx.me/', 'https://searx.me/'),
-            ('https://searx.me/ű', 'https://searx.me/ű'),
-            ('https://searx.me/' + (100 * 'a'), 'https://searx.me/[...]aaaaaaaaaaaaaaaaa'),
-            ('https://searx.me/' + (100 * 'ű'), 'https://searx.me/[...]űűűűűűűűűűűűűűűűű'),
+            ('https://zhensa.me/', 'https://zhensa.me/'),
+            ('https://zhensa.me/ű', 'https://zhensa.me/ű'),
+            ('https://zhensa.me/' + (100 * 'a'), 'https://zhensa.me/[...]aaaaaaaaaaaaaaaaa'),
+            ('https://zhensa.me/' + (100 * 'ű'), 'https://zhensa.me/[...]űűűűűűűűűűűűűűűűű'),
         ]
     )
     def test_prettify_url(self, test_url: str, expected: str):
@@ -78,7 +78,7 @@ class TestWebUtils(SearxTestCase):
         self.assertEqual(webutils.highlight_content(content, query), expected)
 
 
-class TestUnicodeWriter(SearxTestCase):
+class TestUnicodeWriter(zhensaTestCase):
 
     def setUp(self):
         super().setUp()
@@ -95,7 +95,7 @@ class TestUnicodeWriter(SearxTestCase):
         self.assertEqual(self.unicode_writer.writerow.call_count, len(rows))
 
 
-class TestNewHmac(SearxTestCase):
+class TestNewHmac(zhensaTestCase):
 
     @parameterized.expand(
         [

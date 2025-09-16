@@ -4,7 +4,7 @@
 ``settings.yml``
 ================
 
-This page describe the options possibilities of the :origin:`searx/settings.yml`
+This page describe the options possibilities of the :origin:`zhensa/settings.yml`
 file.
 
 .. sidebar:: Further reading ..
@@ -28,7 +28,7 @@ The initial ``settings.yml`` we be load from these locations:
 2. ``/etc/zhensa/settings.yml``
 
 If these files don't exist (or are empty or can't be read), Zhensa uses the
-:origin:`searx/settings.yml` file.  Read :ref:`settings use_default_settings` to
+:origin:`zhensa/settings.yml` file.  Read :ref:`settings use_default_settings` to
 see how you can simplify your *user defined* ``settings.yml``.
 
 
@@ -45,13 +45,13 @@ use_default_settings
    - :origin:`/etc/zhensa/settings.yml <utils/templates/etc/zhensa/settings.yml>`
 
 The user defined ``settings.yml`` is loaded from the :ref:`settings location`
-and can relied on the default configuration :origin:`searx/settings.yml` using:
+and can relied on the default configuration :origin:`zhensa/settings.yml` using:
 
  ``use_default_settings: true``
 
 ``server:``
   In the following example, the actual settings are the default settings defined
-  in :origin:`searx/settings.yml` with the exception of the ``secret_key`` and
+  in :origin:`zhensa/settings.yml` with the exception of the ``secret_key`` and
   the ``bind_address``:
 
   .. code:: yaml

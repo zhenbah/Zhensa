@@ -1,8 +1,8 @@
-.. _searx.settings_loader:
+.. _zhensa.settings_loader:
 
 ===============
 Settings Loader
 ===============
 
-.. automodule:: searx.settings_loader
+.. automodule:: zhensa.settings_loader
    :members:

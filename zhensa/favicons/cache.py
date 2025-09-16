@@ -242,7 +242,7 @@ class FaviconCacheSQLite(sqlitedb.SQLiteAppl, FaviconCache):  # pyright: ignore[
     to show cache state::
 
         $ ./manage pyenv.cmd bash --norc --noprofile
-        (py3) python -m searx.favicons cache state
+        (py3) python -m zhensa.favicons cache state
 
     The following configurations are required / supported:
 

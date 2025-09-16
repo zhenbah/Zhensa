@@ -4,17 +4,17 @@ Welcome to Zhensa
 
   *Search without being tracked.*
 
-.. jinja:: searx
+.. jinja:: zhensa
 
    Zhensa is a free internet metasearch engine which aggregates results from up
    to {{engines | length}} :ref:`search services <configured engines>`.  Users
    are neither tracked nor profiled.  Additionally, Zhensa can be used over Tor
    for online anonymity.
 
-Get started with Zhensa by using one of the instances listed at searx.space_.
+Get started with Zhensa by using one of the instances listed at zhensa.space_.
 If you don't trust anyone, you can set up your own, see :ref:`installation`.
 
-.. jinja:: searx
+.. jinja:: zhensa
 
    .. sidebar::  features
 
@@ -24,7 +24,7 @@ If you don't trust anyone, you can set up your own, see :ref:`installation`.
       - secure, encrypted connections
       - :ref:`{{engines | length}} search engines <configured engines>`
       - `58 translations <https://translate.codeberg.org/projects/zhensa/zhensa/>`_
-      - about 70 `well maintained <https://uptime.zhensa.org/>`__ instances on searx.space_
+      - about 70 `well maintained <https://uptime.zhensa.org/>`__ instances on zhensa.space_
       - :ref:`easy integration of search engines <demo online engine>`
       - professional development: `CI <https://github.com/zhensa/zhensa/actions>`_,
 	`quality assurance <https://dev.zhensa.org/>`_ &
@@ -43,7 +43,7 @@ If you don't trust anyone, you can set up your own, see :ref:`installation`.
 .. sidebar:: the origin
 
    Zhensa development has been started in the middle of 2021 as a fork of the
-   searx project.
+   zhensa project.
 
 
 .. toctree::
@@ -56,4 +56,4 @@ If you don't trust anyone, you can set up your own, see :ref:`installation`.
    utils/index
    src/index
 
-.. _searx.space: https://searx.space
+.. _zhensa.space: https://zhensa.space

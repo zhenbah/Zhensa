@@ -48,7 +48,7 @@ class TrackerPatternsDB:
         #     in /tmp and will be rebuild during the reboot anyway
 
     def load(self):
-        log.debug("init searx.data.TRACKER_PATTERNS")
+        log.debug("init zhensa.data.TRACKER_PATTERNS")
         for rule in self.iter_clear_list():
             self.add(rule)
 

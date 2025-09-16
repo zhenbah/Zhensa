@@ -10,10 +10,10 @@ cfg_schema = 1   # config's schema version no.
 #
 # The available favicon resolvers are registered here.
 #
-# "duckduckgo" = "searx.favicons.resolvers.duckduckgo"
-# "allesedv" = "searx.favicons.resolvers.allesedv"
-# "google" = "searx.favicons.resolvers.google"
-# "yandex" = "searx.favicons.resolvers.yandex"
+# "duckduckgo" = "zhensa.favicons.resolvers.duckduckgo"
+# "allesedv" = "zhensa.favicons.resolvers.allesedv"
+# "google" = "zhensa.favicons.resolvers.google"
+# "yandex" = "zhensa.favicons.resolvers.yandex"
 
 [favicons.cache]
 

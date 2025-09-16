@@ -10,10 +10,10 @@ os.environ.pop('ZHENSA_SETTINGS_PATH', None)
 os.environ['ZHENSA_DISABLE_ETC_SETTINGS'] = '1'
 
 
-class SearxTestLayer:
+class zhensaTestLayer:
     """Base layer for non-robot tests."""
 
-    __name__ = 'SearxTestLayer'
+    __name__ = 'zhensaTestLayer'
 
     @classmethod
     def setUp(cls):
@@ -32,10 +32,10 @@ class SearxTestLayer:
         pass
 
 
-class SearxTestCase(aiounittest.AsyncTestCase):
+class zhensaTestCase(aiounittest.AsyncTestCase):
     """Base test case for non-robot tests."""
 
-    layer = SearxTestLayer
+    layer = zhensaTestLayer
 
     SETTINGS_FOLDER = pathlib.Path(__file__).parent / "unit" / "settings"
     TEST_SETTINGS = "test_settings.yml"
@@ -70,23 +70,23 @@ class SearxTestCase(aiounittest.AsyncTestCase):
         import zhensa.webapp
 
         # https://flask.palletsprojects.com/en/stable/config/#builtin-configuration-values
-        # searx.webapp.app.config["DEBUG"] = True
-        searx.webapp.app.config["TESTING"] = True  # to get better error messages
-        searx.webapp.app.config["EXPLAIN_TEMPLATE_LOADING"] = True
+        # zhensa.webapp.app.config["DEBUG"] = True
+        zhensa.webapp.app.config["TESTING"] = True  # to get better error messages
+        zhensa.webapp.app.config["EXPLAIN_TEMPLATE_LOADING"] = True
 
-        searx.init_settings()
-        searx.plugins.initialize(searx.webapp.app)
+        zhensa.init_settings()
+        zhensa.plugins.initialize(zhensa.webapp.app)
 
-        # searx.search.initialize will:
+        # zhensa.search.initialize will:
         # - load the engines and
-        # - initialize searx.network, searx.metrics, searx.processors and searx.search.checker
+        # - initialize zhensa.network, zhensa.metrics, zhensa.processors and zhensa.search.checker
 
-        searx.search.initialize(
+        zhensa.search.initialize(
             enable_checker=True,
             check_network=True,
-            enable_metrics=searx.get_setting("general.enable_metrics"),  # type: ignore
+            enable_metrics=zhensa.get_setting("general.enable_metrics"),  # type: ignore
         )
 
         # pylint: disable=attribute-defined-outside-init
-        self.app = searx.webapp.app
+        self.app = zhensa.webapp.app
         self.client = self.app.test_client()

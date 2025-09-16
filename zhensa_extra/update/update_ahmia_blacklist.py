@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: MIT
 """This script saves `Ahmia's blacklist`_ for onion sites.
 
-Output file: :origin:`searx/data/ahmia_blacklist.txt` (:origin:`CI Update data
+Output file: :origin:`zhensa/data/ahmia_blacklist.txt` (:origin:`CI Update data
 ...  <.github/workflows/data-update.yml>`).
 
 .. _Ahmia's blacklist: https://ahmia.fi/blacklist/

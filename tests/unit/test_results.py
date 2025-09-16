@@ -4,10 +4,10 @@
 
 from zhensa.result_types import LegacyResult
 from zhensa.results import ResultContainer
-from tests import SearxTestCase
+from tests import zhensaTestCase
 
 
-class ResultContainerTestCase(SearxTestCase):
+class ResultContainerTestCase(zhensaTestCase):
     # pylint: disable=use-dict-literal
 
     TEST_SETTINGS = "test_result_container.yml"

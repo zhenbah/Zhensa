@@ -56,19 +56,19 @@ def iter_processor(engine_name_list):
             else:
                 stdout.write(f'{BOLD_SEQ}Engine {name:30}{RESET_SEQ}{RED}Engine does not exist{RESET_SEQ}\n')
     else:
-        for name, processor in searx.search.PROCESSORS.items():
+        for name, processor in zhensa.search.PROCESSORS.items():
             yield name, processor
 
 
 # actual check & display
 def run(engine_name_list, verbose):
-    searx.search.initialize()
+    zhensa.search.initialize()
     name_checker_list = []
     for name, processor in iter_processor(engine_name_list):
         stdout.write(f'{BOLD_SEQ}Engine {name:30}{RESET_SEQ}Checking\n')
         if not sys.stdout.isatty():
             stderr.write(f'{BOLD_SEQ}Engine {name:30}{RESET_SEQ}Checking\n')
-        checker = searx.search.checker.Checker(processor)
+        checker = zhensa.search.checker.Checker(processor)
         checker.run()
         name_checker_list.append((name, checker))
 

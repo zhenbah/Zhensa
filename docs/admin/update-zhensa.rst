@@ -77,13 +77,13 @@ Check after Installation
 
 Once you have done your installation, you can run a Zhensa *check* procedure,
 to see if there are some left overs.  In this example there exists a *old*
-``/etc/searx/settings.yml``::
+``/etc/zhensa/settings.yml``::
 
    $ sudo -H ./utils/zhensa.sh instance check
 
    Zhensa checks
    --------------
-   ERROR: settings.yml in /etc/searx/ is deprecated, move file to folder /etc/zhensa/
+   ERROR: settings.yml in /etc/zhensa/ is deprecated, move file to folder /etc/zhensa/
    ...
-   INFO    searx.valkeydb                 : connecting to Valkey db=0 path='/usr/local/zhensa-valkey/run/valkey.sock'
-   INFO    searx.valkeydb                 : connected to Valkey
+   INFO    zhensa.valkeydb                 : connecting to Valkey db=0 path='/usr/local/zhensa-valkey/run/valkey.sock'
+   INFO    zhensa.valkeydb                 : connected to Valkey

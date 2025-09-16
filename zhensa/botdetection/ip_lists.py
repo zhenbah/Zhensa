@@ -12,7 +12,7 @@ The ``ip_lists`` method implements :py:obj:`block-list <block_ip>` and
    [botdetection.ip_lists]
 
    pass_ip = [
-     '167.235.158.251', # IPv4 of check.searx.space
+     '167.235.158.251', # IPv4 of check.zhensa.space
      '192.168.0.0/16',  # IPv4 private network
      'fe80::/10',       # IPv6 linklocal
    ]
@@ -40,10 +40,10 @@ logger = logger.getChild('ip_limit')
 
 ZHENSA_ORG = [
     # https://github.com/zhensa/zhensa/pull/2484#issuecomment-1576639195
-    '167.235.158.251',  # IPv4 check.searx.space
-    '2a01:04f8:1c1c:8fc2::/64',  # IPv6 check.searx.space
+    '167.235.158.251',  # IPv4 check.zhensa.space
+    '2a01:04f8:1c1c:8fc2::/64',  # IPv6 check.zhensa.space
 ]
-"""Passlist of IPs from the Zhensa organization, e.g. `check.searx.space`."""
+"""Passlist of IPs from the Zhensa organization, e.g. `check.zhensa.space`."""
 
 
 def pass_ip(real_ip: IPv4Address | IPv6Address, cfg: config.Config) -> Tuple[bool, str]:

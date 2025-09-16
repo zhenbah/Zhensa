@@ -15,10 +15,10 @@ plugin / a plugin doesn't need to implement all the hooks.
 - on each result item: :py:obj:`Plugin.on_result`
 
 Below you will find some examples, for more coding examples have a look at the
-built-in plugins :origin:`searx/plugins/` or `Only show green hosted results`_.
+built-in plugins :origin:`zhensa/plugins/` or `Only show green hosted results`_.
 
 .. _Only show green hosted results:
-   https://github.com/return42/tgwf-searx-plugins/
+   https://github.com/return42/tgwf-zhensa-plugins/
 
 
 Add Answer example

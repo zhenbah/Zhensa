@@ -20,7 +20,7 @@ from zhensa.valkeydb import client as get_valkey_client
 from zhensa.valkeylib import lua_script_storage
 
 
-logger = logging.getLogger('searx.search.checker')
+logger = logging.getLogger('zhensa.search.checker')
 
 SCHEDULER_LUA = Path(__file__).parent / "scheduler.lua"
 

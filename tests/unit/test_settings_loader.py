@@ -10,14 +10,14 @@ from parameterized import parameterized
 
 from zhensa.exceptions import ZhensaSettingsException
 from zhensa import settings_loader
-from tests import SearxTestCase
+from tests import zhensaTestCase
 
 
 def _settings(f_name):
     return str(Path(__file__).parent.absolute() / "settings" / f_name)
 
 
-class TestLoad(SearxTestCase):
+class TestLoad(zhensaTestCase):
 
     def test_load_zero(self):
         with self.assertRaises(ZhensaSettingsException):
@@ -29,7 +29,7 @@ class TestLoad(SearxTestCase):
         self.assertEqual(settings_loader.load_yaml(_settings("empty_settings.yml")), {})
 
 
-class TestDefaultSettings(SearxTestCase):
+class TestDefaultSettings(zhensaTestCase):
 
     def test_load(self):
         settings, msg = settings_loader.load_settings(load_user_settings=False)
@@ -44,7 +44,7 @@ class TestDefaultSettings(SearxTestCase):
         self.assertIsInstance(settings['default_doi_resolver'], str)
 
 
-class TestUserSettings(SearxTestCase):
+class TestUserSettings(zhensaTestCase):
 
     def test_is_use_default_settings(self):
         self.assertFalse(settings_loader.is_use_default_settings({}))

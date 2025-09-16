@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: MIT
 """Fetch firefox useragent signatures
 
-Output file: :origin:`searx/data/useragents.json` (:origin:`CI Update data ...
+Output file: :origin:`zhensa/data/useragents.json` (:origin:`CI Update data ...
 <.github/workflows/data-update.yml>`).
 
 """

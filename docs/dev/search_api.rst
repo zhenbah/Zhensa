@@ -116,9 +116,9 @@ Parameters
   :values:
      see values from ``enabled_plugins``
 
-``enabled_engines`` : optional : *all* :origin:`engines <searx/engines>`
+``enabled_engines`` : optional : *all* :origin:`engines <zhensa/engines>`
   List of enabled engines.
 
-``disabled_engines`` : optional : *all* :origin:`engines <searx/engines>`
+``disabled_engines`` : optional : *all* :origin:`engines <zhensa/engines>`
   List of disabled engines.
 

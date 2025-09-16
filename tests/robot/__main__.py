@@ -11,20 +11,20 @@ import shutil
 
 from splinter import Browser
 
-import tests as searx_tests
+import tests as zhensa_tests
 from tests.robot import test_webapp
 
 
-class SearxRobotLayer:
-    """Searx Robot Test Layer"""
+class zhensaRobotLayer:
+    """zhensa Robot Test Layer"""
 
     def setUp(self):
         os.setpgrp()  # create new process group, become its leader
 
-        tests_path = pathlib.Path(searx_tests.__file__).resolve().parent
+        tests_path = pathlib.Path(zhensa_tests.__file__).resolve().parent
 
         # get program paths
-        webapp = str(tests_path.parent / 'searx' / 'webapp.py')
+        webapp = str(tests_path.parent / 'zhensa' / 'webapp.py')
         exe = 'python'
 
         # set robot settings path
@@ -54,7 +54,7 @@ def run_robot_tests(tests):
 
 
 def main():
-    test_layer = SearxRobotLayer()
+    test_layer = zhensaRobotLayer()
     try:
         test_layer.setUp()
         run_robot_tests([getattr(test_webapp, x) for x in dir(test_webapp) if x.startswith('test_')])

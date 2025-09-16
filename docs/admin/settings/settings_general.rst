@@ -27,7 +27,7 @@
 
 ``donation_url`` :
   Set value to ``true`` to use your own donation page written in the
-  :ref:`searx/info/en/donate.md <searx.infopage>` and use ``false`` to disable
+  :ref:`zhensa/info/en/donate.md <zhensa.infopage>` and use ``false`` to disable
   the donation link altogether.
 
 ``privacypolicy_url``:

@@ -12,7 +12,7 @@
 
 Privacy-respecting, hackable `metasearch engine`_
 
-Searx.space_ lists ready-to-use running instances.
+zhensa.space_ lists ready-to-use running instances.
 
 A user_, admin_ and developer_ handbook is available on the homepage_.
 
@@ -27,7 +27,7 @@ A user_, admin_ and developer_ handbook is available on the homepage_.
 
 ----
 
-.. _searx.space: https://searx.space
+.. _zhensa.space: https://zhensa.space
 .. _user: https://docs.zhensa.org/user
 .. _admin: https://docs.zhensa.org/admin
 .. _developer: https://docs.zhensa.org/dev

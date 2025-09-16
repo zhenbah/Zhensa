@@ -9,7 +9,7 @@ Favicons (source)
    :local:
    :backlinks: entry
 
-.. automodule:: searx.favicons
+.. automodule:: zhensa.favicons
    :members:
 
 .. _favicons.config:
@@ -17,7 +17,7 @@ Favicons (source)
 Favicons Config
 ===============
 
-.. automodule:: searx.favicons.config
+.. automodule:: zhensa.favicons.config
    :members:
 
 .. _favicons.proxy:
@@ -25,7 +25,7 @@ Favicons Config
 Favicons Proxy
 ==============
 
-.. automodule:: searx.favicons.proxy
+.. automodule:: zhensa.favicons.proxy
    :members:
 
 .. _favicons.resolver:
@@ -33,7 +33,7 @@ Favicons Proxy
 Favicons Resolver
 =================
 
-.. automodule:: searx.favicons.resolvers
+.. automodule:: zhensa.favicons.resolvers
    :members:
 
 .. _favicons.cache:
@@ -41,7 +41,7 @@ Favicons Resolver
 Favicons Cache
 ==============
 
-.. automodule:: searx.favicons.cache
+.. automodule:: zhensa.favicons.cache
    :members:
 
 

@@ -88,7 +88,7 @@ def response(resp):
 def fetch_traits(engine_traits: EngineTraits):
     """Fetch languages from Archlinux-Wiki.  The location of the Wiki address of a
     language is mapped in a :py:obj:`custom field
-    <searx.enginelib.traits.EngineTraits.custom>` (``wiki_netloc``).  Depending
+    <zhensa.enginelib.traits.EngineTraits.custom>` (``wiki_netloc``).  Depending
     on the location, the ``title`` argument in the request is translated.
 
     .. code:: python

@@ -344,7 +344,7 @@ class WindSpeed:
 
     .. hint::
 
-       Working with unit ``Bft`` (:py:obj:`searx.wikidata_units.Beaufort`) will
+       Working with unit ``Bft`` (:py:obj:`zhensa.wikidata_units.Beaufort`) will
        throw a :py:obj:`ValueError` for egative values or values greater 16 Bft
        (55.6 m/s)
     """
@@ -539,7 +539,7 @@ WeatherConditionType = typing.Literal[
 taken from a collaboration between NRK and Norwegian Meteorological Institute
 (yr.no_).  `Weather symbols`_ can be assigned to the identifiers
 (weathericons_) and they are included in the translation (i18n/l10n
-:origin:`searx/zhensa.msg`).
+:origin:`zhensa/zhensa.msg`).
 
 .. _yr.no: https://www.yr.no/en
 .. _Weather symbols: https://github.com/nrkno/yr-weather-symbols

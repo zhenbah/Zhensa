@@ -3,7 +3,7 @@ Zhensa
 =======
 
 Zhensa development has been started in the middle of 2021 as a fork of the
-searx project.  Since it beginning its a rolling release pulled from Zhensa's
+zhensa project.  Since it beginning its a rolling release pulled from Zhensa's
 master branch:
 
 - The CHANGELOG_ is replaced by the commit history of the master branch.

@@ -11,7 +11,7 @@ Configured Engines
    - :ref:`settings engines`
    - :ref:`general engine configuration`
 
-.. jinja:: searx
+.. jinja:: zhensa
 
    Zhensa supports {{engines | length}} search engines of which
    {{enabled_engine_count}} are enabled by default.
@@ -27,7 +27,7 @@ Configured Engines
    :local:
    :backlinks: entry
 
-.. jinja:: searx
+.. jinja:: zhensa
 
    {% for category, engines in categories_as_tabs.items() %}
 
@@ -67,10 +67,10 @@ Configured Engines
           ({{mod.about.language | upper}})
           {%- endif %}
         - ``!{{mod.shortcut}}``
-        - {%- if 'searx.engines.' + mod.__name__ in documented_modules %}
-          :py:mod:`~searx.engines.{{mod.__name__}}`
+        - {%- if 'zhensa.engines.' + mod.__name__ in documented_modules %}
+          :py:mod:`~zhensa.engines.{{mod.__name__}}`
           {%- else %}
-          :origin:`{{mod.__name__}} <searx/engines/{{mod.__name__}}.py>`
+          :origin:`{{mod.__name__}} <zhensa/engines/{{mod.__name__}}.py>`
           {%- endif %}
         - {{(mod.disabled and "y") or ""}}
         - {{mod.timeout}}

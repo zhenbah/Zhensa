@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # SPDX-License-Identifier: MIT
-"""Update locale names in :origin:`searx/data/locales.json` used by
-:ref:`searx.locales`
+"""Update locale names in :origin:`zhensa/data/locales.json` used by
+:ref:`zhensa.locales`
 
-- :py:obj:`searx.locales.RTL_LOCALES`
-- :py:obj:`searx.locales.LOCALE_NAMES`
+- :py:obj:`zhensa.locales.RTL_LOCALES`
+- :py:obj:`zhensa.locales.LOCALE_NAMES`
 """
 # pylint: disable=invalid-name
 

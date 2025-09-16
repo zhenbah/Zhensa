@@ -61,7 +61,7 @@ working tree and release a ``make install`` to get a virtualenv with a
    $ make install
    PYENV     [virtualenv] installing ./requirements*.txt into local/py3
    ...
-   PYENV     [install] pip install --use-pep517 --no-build-isolation -e 'searx[test]'
+   PYENV     [install] pip install --use-pep517 --no-build-isolation -e 'zhensa[test]'
    ...
    Successfully installed zhensa-2023.7.19+a446dea1b
 
@@ -78,7 +78,7 @@ the check fails if you edit the requirements listed in
    ...
    PYENV     [virtualenv] installing ./requirements*.txt into local/py3
    ...
-   PYENV     [install] pip install --use-pep517 --no-build-isolation -e 'searx[test]'
+   PYENV     [install] pip install --use-pep517 --no-build-isolation -e 'zhensa[test]'
    ...
    Successfully installed zhensa-2023.7.19+a446dea1b
 
@@ -99,7 +99,7 @@ Node.js environment (``make node.env``)
 .. _nvm: https://github.com/nvm-sh
 .. _npm: https://www.npmjs.com/
 
-.. jinja:: searx
+.. jinja:: zhensa
 
    Node.js_ version {{version.node}} or higher is required to build the themes.
    If the requirement is not met, the build chain uses nvm_ (Node Version
@@ -170,7 +170,7 @@ Install latest Node.js_ locally (uses nvm_)::
 ============
 
 To get up a running a developer instance simply call ``make run``.  This enables
-*debug* option in :origin:`searx/settings.yml`, starts a ``./searx/webapp.py``
+*debug* option in :origin:`zhensa/settings.yml`, starts a ``./zhensa/webapp.py``
 instance and opens the URL in your favorite WEB browser (:man:`xdg-open`)::
 
    $ make run

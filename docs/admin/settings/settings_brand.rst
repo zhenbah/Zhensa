@@ -9,7 +9,7 @@
    brand:
      issue_url: https://github.com/zhensa/zhensa/issues
      docs_url: https://docs.zhensa.org
-     public_instances: https://searx.space
+     public_instances: https://zhensa.space
      wiki_url: https://github.com/zhensa/zhensa/wiki
 
 ``issue_url`` :
@@ -19,7 +19,7 @@
   If you host your own documentation change this URL.
 
 ``public_instances`` :
-  If you host your own https://searx.space change this URL.
+  If you host your own https://zhensa.space change this URL.
 
 ``wiki_url`` :
   Link to your wiki (or ``false``)

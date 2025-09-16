@@ -170,7 +170,7 @@ SCHEMA: dict[str, t.Any] = {
         'issue_url': SettingsValue(str, 'https://github.com/zhensa/zhensa/issues'),
         'new_issue_url': SettingsValue(str, 'https://github.com/zhensa/zhensa/issues/new'),
         'docs_url': SettingsValue(str, 'https://docs.zhensa.org'),
-        'public_instances': SettingsValue((False, str), 'https://searx.space'),
+        'public_instances': SettingsValue((False, str), 'https://zhensa.space'),
         'wiki_url': SettingsValue((False, str), 'https://github.com/zhensa/zhensa/wiki'),
         'custom': SettingsValue(dict, {'links': {}}),
     },

@@ -18,7 +18,7 @@ os.environ['ZHENSA_DEBUG'] = '1'
 
 import zhensa
 
-OLD_SETTING = '/etc/searx/settings.yml'
+OLD_SETTING = '/etc/zhensa/settings.yml'
 
 if os.path.isfile(OLD_SETTING):
     msg = (

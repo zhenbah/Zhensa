@@ -7,16 +7,16 @@ import lxml.etree
 from lxml import html
 from parameterized.parameterized import parameterized
 
-from zhensa.exceptions import ZhensaXPathSyntaxException, SearxEngineXPathException
+from zhensa.exceptions import ZhensaXPathSyntaxException, zhensaEngineXPathException
 from zhensa import utils
-from tests import SearxTestCase
+from tests import zhensaTestCase
 
 
 def random_string(length, choices=string.ascii_letters):
     return ''.join(random.choice(choices) for _ in range(length))
 
 
-class TestUtils(SearxTestCase):
+class TestUtils(zhensaTestCase):
 
     def test_gen_useragent(self):
         self.assertIsInstance(utils.gen_useragent(), str)
@@ -115,7 +115,7 @@ class TestUtils(SearxTestCase):
         self.assertEqual(utils.html_to_text(html_str), "Test text")
 
 
-class TestXPathUtils(SearxTestCase):  # pylint: disable=missing-class-docstring
+class TestXPathUtils(zhensaTestCase):  # pylint: disable=missing-class-docstring
 
     TEST_DOC = """<ul>
         <li>Text in <b>bold</b> and <i>italic</i> </li>
@@ -148,7 +148,7 @@ class TestXPathUtils(SearxTestCase):  # pylint: disable=missing-class-docstring
         doc = html.fromstring(TestXPathUtils.TEST_DOC)
 
         invalid_function_xpath = 'int(//a)'
-        with self.assertRaises(SearxEngineXPathException) as context:
+        with self.assertRaises(zhensaEngineXPathException) as context:
             utils.eval_xpath(doc, invalid_function_xpath)
 
         self.assertEqual(context.exception.message, 'Unregistered function')
@@ -168,7 +168,7 @@ class TestXPathUtils(SearxTestCase):  # pylint: disable=missing-class-docstring
         self.assertEqual(utils.eval_xpath_list(doc, '//i/text()'), ['italic'])
 
         # check min_len parameter
-        with self.assertRaises(SearxEngineXPathException) as context:
+        with self.assertRaises(zhensaEngineXPathException) as context:
             utils.eval_xpath_list(doc, '//p', min_len=1)
         self.assertEqual(context.exception.message, 'len(xpath_str) < 1')
         self.assertEqual(context.exception.xpath_str, '//p')
@@ -186,12 +186,12 @@ class TestXPathUtils(SearxTestCase):  # pylint: disable=missing-class-docstring
         self.assertIsNone(utils.eval_xpath_getindex(doc, '//i/text()', 1, default=None))
 
         # index not found
-        with self.assertRaises(SearxEngineXPathException) as context:
+        with self.assertRaises(zhensaEngineXPathException) as context:
             utils.eval_xpath_getindex(doc, '//i/text()', 1)
         self.assertEqual(context.exception.message, 'index 1 not found')
 
         # not a list
-        with self.assertRaises(SearxEngineXPathException) as context:
+        with self.assertRaises(zhensaEngineXPathException) as context:
             utils.eval_xpath_getindex(doc, 'count(//i)', 1)
         self.assertEqual(context.exception.message, 'the result is not a list')
 

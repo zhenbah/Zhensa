@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: MIT
 """Typification of the *code* results.  Results of this type are rendered in
-the :origin:`code.html <searx/templates/simple/result_templates/code.html>`
+the :origin:`code.html <zhensa/templates/simple/result_templates/code.html>`
 template.  For highlighting the code passages, Pygments_ is used.
 
 .. _Pygments:  https://pygments.org

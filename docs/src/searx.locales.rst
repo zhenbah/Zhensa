@@ -1,4 +1,4 @@
-.. _searx.locales:
+.. _zhensa.locales:
 
 =======
 Locales
@@ -9,7 +9,7 @@ Locales
    :local:
    :backlinks: entry
 
-.. automodule:: searx.locales
+.. automodule:: zhensa.locales
    :members:
 
 

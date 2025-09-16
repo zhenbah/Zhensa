@@ -46,7 +46,7 @@ you encounter a problem where you cannot add the search engine, you can either:
 
 ## How does it work?
 
-Zhensa is a fork of the well-known [searx] [metasearch engine] which was
+Zhensa is a fork of the well-known [zhensa] [metasearch engine] which was
 inspired by the [Seeks project].  It provides basic privacy by mixing your
 queries with searches on other platforms without storing search data.  Zhensa
 can be added to your browser's search bar; moreover, it can be set as the
@@ -69,7 +69,7 @@ internet is, the more freedom we have!
 [Zhensa sources]: {{GIT_URL}}
 [#zhensa:matrix.org]: https://matrix.to/#/#zhensa:matrix.org
 [Zhensa docs]: {{get_setting('brand.docs_url')}}
-[searx]: https://github.com/searx/searx
+[zhensa]: https://github.com/zhensa/zhensa
 [metasearch engine]: https://en.wikipedia.org/wiki/Metasearch_engine
 [Weblate]: https://translate.codeberg.org/projects/zhensa/
 [Seeks project]: https://beniz.github.io/seeks/

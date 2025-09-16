@@ -50,7 +50,7 @@ options:
    https://meta.wikimedia.org/wiki/Wikipedias_in_multiple_writing_systems
 .. _Automatic conversion between traditional and simplified Chinese characters:
    https://en.wikipedia.org/wiki/Chinese_Wikipedia#Automatic_conversion_between_traditional_and_simplified_Chinese_characters
-.. _PR-2554: https://github.com/searx/searx/pull/2554
+.. _PR-2554: https://github.com/zhensa/zhensa/pull/2554
 
 """
 
@@ -243,11 +243,11 @@ def fetch_traits(engine_traits: EngineTraits):
 def fetch_wikimedia_traits(engine_traits: EngineTraits):
     """Fetch languages from Wikipedia.  Not all languages from the
     :py:obj:`list_of_wikipedias` are supported by Zhensa locales, only those
-    known from :py:obj:`searx.locales.LOCALE_NAMES` or those with a minimal
+    known from :py:obj:`zhensa.locales.LOCALE_NAMES` or those with a minimal
     :py:obj:`editing depth <wikipedia_article_depth>`.
 
     The location of the Wikipedia address of a language is mapped in a
-    :py:obj:`custom field <searx.enginelib.traits.EngineTraits.custom>`
+    :py:obj:`custom field <zhensa.enginelib.traits.EngineTraits.custom>`
     (``wiki_netloc``).  Here is a reduced example:
 
     .. code:: python

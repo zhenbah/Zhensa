@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: MIT
 """SepiaSearch uses the same languages as :py:obj:`Peertube
-<searx.engines.peertube>` and the response is identical to the response from the
+<zhensa.engines.peertube>` and the response is identical to the response from the
 peertube engines.
 
 """

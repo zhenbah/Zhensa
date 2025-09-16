@@ -12,10 +12,10 @@ from zhensa.result_types._base import MainResult
 
 from zhensa.results import Timing
 from zhensa.preferences import Preferences
-from tests import SearxTestCase
+from tests import zhensaTestCase
 
 
-class ViewsTestCase(SearxTestCase):  # pylint: disable=too-many-public-methods
+class ViewsTestCase(zhensaTestCase):  # pylint: disable=too-many-public-methods
 
     def setUp(self):
         super().setUp()
@@ -24,7 +24,7 @@ class ViewsTestCase(SearxTestCase):  # pylint: disable=too-many-public-methods
         def dummy(*args, **kwargs):  # pylint: disable=unused-argument
             pass
 
-        self.setattr4test(searx.search.processors, 'initialize_processor', dummy)
+        self.setattr4test(zhensa.search.processors, 'initialize_processor', dummy)
 
         # set some defaults
         test_results = [
@@ -65,7 +65,7 @@ class ViewsTestCase(SearxTestCase):  # pylint: disable=too-many-public-methods
             )
             search_self.search_query.locale = babel.Locale.parse("en-US", sep='-')
 
-        self.setattr4test(searx.search.Search, 'search', search_mock)
+        self.setattr4test(zhensa.search.Search, 'search', search_mock)
 
         original_preferences_get_value = Preferences.get_value
 

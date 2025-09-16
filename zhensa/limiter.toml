@@ -45,5 +45,5 @@ pass_ip = [
 ]
 
 # Activate passlist of (hardcoded) IPs from the Zhensa organization,
-# e.g. `check.searx.space`.
+# e.g. `check.zhensa.space`.
 pass_zhensa_org = true

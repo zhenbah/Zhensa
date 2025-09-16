@@ -7,12 +7,12 @@ import mock
 from zhensa.engines import xpath
 from zhensa import logger
 
-from tests import SearxTestCase
+from tests import zhensaTestCase
 
 logger = logger.getChild('engines')
 
 
-class TestXpathEngine(SearxTestCase):
+class TestXpathEngine(zhensaTestCase):
     html = """
     <div>
         <div class="search_result">

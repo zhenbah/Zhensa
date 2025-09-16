@@ -3,10 +3,10 @@
 
 from parameterized.parameterized import parameterized
 from zhensa.query import RawTextQuery
-from tests import SearxTestCase
+from tests import zhensaTestCase
 
 
-class TestQuery(SearxTestCase):
+class TestQuery(zhensaTestCase):
 
     def test_simple_query(self):
         query_text = 'the query'
@@ -47,7 +47,7 @@ class TestQuery(SearxTestCase):
         self.assertEqual(query.getFullQuery(), '<8 another text')
 
 
-class TestLanguageParser(SearxTestCase):
+class TestLanguageParser(zhensaTestCase):
 
     def test_language_code(self):
         language = 'es-ES'
@@ -132,7 +132,7 @@ class TestLanguageParser(SearxTestCase):
         self.assertEqual(query.autocomplete_list, autocomplete_list)
 
 
-class TestTimeoutParser(SearxTestCase):
+class TestTimeoutParser(zhensaTestCase):
 
     @parameterized.expand(
         [
@@ -172,7 +172,7 @@ class TestTimeoutParser(SearxTestCase):
         self.assertEqual(query.autocomplete_list, ['<3', '<850'])
 
 
-class TestExternalBangParser(SearxTestCase):
+class TestExternalBangParser(zhensaTestCase):
 
     def test_external_bang(self):
         query_text = '!!ddg the query'
@@ -203,7 +203,7 @@ class TestExternalBangParser(SearxTestCase):
         self.assertEqual(query.get_autocomplete_full_query(a), a + ' the query')
 
 
-class TestBang(SearxTestCase):
+class TestBang(zhensaTestCase):
 
     SPECIFIC_BANGS = ['!dummy_engine', '!gd', '!general']
     THE_QUERY = 'the query'

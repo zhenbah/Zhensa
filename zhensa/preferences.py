@@ -339,7 +339,7 @@ class PluginsSetting(BooleanChoices):
 class ClientPref:
     """Container to assemble client prefferences and settings."""
 
-    # hint: searx.webapp.get_client_settings should be moved into this class
+    # hint: zhensa.webapp.get_client_settings should be moved into this class
 
     locale: babel.Locale | None
     """Locale preferred by the client."""

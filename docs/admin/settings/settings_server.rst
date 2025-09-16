@@ -26,7 +26,7 @@
 
 ``port`` & ``bind_address``: ``$ZHENSA_PORT`` & ``$ZHENSA_BIND_ADDRESS``
   Port number and *bind address* of the Zhensa web application if you run it
-  directly using ``python searx/webapp.py``.  Doesn't apply to a Zhensa
+  directly using ``python zhensa/webapp.py``.  Doesn't apply to a Zhensa
   services running behind a proxy and using socket communications.
 
 .. _server.secret_key:
@@ -46,7 +46,7 @@
   needed for local usage).  By set to ``true`` the following features are
   activated:
 
-  - :py:obj:`searx.botdetection.link_token` in the :ref:`limiter`
+  - :py:obj:`zhensa.botdetection.link_token` in the :ref:`limiter`
 
 .. _image_proxy:
 
@@ -73,4 +73,4 @@
 .. _HTTP headers: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
 
 ``default_http_headers`` :
-  Set additional `HTTP headers`_, see `#755 <https://github.com/searx/searx/issues/715>`__
+  Set additional `HTTP headers`_, see `#755 <https://github.com/zhensa/zhensa/issues/715>`__

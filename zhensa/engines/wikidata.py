@@ -810,7 +810,7 @@ def init(engine_settings=None):  # pylint: disable=unused-argument
 
 def fetch_traits(engine_traits: EngineTraits):
     """Uses languages evaluated from :py:obj:`wikipedia.fetch_wikimedia_traits
-    <searx.engines.wikipedia.fetch_wikimedia_traits>` and removes
+    <zhensa.engines.wikipedia.fetch_wikimedia_traits>` and removes
 
     - ``traits.custom['wiki_netloc']``: wikidata does not have net-locations for
       the languages and the list of all

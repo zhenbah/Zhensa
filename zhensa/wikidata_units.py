@@ -268,7 +268,7 @@ ORDER BY ?item DESC(?rank) ?symbol
 
 def fetch_units():
     """Fetch units from Wikidata.  Function is used to update persistence of
-    :py:obj:`searx.data.WIKIDATA_UNITS`."""
+    :py:obj:`zhensa.data.WIKIDATA_UNITS`."""
 
     results = collections.OrderedDict()
     response = wikidata.send_wikidata_query(SARQL_REQUEST)

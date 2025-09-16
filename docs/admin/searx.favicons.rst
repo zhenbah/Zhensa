@@ -142,13 +142,13 @@ by creating a :man:`crontab` entry for maintenance:
 
 .. code:: bash
 
-   $ python -m searx.favicons cache maintenance
+   $ python -m zhensa.favicons cache maintenance
 
 The following command can be used to display the state of the cache:
 
 .. code:: bash
 
-   $ python -m searx.favicons cache state
+   $ python -m zhensa.favicons cache state
 
 
 .. _favicon proxy setup:
@@ -200,7 +200,7 @@ following TOML configuration from the following YAML configuration:
 
    [favicons.proxy.resolver_map]
 
-   "duckduckgo" = "searx.favicons.resolvers.duckduckgo"
+   "duckduckgo" = "zhensa.favicons.resolvers.duckduckgo"
 
 If this automatism is not desired, then (and only then) a separate
 ``resolver_map`` must be created.  For example, to give the user two resolvers to
@@ -210,10 +210,10 @@ choose from, the following configuration could be used:
 
    [favicons.proxy.resolver_map]
 
-   "duckduckgo" = "searx.favicons.resolvers.duckduckgo"
-   "allesedv" = "searx.favicons.resolvers.allesedv"
-   # "google" = "searx.favicons.resolvers.google"
-   # "yandex" = "searx.favicons.resolvers.yandex"
+   "duckduckgo" = "zhensa.favicons.resolvers.duckduckgo"
+   "allesedv" = "zhensa.favicons.resolvers.allesedv"
+   # "google" = "zhensa.favicons.resolvers.google"
+   # "yandex" = "zhensa.favicons.resolvers.yandex"
 
 .. note::
 
@@ -228,10 +228,10 @@ In the following we list the resolvers available in the core of Zhensa, but via
 the FQN_ it is also possible to implement your own resolvers and integrate them
 into the *proxy*:
 
-- :py:obj:`searx.favicons.resolvers.duckduckgo`
-- :py:obj:`searx.favicons.resolvers.allesedv`
-- :py:obj:`searx.favicons.resolvers.google`
-- :py:obj:`searx.favicons.resolvers.yandex`
+- :py:obj:`zhensa.favicons.resolvers.duckduckgo`
+- :py:obj:`zhensa.favicons.resolvers.allesedv`
+- :py:obj:`zhensa.favicons.resolvers.google`
+- :py:obj:`zhensa.favicons.resolvers.yandex`
 
 
 

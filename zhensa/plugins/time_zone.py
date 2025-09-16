@@ -38,9 +38,9 @@ class SXNGPlugin(Plugin):
         )
 
     def post_search(self, request: "SXNG_Request", search: "SearchWithPlugins") -> EngineResults:
-        """The plugin uses the :py:obj:`searx.weather.GeoLocation` class, which
+        """The plugin uses the :py:obj:`zhensa.weather.GeoLocation` class, which
         is already implemented in the context of weather forecasts, to determine
-        the time zone. The :py:obj:`searx.weather.DateTime` class is used for
+        the time zone. The :py:obj:`zhensa.weather.DateTime` class is used for
         the localized display of date and time."""
 
         results = EngineResults()

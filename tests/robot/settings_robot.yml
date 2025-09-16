@@ -1,6 +1,6 @@
 general:
   debug: false
-  instance_name: "searx_test"
+  instance_name: "zhensa_test"
 
 brand:
   git_url: https://github.com/zhensa/zhensa
@@ -8,7 +8,7 @@ brand:
   issue_url: https://github.com/zhensa/zhensa/issues
   new_issue_url: https://github.com/zhensa/zhensa/issues/new
   docs_url: https://docs.zhensa.org
-  public_instances: https://searx.space
+  public_instances: https://zhensa.space
   wiki_url: https://github.com/zhensa/zhensa/wiki
 
 search:

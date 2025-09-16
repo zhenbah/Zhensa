@@ -68,9 +68,9 @@ def raise_for_httperror(resp: "SXNG_Response") -> None:
 
     Raises:
         requests.HTTPError: raise by resp.raise_for_status()
-        searx.exceptions.ZhensaEngineAccessDeniedException: raise when the HTTP status code is 402 or 403.
-        searx.exceptions.ZhensaEngineTooManyRequestsException: raise when the HTTP status code is 429.
-        searx.exceptions.ZhensaEngineCaptchaException: raise when if CATPCHA challenge is detected.
+        zhensa.exceptions.ZhensaEngineAccessDeniedException: raise when the HTTP status code is 402 or 403.
+        zhensa.exceptions.ZhensaEngineTooManyRequestsException: raise when the HTTP status code is 429.
+        zhensa.exceptions.ZhensaEngineCaptchaException: raise when if CATPCHA challenge is detected.
     """
     if resp.status_code and resp.status_code >= 400:
         raise_for_captcha(resp)

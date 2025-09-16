@@ -79,8 +79,8 @@ container.build() {
 
         # This is a git repository
         git update-index -q --refresh
-        python -m searx.version freeze
-        eval "$(python -m searx.version)"
+        python -m zhensa.version freeze
+        eval "$(python -m zhensa.version)"
 
         info_msg "Set \$DOCKER_TAG: $DOCKER_TAG"
         info_msg "Set \$GIT_URL: $GIT_URL"
@@ -102,7 +102,7 @@ container.build() {
 
         # shellcheck disable=SC2086
         "$container_engine" $params_build_builder \
-            --build-arg="TIMESTAMP_SETTINGS=$(git log -1 --format="%cd" --date=unix -- ./searx/settings.yml)" \
+            --build-arg="TIMESTAMP_SETTINGS=$(git log -1 --format="%cd" --date=unix -- ./zhensa/settings.yml)" \
             --tag="localhost/$CONTAINER_IMAGE_ORGANIZATION/$CONTAINER_IMAGE_NAME:builder" \
             --file="./container/builder.dockerfile" \
             .

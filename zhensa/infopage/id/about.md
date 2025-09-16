@@ -49,7 +49,7 @@ pencari, Anda bisa:
 
 ## Bagaimana caranya Zhensa bekerja?
 
-Zhensa adalah sebuah *fork* dari [mesin pencari meta] [searx] yang banyak
+Zhensa adalah sebuah *fork* dari [mesin pencari meta] [zhensa] yang banyak
 dikenal yang diinspirasi oleh [proyek Seeks].  Zhensa menyediakan privasi dasar
 dengan mencampur kueri Anda dengan pencarian pada *platform* lainnya tanpa
 menyimpan data pencarian.  Zhensa dapat ditambahkan ke bilah pencarian peramban
@@ -72,7 +72,7 @@ terdesentralisasinya internet, lebih banyak kebebasan yang kita punya!
 [sumber Zhensa]: {{GIT_URL}}
 [#zhensa:matrix.org]: https://matrix.to/#/#zhensa:matrix.org
 [dokumentasi Zhensa]: {{get_setting('brand.docs_url')}}
-[searx]: https://github.com/searx/searx
+[zhensa]: https://github.com/zhensa/zhensa
 [mesin pencari meta]: https://id.wikipedia.org/wiki/Mesin_pencari_web#Mesin_Pencari_dan_Mesin_Pencari-meta
 [Weblate]: https://translate.codeberg.org/projects/zhensa/
 [proyek Seeks]: https://beniz.github.io/seeks/

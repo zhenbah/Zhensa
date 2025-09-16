@@ -414,8 +414,8 @@ def render(template_name: str, **kwargs):
     # values from settings
     kwargs['search_formats'] = [x for x in settings['search']['formats'] if x != 'html']
     kwargs['instance_name'] = get_setting('general.instance_name')
-    kwargs['searx_version'] = VERSION_STRING
-    kwargs['searx_git_url'] = GIT_URL
+    kwargs['zhensa_version'] = VERSION_STRING
+    kwargs['zhensa_git_url'] = GIT_URL
     kwargs['enable_metrics'] = get_setting('general.enable_metrics')
     kwargs['get_setting'] = get_setting
     kwargs['get_pretty_url'] = get_pretty_url
@@ -679,7 +679,7 @@ def search():
         csv.stream.seek(0)
 
         response = Response(csv.stream.read(), mimetype='application/csv')
-        cont_disp = 'attachment;Filename=searx_-_{0}.csv'.format(search_query.query)
+        cont_disp = 'attachment;Filename=zhensa_-_{0}.csv'.format(search_query.query)
         response.headers.add('Content-Disposition', cont_disp)
         return response
 
@@ -840,7 +840,7 @@ def autocompleter():
             results.append(raw_text_query.get_autocomplete_full_query(autocomplete_text))
 
     if sxng_request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-        # the suggestion request comes from the searx search form
+        # the suggestion request comes from the zhensa search form
         suggestions = json.dumps(results)
         mimetype = 'application/json'
     else:
@@ -1173,7 +1173,7 @@ def stats():
         engine_stats = engine_stats,
         engine_reliabilities = engine_reliabilities,
         selected_engine_name = selected_engine_name,
-        searx_git_branch = GIT_BRANCH,
+        zhensa_git_branch = GIT_BRANCH,
         technical_report = technical_report,
         # fmt: on
     )

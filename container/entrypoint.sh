@@ -125,6 +125,6 @@ volume_handler "$CONFIG_PATH"
 volume_handler "$DATA_PATH"
 
 # Check for files
-config_handler "$ZHENSA_SETTINGS_PATH" "/usr/local/zhensa/searx/settings.yml"
+config_handler "$ZHENSA_SETTINGS_PATH" "/usr/local/zhensa/zhensa/settings.yml"
 
-exec /usr/local/zhensa/.venv/bin/granian searx.webapp:app
+exec /usr/local/zhensa/.venv/bin/granian zhensa.webapp:app

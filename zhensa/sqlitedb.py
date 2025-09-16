@@ -9,12 +9,12 @@
 
 Examplarical implementations based on :py:obj:`SQLiteAppl`:
 
-:py:obj:`searx.cache.ExpireCacheSQLite` :
+:py:obj:`zhensa.cache.ExpireCacheSQLite` :
   Cache that manages key/value pairs in a SQLite DB, in which the key/value
   pairs are deleted after an "expire" time.  This type of cache is used, for
-  example, for the engines, see :py:obj:`searx.enginelib.EngineCache`.
+  example, for the engines, see :py:obj:`zhensa.enginelib.EngineCache`.
 
-:py:obj:`searx.favicons.cache.FaviconCacheSQLite` :
+:py:obj:`zhensa.favicons.cache.FaviconCacheSQLite` :
   Favicon cache that manages the favicon BLOBs in a SQLite DB.
 
 ----

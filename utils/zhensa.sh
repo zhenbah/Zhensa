@@ -21,9 +21,9 @@ SERVICE_GROUP="zhensa"
 
 ZHENSA_SRC="${SERVICE_HOME}/zhensa-src"
 # shellcheck disable=SC2034
-ZHENSA_STATIC="${ZHENSA_SRC}/searx/static"
+ZHENSA_STATIC="${ZHENSA_SRC}/zhensa/static"
 
-ZHENSA_PYENV="${SERVICE_HOME}/searx-pyenv"
+ZHENSA_PYENV="${SERVICE_HOME}/zhensa-pyenv"
 ZHENSA_SETTINGS_PATH="/etc/zhensa/settings.yml"
 ZHENSA_UWSGI_APP="zhensa.ini"
 
@@ -655,7 +655,7 @@ zhensa.instance.localtest() {
     tee_stderr 0.1 <<EOF | sudo -H -u "${SERVICE_USER}" -i 2>&1 | prefix_stdout "$_service_prefix"
 export ZHENSA_SETTINGS_PATH="${ZHENSA_SETTINGS_PATH}"
 cd ${ZHENSA_SRC}
-timeout 10 python searx/webapp.py &
+timeout 10 python zhensa/webapp.py &
 sleep 3
 curl --location --verbose --head --insecure ${ZHENSA_INTERNAL_HTTP}
 EOF

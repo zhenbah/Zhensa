@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # SPDX-License-Identifier: MIT
-"""Fetch units from :origin:`searx/engines/wikidata.py` engine.
+"""Fetch units from :origin:`zhensa/engines/wikidata.py` engine.
 
-Output file: :origin:`searx/data/wikidata_units.json` (:origin:`CI Update data
+Output file: :origin:`zhensa/data/wikidata_units.json` (:origin:`CI Update data
 ...  <.github/workflows/data-update.yml>`).
 
 """

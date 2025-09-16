@@ -52,7 +52,7 @@ vous ne pouvez pas ajouter un moteur de recherche, veuillez :
 
 ## Comment ça marche ?
 
-Zhensa est une reprise logicielle du projet [searx] [Métamoteur],
+Zhensa est une reprise logicielle du projet [zhensa] [Métamoteur],
 lui-même inspiré du [projet Seeks]. Il assure la confidentialité en
 mélangeant vos recherches vers d'autres plateformes sans stocker aucune
 données de recherche. Zhensa peut être ajouté à la barre de recherche
@@ -77,7 +77,7 @@ libre. Plus Internet sera décentralisé, plus nous aurons de liberté !
 [dépôt de sources]: {{GIT_URL}}
 [#zhensa:matrix.org]: https://matrix.to/#/#zhensa:matrix.org
 [projet Zhensa]: {{get_setting('brand.docs_url')}}
-[searx]: https://github.com/searx/searx
+[zhensa]: https://github.com/zhensa/zhensa
 [Métamoteur]: https://fr.wikipedia.org/wiki/M%C3%A9tamoteur
 [Weblate]: https://translate.codeberg.org/projects/zhensa/
 [projet Seeks]: https://beniz.github.io/seeks/

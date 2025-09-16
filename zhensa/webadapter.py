@@ -227,14 +227,14 @@ def get_search_query_from_webapp(
 
     The returned tuple consists of:
 
-    1. instance of :py:obj:`searx.search.SearchQuery`
-    2. instance of :py:obj:`searx.query.RawTextQuery`
-    3. list of :py:obj:`searx.search.EngineRef` instances
+    1. instance of :py:obj:`zhensa.search.SearchQuery`
+    2. instance of :py:obj:`zhensa.query.RawTextQuery`
+    3. list of :py:obj:`zhensa.search.EngineRef` instances
     4. string with the *selected locale* of the query
 
     About language/locale: if the client selects the alias ``auto`` the
     ``SearchQuery`` object is build up by the :py:obj:`detected language
-    <searx.utils.detect_language>`.  If language recognition does not have a
+    <zhensa.utils.detect_language>`.  If language recognition does not have a
     match the language preferred by the :py:obj:`Preferences.client` is used.
     If client does not have a preference, the default ``all`` is used.
 

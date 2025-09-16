@@ -1,8 +1,8 @@
-.. _searx.exceptions:
+.. _zhensa.exceptions:
 
 ==================
 Zhensa Exceptions
 ==================
 
-.. automodule:: searx.exceptions
+.. automodule:: zhensa.exceptions
   :members:

@@ -3,8 +3,8 @@
 
 STATIC_BUILD_COMMIT="[build] /static"
 STATIC_BUILT_PATHS=(
-    'searx/templates/simple/icons.html'
-    'searx/static/themes/simple'
+    'zhensa/templates/simple/icons.html'
+    'zhensa/static/themes/simple'
     'client/simple/package-lock.json'
 )
 

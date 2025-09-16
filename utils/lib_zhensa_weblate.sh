@@ -96,14 +96,14 @@ weblate.translations.commit() {
         weblate.to.translations
 
         # copy the changes to the master branch
-        cp -rv --preserve=mode,timestamps "${TRANSLATIONS_WORKTREE}/searx/translations" "searx"
+        cp -rv --preserve=mode,timestamps "${TRANSLATIONS_WORKTREE}/zhensa/translations" "zhensa"
 
         # compile translations
         build_msg BABEL 'compile translation catalogs into binary MO files'
         pybabel compile --statistics \
-            -d "searx/translations"
+            -d "zhensa/translations"
 
-        # update searx/data/translation_labels.json
+        # update zhensa/data/translation_labels.json
         data.locales
 
         # git add/commit (no push)
@@ -112,8 +112,8 @@ weblate.translations.commit() {
             git log --pretty=format:'%h - %as - %aN <%ae>' "${existing_commit_hash}..HEAD"
         )
         commit_message=$(echo -e "[l10n] update translations from Weblate\n\n${commit_body}")
-        git add searx/translations
-        git add searx/data/locales.json
+        git add zhensa/translations
+        git add zhensa/data/locales.json
         git commit -m "${commit_message}"
     )
     exitcode=$?
@@ -130,7 +130,7 @@ weblate.push.translations() {
     # (weblate).
 
     # In branch master of Zhensa (origin) check for meaningful changes in
-    # folder 'searx/translations', commit changes on branch 'translations' and
+    # folder 'zhensa/translations', commit changes on branch 'translations' and
     # at least, pull updated branches on Weblate's counterpart (weblate).
 
     # 1. Create git worktree ${TRANSLATIONS_WORKTREE} and checkout branch
@@ -143,7 +143,7 @@ weblate.push.translations() {
 
     local messages_pot diff_messages_pot last_commit_hash last_commit_detail \
         exitcode
-    messages_pot="${TRANSLATIONS_WORKTREE}/searx/translations/messages.pot"
+    messages_pot="${TRANSLATIONS_WORKTREE}/zhensa/translations/messages.pot"
     (
         set -e
         pyenv.activate
@@ -154,12 +154,12 @@ weblate.push.translations() {
         build_msg BABEL 'extract messages from source files and generate POT file'
         pybabel extract -F babel.cfg --project="Zhensa" --version="-" \
             -o "${messages_pot}" \
-            "searx/"
+            "zhensa/"
 
         # stop if there is no meaningful change in the master branch
         diff_messages_pot=$(
             cd "${TRANSLATIONS_WORKTREE}"
-            git diff -- "searx/translations/messages.pot"
+            git diff -- "zhensa/translations/messages.pot"
         )
         if ! echo "$diff_messages_pot" | grep -qE "[\+\-](msgid|msgstr)"; then
             build_msg BABEL 'no changes detected, exiting'
@@ -201,14 +201,14 @@ weblate.push.translations() {
         build_msg BABEL 'update existing message catalogs from POT file'
         pybabel update -N \
             -i "${messages_pot}" \
-            -d "${TRANSLATIONS_WORKTREE}/searx/translations"
+            -d "${TRANSLATIONS_WORKTREE}/zhensa/translations"
 
         # git add/commit/push
         last_commit_hash=$(git log -n1 --pretty=format:'%h')
         last_commit_detail=$(git log -n1 --pretty=format:'%h - %as - %aN <%ae>' "${last_commit_hash}")
 
         pushd "${TRANSLATIONS_WORKTREE}"
-        git add searx/translations
+        git add zhensa/translations
         git commit \
             -m "[translations] update messages.pot and messages.po files" \
             -m "From ${last_commit_detail}"

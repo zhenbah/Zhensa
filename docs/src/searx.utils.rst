@@ -1,8 +1,8 @@
-.. _searx.utils:
+.. _zhensa.utils:
 
 =================================
 Utility functions for the engines
 =================================
 
-.. automodule:: searx.utils
+.. automodule:: zhensa.utils
   :members:

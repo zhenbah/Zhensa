@@ -21,7 +21,7 @@ if typing.TYPE_CHECKING:
     from zhensa.search import SearchWithPlugins
     import flask
 
-log: logging.Logger = logging.getLogger("searx.plugins")
+log: logging.Logger = logging.getLogger("zhensa.plugins")
 
 
 @dataclass
@@ -156,8 +156,8 @@ class Plugin(abc.ABC):
 
         .. hint::
 
-           If :py:obj:`Result.url <searx.result_types._base.Result.url>` is modified,
-           :py:obj:`Result.parsed_url <searx.result_types._base.Result.parsed_url>` must
+           If :py:obj:`Result.url <zhensa.result_types._base.Result.url>` is modified,
+           :py:obj:`Result.parsed_url <zhensa.result_types._base.Result.parsed_url>` must
            be changed accordingly:
 
            .. code:: python
@@ -168,7 +168,7 @@ class Plugin(abc.ABC):
 
     def post_search(self, request: SXNG_Request, search: "SearchWithPlugins") -> None | Sequence[Result]:
         """Runs AFTER the search request.  Can return a list of
-        :py:obj:`Result <searx.result_types._base.Result>` objects to be added to the
+        :py:obj:`Result <zhensa.result_types._base.Result>` objects to be added to the
         final result list."""
         return
 
@@ -279,7 +279,7 @@ class PluginStorage:
 
     def post_search(self, request: SXNG_Request, search: "SearchWithPlugins") -> None:
         """Extend :py:obj:`search.result_container
-        <searx.results.ResultContainer`> with result items from plugins listed
+        <zhensa.results.ResultContainer`> with result items from plugins listed
         in :py:obj:`search.user_plugins <SearchWithPlugins.user_plugins>`.
         """
 
@@ -300,5 +300,5 @@ class PluginStorage:
                 plugin.log.exception("Exception while calling post_search")
                 continue
 
-            # In case of *plugins* prefix ``plugin:`` is set, see searx.result_types.Result
+            # In case of *plugins* prefix ``plugin:`` is set, see zhensa.result_types.Result
             search.result_container.extend(f"plugin: {plugin.id}", results)

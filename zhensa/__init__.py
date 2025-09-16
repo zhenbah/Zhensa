@@ -67,7 +67,7 @@ def init_settings():
         logger.warning(
             "Be aware you have activated features intended only for public instances. "
             "This force the usage of the limiter and link_token / "
-            "see https://docs.zhensa.org/admin/searx.limiter.html"
+            "see https://docs.zhensa.org/admin/zhensa.limiter.html"
         )
 
 

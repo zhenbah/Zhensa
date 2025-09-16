@@ -11,7 +11,7 @@ Further reading ..
 
 .. _configured plugins:
 
-.. jinja:: searx
+.. jinja:: zhensa
 
    .. flat-table:: Plugins configured at built time (defaults)
       :header-rows: 1

@@ -37,7 +37,7 @@ def _initial_resolver_map():
     if name:
         func = DEFAULT_RESOLVER_MAP.get(name)
         if func:
-            d = {name: f"searx.favicons.resolvers.{func.__name__}"}
+            d = {name: f"zhensa.favicons.resolvers.{func.__name__}"}
     return d
 
 
@@ -63,7 +63,7 @@ class FaviconProxyConfig(msgspec.Struct):
     """The resolver_map is a key / value dictionary where the key is the name of
     the resolver and the value is the fully qualifying name (fqn) of resolver's
     function (the callable).  The resolvers from the python module
-    :py:obj:`searx.favicons.resolver` are available by default."""
+    :py:obj:`zhensa.favicons.resolver` are available by default."""
 
     def get_resolver(self, name: str) -> Callable | None:
         """Returns the callable object (function) of the resolver with the

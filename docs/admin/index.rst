@@ -16,8 +16,8 @@ Administrator documentation
    installation-apache
    update-zhensa
    answer-captcha
-   searx.favicons
-   searx.limiter
+   zhensa.favicons
+   zhensa.limiter
    api
    architecture
    plugins

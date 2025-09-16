@@ -9,7 +9,7 @@ Bot Detection
    :local:
    :backlinks: entry
 
-.. automodule:: searx.botdetection
+.. automodule:: zhensa.botdetection
   :members:
 
 .. _botdetection ip_lists:
@@ -17,7 +17,7 @@ Bot Detection
 IP lists
 ========
 
-.. automodule:: searx.botdetection.ip_lists
+.. automodule:: zhensa.botdetection.ip_lists
   :members:
 
 
@@ -26,10 +26,10 @@ IP lists
 Rate limit
 ==========
 
-.. automodule:: searx.botdetection.ip_limit
+.. automodule:: zhensa.botdetection.ip_limit
   :members:
 
-.. automodule:: searx.botdetection.link_token
+.. automodule:: zhensa.botdetection.link_token
   :members:
 
 
@@ -38,22 +38,22 @@ Rate limit
 Probe HTTP headers
 ==================
 
-.. automodule:: searx.botdetection.http_accept
+.. automodule:: zhensa.botdetection.http_accept
   :members:
 
-.. automodule:: searx.botdetection.http_accept_encoding
+.. automodule:: zhensa.botdetection.http_accept_encoding
   :members:
 
-.. automodule:: searx.botdetection.http_accept_language
+.. automodule:: zhensa.botdetection.http_accept_language
   :members:
 
-.. automodule:: searx.botdetection.http_connection
+.. automodule:: zhensa.botdetection.http_connection
   :members:
 
-.. automodule:: searx.botdetection.http_user_agent
+.. automodule:: zhensa.botdetection.http_user_agent
   :members:
 
-.. automodule:: searx.botdetection.http_sec_fetch
+.. automodule:: zhensa.botdetection.http_sec_fetch
   :members:
 
 .. _botdetection config:
@@ -61,5 +61,5 @@ Probe HTTP headers
 Config
 ======
 
-.. automodule:: searx.botdetection.config
+.. automodule:: zhensa.botdetection.config
   :members:

@@ -11,7 +11,7 @@ from zhensa import logger
 
 __all__ = ["Histogram", "HistogramStorage", "CounterStorage"]
 
-logger = logger.getChild('searx.metrics')
+logger = logger.getChild('zhensa.metrics')
 
 
 class Histogram:  # pylint: disable=missing-class-docstring

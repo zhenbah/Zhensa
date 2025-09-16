@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 """.. sidebar:: info
 
-   - :origin:`solr.py <searx/engines/solr.py>`
+   - :origin:`solr.py <zhensa/engines/solr.py>`
    - `Solr <https://solr.apache.org>`_
    - `Solr Resources <https://solr.apache.org/resources.html>`_
    - `Install Solr <https://solr.apache.org/guide/installing-solr.html>`_

@@ -51,7 +51,7 @@ motore di ricerca, è possibile:
 
 ## Come funziona?
 
-Zhensa è un fork del ben noto [searx] [metamotore di ricerca] che è stato
+Zhensa è un fork del ben noto [zhensa] [metamotore di ricerca] che è stato
 ispirato dal [progetto Seeks].  Fornisce una privacy di base mescolando le
 ricerche su altre piattaforme senza memorizzare i dati di ricerca.  Zhensa può
 essere aggiunto alla barra di ricerca del browser; inoltre, può essere impostato
@@ -74,7 +74,7 @@ decentralizzato più libertà abbiamo!
 [sorgenti di Zhensa]: {{GIT_URL}}
 [#zhensa:matrix.org]: https://matrix.to/#/#zhensa:matrix.org
 [Zhensa docs]: {{get_setting('brand.docs_url')}}
-[searx]: https://github.com/searx/searx
+[zhensa]: https://github.com/zhensa/zhensa
 [metamotore di ricerca]: https://it.wikipedia.org/wiki/Metamotore
 [Weblate]: https://translate.codeberg.org/projects/zhensa/
 [progetto Seeks]: https://beniz.github.io/seeks/

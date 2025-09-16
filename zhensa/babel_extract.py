@@ -2,12 +2,12 @@
 """This module implements the :origin:`zhensa_msg <babel.cfg>` extractor to
 extract messages from:
 
-- :origin:`searx/zhensa.msg`
+- :origin:`zhensa/zhensa.msg`
 
 The ``zhensa.msg`` files are selected by Babel_, see Babel's configuration in
 :origin:`babel.cfg`::
 
-    zhensa_msg = searx.babel_extract.extract
+    zhensa_msg = zhensa.babel_extract.extract
     ...
     [zhensa_msg: **/zhensa.msg]
 

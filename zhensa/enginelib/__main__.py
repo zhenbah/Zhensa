@@ -2,13 +2,13 @@
 command, switch to the environment and run library module as a script::
 
    $ ./manage pyenv.cmd bash --norc --noprofile
-   (py3) python -m searx.enginelib --help
+   (py3) python -m zhensa.enginelib --help
 
 The following commands can be used for maintenance and introspection
 (development) of the engine cache::
 
-   (py3) python -m searx.enginelib cache state
-   (py3) python -m searx.enginelib cache maintenance
+   (py3) python -m zhensa.enginelib cache state
+   (py3) python -m zhensa.enginelib cache maintenance
 
 """
 

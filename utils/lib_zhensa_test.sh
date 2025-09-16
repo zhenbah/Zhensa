@@ -5,7 +5,7 @@ test.help() {
     cat <<EOF
 test.:
   yamllint  : lint YAML files (YAMLLINT_FILES)
-  pylint    : lint ./searx, ./zhensa_extra and ./tests
+  pylint    : lint ./zhensa, ./zhensa_extra and ./tests
   pyright   : check Python types
   black     : check Python code format
   shfmt     : check Shell script code format
@@ -33,17 +33,17 @@ test.pylint() {
         pyenv.activate
         PYLINT_OPTIONS="--rcfile .pylintrc"
 
-        build_msg TEST "[pylint] ./searx/engines"
+        build_msg TEST "[pylint] ./zhensa/engines"
         # shellcheck disable=SC2086
         pylint ${PYLINT_OPTIONS} ${PYLINT_VERBOSE} \
             --additional-builtins="traits,supported_languages,language_aliases,logger,categories" \
-            searx/engines
+            zhensa/engines
 
-        build_msg TEST "[pylint] ./searx ./zhensa_extra ./tests"
+        build_msg TEST "[pylint] ./zhensa ./zhensa_extra ./tests"
         # shellcheck disable=SC2086
         pylint ${PYLINT_OPTIONS} ${PYLINT_VERBOSE} \
-            --ignore=searx/engines \
-            searx searx/zhensa.msg \
+            --ignore=zhensa/engines \
+            zhensa zhensa/zhensa.msg \
             zhensa_extra zhensa_extra/docs_prebuild \
             tests
     )
@@ -105,7 +105,7 @@ test.coverage() {
         set -e
         pyenv.activate
         # shellcheck disable=SC2086
-        python -m nose2 ${TEST_NOSE2_VERBOSE} -C --log-capture --with-coverage --coverage searx -s tests/unit
+        python -m nose2 ${TEST_NOSE2_VERBOSE} -C --log-capture --with-coverage --coverage zhensa -s tests/unit
         coverage report
         coverage html
     )
@@ -137,7 +137,7 @@ test.pybabel() {
     TEST_BABEL_FOLDER="build/test/pybabel"
     build_msg TEST "[extract messages] pybabel"
     mkdir -p "${TEST_BABEL_FOLDER}"
-    pyenv.cmd pybabel extract -F babel.cfg -o "${TEST_BABEL_FOLDER}/messages.pot" searx
+    pyenv.cmd pybabel extract -F babel.cfg -o "${TEST_BABEL_FOLDER}/messages.pot" zhensa
 }
 
 test.clean() {

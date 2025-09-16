@@ -1,18 +1,18 @@
 # SPDX-License-Identifier: MIT
 # pylint: disable=missing-module-docstring,disable=missing-class-docstring,invalid-name
 
-"""Test some code from module :py:obj:`searx.locales`"""
+"""Test some code from module :py:obj:`zhensa.locales`"""
 
 from parameterized import parameterized
 from zhensa import locales
 from zhensa.sxng_locales import sxng_locales
-from tests import SearxTestCase
+from tests import zhensaTestCase
 
 
-class TestLocales(SearxTestCase):
+class TestLocales(zhensaTestCase):
     """Implemented tests:
 
-    - :py:obj:`searx.locales.match_locale`
+    - :py:obj:`zhensa.locales.match_locale`
     """
 
     @classmethod

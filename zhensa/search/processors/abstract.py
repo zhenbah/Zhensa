@@ -20,7 +20,7 @@ from zhensa.utils import get_engine_from_settings
 if t.TYPE_CHECKING:
     from zhensa.enginelib import Engine
 
-logger = logger.getChild('searx.search.processor')
+logger = logger.getChild('zhensa.search.processor')
 SUSPENDED_STATUS: dict[int | str, 'SuspendedStatus'] = {}
 
 

@@ -9,7 +9,7 @@ from zhensa.external_bang import (
     LEAF_KEY,
 )
 from zhensa.search.models import EngineRef, SearchQuery
-from tests import SearxTestCase
+from tests import zhensaTestCase
 
 
 TEST_DB = {
@@ -34,7 +34,7 @@ TEST_DB = {
 }
 
 
-class TestGetNode(SearxTestCase):
+class TestGetNode(zhensaTestCase):
 
     DB = {  # pylint:disable=invalid-name
         'trie': {
@@ -65,7 +65,7 @@ class TestGetNode(SearxTestCase):
         self.assertEqual(after, 's')
 
 
-class TestResolveBangDefinition(SearxTestCase):
+class TestResolveBangDefinition(zhensaTestCase):
 
     def test_https(self):
         url, rank = resolve_bang_definition('//example.com/' + chr(2) + chr(1) + '42', 'query')
@@ -78,7 +78,7 @@ class TestResolveBangDefinition(SearxTestCase):
         self.assertEqual(rank, 0)
 
 
-class TestGetBangDefinitionAndAutocomplete(SearxTestCase):
+class TestGetBangDefinitionAndAutocomplete(zhensaTestCase):
 
     def test_found(self):
         bang_definition, new_autocomplete = get_bang_definition_and_autocomplete('exam', external_bangs_db=TEST_DB)
@@ -111,7 +111,7 @@ class TestGetBangDefinitionAndAutocomplete(SearxTestCase):
         self.assertEqual(new_autocomplete, [])
 
 
-class TestExternalBangJson(SearxTestCase):
+class TestExternalBangJson(zhensaTestCase):
 
     def test_no_external_bang_query(self):
         result = get_bang_url(SearchQuery('test', engineref_list=[EngineRef('wikipedia', 'general')]))

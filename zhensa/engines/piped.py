@@ -35,7 +35,7 @@ named `piped` and are used by all piped engines
 Known Quirks
 ============
 
-The implementation to support :py:obj:`paging <searx.enginelib.Engine.paging>`
+The implementation to support :py:obj:`paging <zhensa.enginelib.Engine.paging>`
 is based on the *nextpage* method of Piped's REST API / the :py:obj:`frontend
 API <frontend_url>`.  This feature is *next page driven* and plays well with the
 :ref:`infinite_scroll <settings ui>` setting in Zhensa but it does not really

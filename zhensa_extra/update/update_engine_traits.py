@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # SPDX-License-Identifier: MIT
-"""Update :py:obj:`searx.enginelib.traits.EngineTraitsMap` and :origin:`searx/languages.py`
+"""Update :py:obj:`zhensa.enginelib.traits.EngineTraitsMap` and :origin:`zhensa/languages.py`
 
-:py:obj:`searx.enginelib.traits.EngineTraitsMap.ENGINE_TRAITS_FILE`:
+:py:obj:`zhensa.enginelib.traits.EngineTraitsMap.ENGINE_TRAITS_FILE`:
   Persistence of engines traits, fetched from the engines.
 
-:origin:`searx/languages.py`
+:origin:`zhensa/languages.py`
   Is generated  from intersecting each engine's supported traits.
 
 The script :origin:`zhensa_extra/update/update_engine_traits.py` is called in

@@ -6,7 +6,7 @@
 
 .. danger::
 
-   Be warned, using the ``standalone_searx.py`` won't give you privacy!
+   Be warned, using the ``standalone_zhensa.py`` won't give you privacy!
 
    On the contrary, this script behaves like a Zhensa server: your IP is
    exposed and tracked by all active engines (google, bing, qwant, ... ), with
@@ -21,18 +21,18 @@
 Getting categories without initiate the engine will only return `['general']`
 
 >>> import zhensa.engines
-... list(searx.engines.categories.keys())
+... list(zhensa.engines.categories.keys())
 ['general']
 >>> import zhensa.search
-... searx.search.initialize()
-... list(searx.engines.categories.keys())
+... zhensa.search.initialize()
+... list(zhensa.engines.categories.keys())
 ['general', 'it', 'science', 'images', 'news', 'videos', 'music', 'files', 'social media', 'map']
 
 Example to use this script:
 
 .. code::  bash
 
-    $ python3 zhensa_extra/standalone_searx.py rain
+    $ python3 zhensa_extra/standalone_zhensa.py rain
 
 """  # pylint: disable=line-too-long
 
@@ -54,10 +54,10 @@ EngineCategoriesVar = Optional[List[str]]
 
 def get_search_query(
     args: argparse.Namespace, engine_categories: EngineCategoriesVar = None
-) -> searx.search.models.SearchQuery:
+) -> zhensa.search.models.SearchQuery:
     """Get  search results for the query"""
     if engine_categories is None:
-        engine_categories = list(searx.engines.categories.keys())
+        engine_categories = list(zhensa.engines.categories.keys())
     try:
         category = args.category.decode('utf-8')
     except AttributeError:
@@ -69,10 +69,10 @@ def get_search_query(
         "language": args.lang,
         "time_range": args.timerange,
     }
-    preferences = searx.preferences.Preferences(['simple'], engine_categories, searx.engines.engines, [])
+    preferences = zhensa.preferences.Preferences(['simple'], engine_categories, zhensa.engines.engines, [])
     preferences.key_value_settings['safesearch'].parse(args.safesearch)
 
-    search_query = searx.webadapter.get_search_query_from_webapp(preferences, form)[0]
+    search_query = zhensa.webadapter.get_search_query_from_webapp(preferences, form)[0]
     return search_query
 
 
@@ -98,9 +98,9 @@ def json_serial(obj: Any) -> Any:
     raise TypeError("Type ({}) not serializable".format(type(obj)))
 
 
-def to_dict(search_query: searx.search.models.SearchQuery) -> Dict[str, Any]:
+def to_dict(search_query: zhensa.search.models.SearchQuery) -> Dict[str, Any]:
     """Get result from parsed arguments."""
-    result_container = searx.search.Search(search_query).search()
+    result_container = zhensa.search.Search(search_query).search()
     result_container_json = {
         "search": {
             "q": search_query.query,
@@ -131,7 +131,7 @@ def parse_argument(
     >>> import importlib
     ... # load module
     ... spec = importlib.util.spec_from_file_location(
-    ...     'utils.standalone_searx', 'utils/standalone_searx.py')
+    ...     'utils.standalone_zhensa', 'utils/standalone_zhensa.py')
     ... sas = importlib.util.module_from_spec(spec)
     ... spec.loader.exec_module(sas)
     ... sas.parse_argument()
@@ -142,8 +142,8 @@ def parse_argument(
     Namespace(category='general', lang='all', pageno=1, query='rain', safesearch='0', timerange=None)
     """  # noqa: E501
     if not category_choices:
-        category_choices = list(searx.engines.categories.keys())
-    parser = argparse.ArgumentParser(description='Standalone searx.')
+        category_choices = list(zhensa.engines.categories.keys())
+    parser = argparse.ArgumentParser(description='Standalone zhensa.')
     parser.add_argument('query', type=str, help='Text query')
     parser.add_argument(
         '--category', type=str, nargs='?', choices=category_choices, default='general', help='Search category'
@@ -165,14 +165,14 @@ def parse_argument(
 
 
 if __name__ == '__main__':
-    settings_engines = searx.settings['engines']
-    searx.search.load_engines(settings_engines)
-    engine_cs = list(searx.engines.categories.keys())
+    settings_engines = zhensa.settings['engines']
+    zhensa.search.load_engines(settings_engines)
+    engine_cs = list(zhensa.engines.categories.keys())
     prog_args = parse_argument(category_choices=engine_cs)
-    searx.search.initialize_network(settings_engines, searx.settings['outgoing'])
-    searx.search.check_network_configuration()
-    searx.search.initialize_metrics([engine['name'] for engine in settings_engines])
-    searx.search.initialize_processors(settings_engines)
+    zhensa.search.initialize_network(settings_engines, zhensa.settings['outgoing'])
+    zhensa.search.check_network_configuration()
+    zhensa.search.initialize_metrics([engine['name'] for engine in settings_engines])
+    zhensa.search.initialize_processors(settings_engines)
     search_q = get_search_query(prog_args, engine_categories=engine_cs)
     res_dict = to_dict(search_q)
     sys.stdout.write(dumps(res_dict, sort_keys=True, indent=4, ensure_ascii=False, default=json_serial))

@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 """.. sidebar:: info
 
-   - :origin:`meilisearch.py <searx/engines/meilisearch.py>`
+   - :origin:`meilisearch.py <zhensa/engines/meilisearch.py>`
    - `MeiliSearch <https://www.meilisearch.com>`_
    - `MeiliSearch Documentation <https://docs.meilisearch.com/>`_
    - `Install MeiliSearch

@@ -1,9 +1,9 @@
 
-.. _standalone_searx.py:
+.. _standalone_zhensa.py:
 
 =====================================
-``zhensa_extra/standalone_searx.py``
+``zhensa_extra/standalone_zhensa.py``
 =====================================
 
-.. automodule:: zhensa_extra.standalone_searx
+.. automodule:: zhensa_extra.standalone_zhensa
   :members:

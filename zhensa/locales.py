@@ -4,21 +4,21 @@ Zhensa’s locale data
 =====================
 
 The variables :py:obj:`RTL_LOCALES` and :py:obj:`LOCALE_NAMES` are loaded from
-:origin:`searx/data/locales.json` / see :py:obj:`locales_initialize` and
+:origin:`zhensa/data/locales.json` / see :py:obj:`locales_initialize` and
 :ref:`update_locales.py`.
 
 .. hint::
 
    Whenever the value of :py:obj:`ADDITIONAL_TRANSLATIONS` or
    :py:obj:`LOCALE_BEST_MATCH` is modified, the
-   :origin:`searx/data/locales.json` needs to be rebuild::
+   :origin:`zhensa/data/locales.json` needs to be rebuild::
 
      ./manage data.locales
 
 Zhensa's locale codes
 ======================
 
-.. automodule:: searx.sxng_locales
+.. automodule:: zhensa.sxng_locales
    :members:
 
 
@@ -122,7 +122,7 @@ _TR_LOCALES: list[str] = []
 
 def get_translation_locales() -> list[str]:
     """Returns the list of translation locales (*underscore*).  The list is
-    generated from the translation folders in :origin:`searx/translations`"""
+    generated from the translation folders in :origin:`zhensa/translations`"""
 
     global _TR_LOCALES  # pylint:disable=global-statement
     if _TR_LOCALES:

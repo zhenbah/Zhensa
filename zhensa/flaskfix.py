@@ -46,7 +46,7 @@ class ReverseProxyPathFix:
             self.script_name = base_url.path
             if self.script_name.endswith('/'):
                 # remove trailing slash to avoid infinite redirect on the index
-                # see https://github.com/searx/searx/issues/2729
+                # see https://github.com/zhensa/zhensa/issues/2729
                 self.script_name = self.script_name[:-1]
             self.scheme = base_url.scheme
             self.server = base_url.netloc

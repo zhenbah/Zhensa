@@ -16,7 +16,7 @@ Translation
 
 .. sidebar:: |translated|
 
-   - :ref:`searx.babel_extract`
+   - :ref:`zhensa.babel_extract`
    - Weblate_
    - Zhensa `translations branch`_
    - Zhensa `Weblate repository`_

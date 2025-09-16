@@ -4,9 +4,9 @@ ARG CONTAINER_IMAGE_ORGANIZATION="zhensa"
 ARG CONTAINER_IMAGE_NAME="zhensa"
 
 COPY --chown=zhensa:zhensa --from=localhost/$CONTAINER_IMAGE_ORGANIZATION/$CONTAINER_IMAGE_NAME:builder /usr/local/zhensa/.venv/ ./.venv/
-COPY --chown=zhensa:zhensa --from=localhost/$CONTAINER_IMAGE_ORGANIZATION/$CONTAINER_IMAGE_NAME:builder /usr/local/zhensa/searx/ ./searx/
+COPY --chown=zhensa:zhensa --from=localhost/$CONTAINER_IMAGE_ORGANIZATION/$CONTAINER_IMAGE_NAME:builder /usr/local/zhensa/zhensa/ ./zhensa/
 COPY --chown=zhensa:zhensa ./container/ ./
-COPY --chown=zhensa:zhensa --from=localhost/$CONTAINER_IMAGE_ORGANIZATION/$CONTAINER_IMAGE_NAME:builder /usr/local/zhensa/version_frozen.py ./searx/
+COPY --chown=zhensa:zhensa --from=localhost/$CONTAINER_IMAGE_ORGANIZATION/$CONTAINER_IMAGE_NAME:builder /usr/local/zhensa/version_frozen.py ./zhensa/
 
 ARG CREATED="0001-01-01T00:00:00Z"
 ARG VERSION="unknown"

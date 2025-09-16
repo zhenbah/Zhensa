@@ -6,7 +6,7 @@ from copy import copy
 import zhensa.search
 from zhensa.search.models import SearchQuery, EngineRef
 from zhensa import settings
-from tests import SearxTestCase
+from tests import zhensaTestCase
 
 
 SAFESEARCH = 0
@@ -14,7 +14,7 @@ PAGENO = 1
 PUBLIC_ENGINE_NAME = "dummy engine"  # from the ./settings/test_settings.yml
 
 
-class SearchQueryTestCase(SearxTestCase):
+class SearchQueryTestCase(zhensaTestCase):
 
     def test_repr(self):
         s = SearchQuery('test', [EngineRef('bing', 'general')], 'all', 0, 1, '1', 5.0, 'g')
@@ -34,14 +34,14 @@ class SearchQueryTestCase(SearxTestCase):
         self.assertEqual(s, t)
 
 
-class SearchTestCase(SearxTestCase):
+class SearchTestCase(zhensaTestCase):
 
     def test_timeout_simple(self):
         settings['outgoing']['max_request_timeout'] = None
         search_query = SearchQuery(
             'test', [EngineRef(PUBLIC_ENGINE_NAME, 'general')], 'en-US', SAFESEARCH, PAGENO, None, None
         )
-        search = searx.search.Search(search_query)
+        search = zhensa.search.Search(search_query)
         with self.app.test_request_context('/search'):
             search.search()
         self.assertEqual(search.actual_timeout, 3.0)
@@ -51,7 +51,7 @@ class SearchTestCase(SearxTestCase):
         search_query = SearchQuery(
             'test', [EngineRef(PUBLIC_ENGINE_NAME, 'general')], 'en-US', SAFESEARCH, PAGENO, None, 5.0
         )
-        search = searx.search.Search(search_query)
+        search = zhensa.search.Search(search_query)
         with self.app.test_request_context('/search'):
             search.search()
         self.assertEqual(search.actual_timeout, 3.0)
@@ -61,7 +61,7 @@ class SearchTestCase(SearxTestCase):
         search_query = SearchQuery(
             'test', [EngineRef(PUBLIC_ENGINE_NAME, 'general')], 'en-US', SAFESEARCH, PAGENO, None, 1.0
         )
-        search = searx.search.Search(search_query)
+        search = zhensa.search.Search(search_query)
         with self.app.test_request_context('/search'):
             search.search()
         self.assertEqual(search.actual_timeout, 1.0)
@@ -71,7 +71,7 @@ class SearchTestCase(SearxTestCase):
         search_query = SearchQuery(
             'test', [EngineRef(PUBLIC_ENGINE_NAME, 'general')], 'en-US', SAFESEARCH, PAGENO, None, 5.0
         )
-        search = searx.search.Search(search_query)
+        search = zhensa.search.Search(search_query)
         with self.app.test_request_context('/search'):
             search.search()
         self.assertEqual(search.actual_timeout, 5.0)
@@ -81,7 +81,7 @@ class SearchTestCase(SearxTestCase):
         search_query = SearchQuery(
             'test', [EngineRef(PUBLIC_ENGINE_NAME, 'general')], 'en-US', SAFESEARCH, PAGENO, None, 15.0
         )
-        search = searx.search.Search(search_query)
+        search = zhensa.search.Search(search_query)
         with self.app.test_request_context('/search'):
             search.search()
         self.assertEqual(search.actual_timeout, 10.0)
@@ -97,7 +97,7 @@ class SearchTestCase(SearxTestCase):
             None,
             external_bang="yt",
         )
-        search = searx.search.Search(search_query)
+        search = zhensa.search.Search(search_query)
         results = search.search()
         # For checking if the user redirected with the youtube external bang
         self.assertIsNotNone(results.redirect_url)
@@ -113,7 +113,7 @@ class SearchTestCase(SearxTestCase):
             None,
         )
 
-        search = searx.search.Search(search_query)
+        search = zhensa.search.Search(search_query)
         with self.app.test_request_context('/search'):
             results = search.search()
         # This should not redirect

@@ -2,7 +2,7 @@
 """Implementations for loading configurations from YAML files.  This essentially
 includes the configuration of the (:ref:`Zhensa appl <zhensa settings.yml>`)
 server. The default configuration for the application server is loaded from the
-:origin:`DEFAULT_SETTINGS_FILE <searx/settings.yml>`.  This default
+:origin:`DEFAULT_SETTINGS_FILE <zhensa/settings.yml>`.  This default
 configuration can be completely replaced or :ref:`customized individually
 <use_default_settings.yml>` and the ``ZHENSA_SETTINGS_PATH`` environment
 variable can be used to set the location from which the local customizations are
@@ -34,7 +34,7 @@ zhensa_dir = os.path.abspath(os.path.dirname(__file__))
 
 SETTINGS_YAML = Path("settings.yml")
 DEFAULT_SETTINGS_FILE = Path(zhensa_dir) / SETTINGS_YAML
-"""The :origin:`searx/settings.yml` file with all the default settings."""
+"""The :origin:`zhensa/settings.yml` file with all the default settings."""
 
 
 def load_yaml(file_name: str | Path) -> SettingsType:
@@ -52,7 +52,7 @@ def get_yaml_cfg(file_name: str | Path) -> SettingsType:
     """Shortcut to load a YAML config from a file, located in the
 
     - :py:obj:`get_user_cfg_folder` or
-    - in the ``searx`` folder of the Zhensa installation
+    - in the ``zhensa`` folder of the Zhensa installation
     """
 
     folder = get_user_cfg_folder() or Path(zhensa_dir)

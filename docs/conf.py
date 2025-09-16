@@ -21,7 +21,7 @@ PRIVACYPOLICY_URL = get_setting('general.privacypolicy_url')
 CONTACT_URL = get_setting('general.contact_url')
 WIKI_URL = get_setting('brand.wiki_url')
 
-SOURCEDIR = Path(__file__).parent.parent / "searx"
+SOURCEDIR = Path(__file__).parent.parent / "zhensa"
 os.environ['SOURCEDIR'] = str(SOURCEDIR)
 
 # hint: sphinx.ext.viewcode won't highlight when 'highlight_language' [1] is set
@@ -46,25 +46,25 @@ import zhensa.webutils
 
 # import zhensa.webapp is needed to init the engines & plugins, to init a
 # (empty) secret_key is needed.
-searx.settings['server']['secret_key'] = ''
+zhensa.settings['server']['secret_key'] = ''
 import zhensa.webapp
 
-searx.engines.load_engines(searx.settings['engines'])
+zhensa.engines.load_engines(zhensa.settings['engines'])
 
 jinja_contexts = {
-    'searx': {
-        'engines': searx.engines.engines,
-        'plugins': searx.plugins.STORAGE,
+    'zhensa': {
+        'engines': zhensa.engines.engines,
+        'plugins': zhensa.plugins.STORAGE,
         'version': {
             'node': os.getenv('NODE_MINIMUM_VERSION')
         },
-        'enabled_engine_count': sum(not x.disabled for x in searx.engines.engines.values()),
-        'categories': searx.engines.categories,
-        'categories_as_tabs': {c: searx.engines.categories[c] for c in searx.settings['categories_as_tabs']},
+        'enabled_engine_count': sum(not x.disabled for x in zhensa.engines.engines.values()),
+        'categories': zhensa.engines.categories,
+        'categories_as_tabs': {c: zhensa.engines.categories[c] for c in zhensa.settings['categories_as_tabs']},
     },
 }
 jinja_filters = {
-    'group_engines_in_tab': searx.webutils.group_engines_in_tab,
+    'group_engines_in_tab': zhensa.webutils.group_engines_in_tab,
 }
 
 # Let the Jinja template in configured_engines.rst access documented_modules
@@ -81,7 +81,7 @@ def setup(app):
 
     def source_read(app, docname, source):
         if docname == ENGINES_DOCNAME:
-            jinja_contexts['searx']['documented_modules'] = app.env.domains['py'].modules
+            jinja_contexts['zhensa']['documented_modules'] = app.env.domains['py'].modules
 
     app.connect('env-before-read-docs', before_read_docs)
     app.connect('source-read', source_read)
@@ -92,7 +92,7 @@ extlinks = {}
 # upstream links
 extlinks['wiki'] = ('https://github.com/zhensa/zhensa/wiki/%s', ' %s')
 extlinks['pull'] = ('https://github.com/zhensa/zhensa/pull/%s', 'PR %s')
-extlinks['pull-searx'] = ('https://github.com/searx/searx/pull/%s', 'PR %s')
+extlinks['pull-zhensa'] = ('https://github.com/zhensa/zhensa/pull/%s', 'PR %s')
 
 # links to custom brand
 extlinks['origin'] = (GIT_URL + '/blob/' + GIT_BRANCH + '/%s', 'git://%s')

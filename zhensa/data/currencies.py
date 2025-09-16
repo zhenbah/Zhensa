@@ -31,7 +31,7 @@ class CurrenciesDB:
         #     in /tmp and will be rebuild during the reboot anyway
 
     def load(self):
-        log.debug("init searx.data.CURRENCIES")
+        log.debug("init zhensa.data.CURRENCIES")
         with open(self.json_file, encoding="utf-8") as f:
             data_dict = json.load(f)
         for key, value in data_dict["names"].items():

@@ -22,7 +22,7 @@ include a link to the fork source code.
 -->
 **How did you install Zhensa?**
 <!-- Did you install Zhensa using the official wiki or using zhensa-docker
-or manually by executing the searx/webapp.py file? -->
+or manually by executing the zhensa/webapp.py file? -->
 **What happened?**
 <!-- A clear and concise description of what the bug is. -->
 

@@ -4,5 +4,5 @@
 Valkey DB
 ==========
 
-.. automodule:: searx.valkeydb
+.. automodule:: zhensa.valkeydb
   :members:

@@ -86,7 +86,7 @@ def __getattr__(name: str) -> t.Any:
     if data is not None:
         return data
 
-    log.debug("init searx.data.%s", name)
+    log.debug("init zhensa.data.%s", name)
 
     with open(data_dir / data_json_files[name], encoding='utf-8') as f:
         lazy_globals[name] = json.load(f)
@@ -100,7 +100,7 @@ def ahmia_blacklist_loader() -> list[str]:
 
       zhensa_extra/update/update_ahmia_blacklist.py
 
-    This function is used by :py:mod:`searx.plugins.ahmia_filter`.
+    This function is used by :py:mod:`zhensa.plugins.ahmia_filter`.
 
     """
     with open(data_dir / 'ahmia_blacklist.txt', encoding='utf-8') as f:

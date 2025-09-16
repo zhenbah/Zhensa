@@ -1,4 +1,4 @@
-zhensa is a fork from `searx <https://github.com/searx/searx>`_ and is
+zhensa is a fork from `zhensa <https://github.com/zhensa/zhensa>`_ and is
 maintained by Markus Heiser (`@return42 <https://github.com/return42>`_)
 
 People who have submitted patches/translations, reported bugs, consulted

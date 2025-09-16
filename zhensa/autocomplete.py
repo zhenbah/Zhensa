@@ -106,7 +106,7 @@ def duckduckgo(query: str, sxng_locale: str) -> list[str]:
 
 def google_complete(query: str, sxng_locale: str) -> list[str]:
     """Autocomplete from Google.  Supports Google's languages and subdomains
-    (:py:obj:`searx.engines.google.get_google_info`) by using the async REST
+    (:py:obj:`zhensa.engines.google.get_google_info`) by using the async REST
     API::
 
         https://{subdomain}/complete/search?{args}

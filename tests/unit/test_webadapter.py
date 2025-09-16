@@ -8,23 +8,23 @@ from zhensa.preferences import Preferences
 from zhensa.search.models import EngineRef
 from zhensa.webadapter import validate_engineref_list
 
-from tests import SearxTestCase
+from tests import zhensaTestCase
 
 PRIVATE_ENGINE_NAME = "dummy private engine"  # from the ./settings/test_settings.yml
 SEARCHQUERY = [EngineRef(PRIVATE_ENGINE_NAME, "general")]
 
 
-class ValidateQueryCase(SearxTestCase):
+class ValidateQueryCase(zhensaTestCase):
 
     def test_without_token(self):
-        preferences = Preferences(['simple'], ['general'], engines, searx.plugins.STORAGE)
+        preferences = Preferences(['simple'], ['general'], engines, zhensa.plugins.STORAGE)
         valid, unknown, invalid_token = validate_engineref_list(SEARCHQUERY, preferences)
         self.assertEqual(len(valid), 0)
         self.assertEqual(len(unknown), 0)
         self.assertEqual(len(invalid_token), 1)
 
     def test_with_incorrect_token(self):
-        preferences_with_tokens = Preferences(['simple'], ['general'], engines, searx.plugins.STORAGE)
+        preferences_with_tokens = Preferences(['simple'], ['general'], engines, zhensa.plugins.STORAGE)
         preferences_with_tokens.parse_dict({'tokens': 'bad-token'})
         valid, unknown, invalid_token = validate_engineref_list(SEARCHQUERY, preferences_with_tokens)
         self.assertEqual(len(valid), 0)
@@ -32,7 +32,7 @@ class ValidateQueryCase(SearxTestCase):
         self.assertEqual(len(invalid_token), 1)
 
     def test_with_correct_token(self):
-        preferences_with_tokens = Preferences(['simple'], ['general'], engines, searx.plugins.STORAGE)
+        preferences_with_tokens = Preferences(['simple'], ['general'], engines, zhensa.plugins.STORAGE)
         preferences_with_tokens.parse_dict({'tokens': 'my-token'})
         valid, unknown, invalid_token = validate_engineref_list(SEARCHQUERY, preferences_with_tokens)
         self.assertEqual(len(valid), 1)

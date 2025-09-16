@@ -21,7 +21,7 @@ from zhensa.search.processors import EngineProcessor
 from zhensa.metrics import counter_inc
 
 
-logger = logger.getChild('searx.search.checker')
+logger = logger.getChild('zhensa.search.checker')
 
 HTML_TAGS = [
     # fmt: off

@@ -101,7 +101,7 @@ def get_google_info(params, eng_traits):
         a ``zhensa_locale`` key should be in the dictionary.
 
     :param eng_traits: Engine's traits fetched from google preferences
-        (:py:obj:`searx.enginelib.traits.EngineTraits`)
+        (:py:obj:`zhensa.enginelib.traits.EngineTraits`)
 
     :rtype: dict
     :returns:

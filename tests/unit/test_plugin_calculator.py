@@ -11,7 +11,7 @@ import zhensa.preferences
 from zhensa.extended_types import sxng_request
 from zhensa.result_types import Answer
 
-from tests import SearxTestCase
+from tests import zhensaTestCase
 from .test_utils import random_string
 from .test_plugins import do_post_search
 
@@ -20,16 +20,16 @@ from .test_plugins import do_post_search
 warnings.filterwarnings("once", category=DeprecationWarning)
 
 
-class PluginCalculator(SearxTestCase):
+class PluginCalculator(zhensaTestCase):
 
     def setUp(self):
         super().setUp()
         engines = {}
 
-        self.storage = searx.plugins.PluginStorage()
-        self.storage.load_settings({"searx.plugins.calculator.SXNGPlugin": {"active": True}})
+        self.storage = zhensa.plugins.PluginStorage()
+        self.storage.load_settings({"zhensa.plugins.calculator.SXNGPlugin": {"active": True}})
         self.storage.init(self.app)
-        self.pref = searx.preferences.Preferences(["simple"], ["general"], engines, self.storage)
+        self.pref = zhensa.preferences.Preferences(["simple"], ["general"], engines, self.storage)
         self.pref.parse_dict({"locale": "en"})
 
     def test_plugin_store_init(self):

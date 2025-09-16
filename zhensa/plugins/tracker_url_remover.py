@@ -18,7 +18,7 @@ if t.TYPE_CHECKING:
     from zhensa.plugins import PluginCfg
 
 
-log = logging.getLogger("searx.plugins.tracker_url_remover")
+log = logging.getLogger("zhensa.plugins.tracker_url_remover")
 
 
 @t.final

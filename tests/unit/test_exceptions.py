@@ -2,12 +2,12 @@
 # pylint: disable=missing-module-docstring,disable=missing-class-docstring,invalid-name
 
 from parameterized import parameterized
-from tests import SearxTestCase
+from tests import zhensaTestCase
 import zhensa.exceptions
 from zhensa import get_setting
 
 
-class TestExceptions(SearxTestCase):
+class TestExceptions(zhensaTestCase):
 
     @parameterized.expand(
         [

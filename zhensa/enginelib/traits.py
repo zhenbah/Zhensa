@@ -94,7 +94,7 @@ class EngineTraits:
         :param default: engine's default language
 
         The *best fits* rules are implemented in
-        :py:obj:`searx.locales.get_engine_locale`.  Except for the special value ``all``
+        :py:obj:`zhensa.locales.get_engine_locale`.  Except for the special value ``all``
         which is determined from :py:obj:`EngineTraits.all_locale`.
         """
         if zhensa_locale == 'all' and self.all_locale is not None:
@@ -110,7 +110,7 @@ class EngineTraits:
         :param default: engine's default region
 
         The *best fits* rules are implemented in
-        :py:obj:`searx.locales.get_engine_locale`.  Except for the special value ``all``
+        :py:obj:`zhensa.locales.get_engine_locale`.  Except for the special value ``all``
         which is determined from :py:obj:`EngineTraits.all_locale`.
         """
         if zhensa_locale == 'all' and self.all_locale is not None:
@@ -152,7 +152,7 @@ class EngineTraits:
     def set_traits(self, engine: "Engine | types.ModuleType"):
         """Set traits from self object in a :py:obj:`.Engine` namespace.
 
-        :param engine: engine instance build by :py:func:`searx.engines.load_engine`
+        :param engine: engine instance build by :py:func:`zhensa.engines.load_engine`
         """
 
         if self.data_type == 'traits_v1':
@@ -244,7 +244,7 @@ class EngineTraitsMap(dict[str, EngineTraits]):
     def set_traits(self, engine: "Engine | types.ModuleType"):
         """Set traits in a :py:obj:`Engine` namespace.
 
-        :param engine: engine instance build by :py:func:`searx.engines.load_engine`
+        :param engine: engine instance build by :py:func:`zhensa.engines.load_engine`
         """
 
         engine_traits = EngineTraits(data_type='traits_v1')

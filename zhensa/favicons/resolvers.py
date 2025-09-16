@@ -18,7 +18,7 @@ logger = logger.getChild('favicons.resolvers')
 
 
 def _req_args(**kwargs):
-    # add the request arguments from the searx.network
+    # add the request arguments from the zhensa.network
     d = {"raise_for_httperror": False}
     d.update(kwargs)
     return d

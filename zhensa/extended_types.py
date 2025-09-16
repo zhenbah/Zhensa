@@ -38,28 +38,28 @@ class SXNG_Request(flask.Request):
     """
 
     user_plugins: list[str]
-    """list of searx.plugins.Plugin.id (the id of the plugins)"""
+    """list of zhensa.plugins.Plugin.id (the id of the plugins)"""
 
-    preferences: "searx.preferences.Preferences"
+    preferences: "zhensa.preferences.Preferences"
     """The preferences of the request."""
 
     errors: list[str]
-    """A list of errors (translated text) added by :py:obj:`searx.webapp` in
+    """A list of errors (translated text) added by :py:obj:`zhensa.webapp` in
     case of errors."""
     # request.form is of type werkzeug.datastructures.ImmutableMultiDict
     # form: dict[str, str]
 
     start_time: float
     """Start time of the request, :py:obj:`timeit.default_timer` added by
-    :py:obj:`searx.webapp` to calculate the total time of the request."""
+    :py:obj:`zhensa.webapp` to calculate the total time of the request."""
 
     render_time: float
     """Duration of the rendering, calculated and added by
-    :py:obj:`searx.webapp`."""
+    :py:obj:`zhensa.webapp`."""
 
-    timings: list["searx.results.Timing"]
-    """A list of :py:obj:`searx.results.Timing` of the engines, calculatid in
-    and hold by :py:obj:`searx.results.ResultContainer.timings`."""
+    timings: list["zhensa.results.Timing"]
+    """A list of :py:obj:`zhensa.results.Timing` of the engines, calculatid in
+    and hold by :py:obj:`zhensa.results.ResultContainer.timings`."""
 
     remote_addr: str
 

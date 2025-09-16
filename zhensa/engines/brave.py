@@ -91,7 +91,7 @@ support any languages in its index.  The choice of available languages is very
 small (and its not clear to me where the difference in UI is when switching
 from en-us to en-ca or en-gb).
 
-In the :py:obj:`EngineTraits object <searx.enginelib.traits.EngineTraits>` the
+In the :py:obj:`EngineTraits object <zhensa.enginelib.traits.EngineTraits>` the
 UI languages are stored in a custom field named ``ui_lang``:
 
 .. code:: python

@@ -1,23 +1,23 @@
 # SPDX-License-Identifier: MIT
 """Implementations of the framework for the Zhensa engines.
 
-- :py:obj:`searx.enginelib.EngineCache`
-- :py:obj:`searx.enginelib.Engine`
-- :py:obj:`searx.enginelib.traits`
+- :py:obj:`zhensa.enginelib.EngineCache`
+- :py:obj:`zhensa.enginelib.Engine`
+- :py:obj:`zhensa.enginelib.traits`
 
 There is a command line for developer purposes and for deeper analysis.  Here is
 an example in which the command line is called in the development environment::
 
   $ ./manage pyenv.cmd bash --norc --noprofile
-  (py3) python -m searx.enginelib --help
+  (py3) python -m zhensa.enginelib --help
 
 .. hint::
 
    The long term goal is to modularize all implementations of the engine
    framework here in this Python package.  ToDo:
 
-   - move implementations of the :ref:`searx.engines loader` to a new module in
-     the :py:obj:`searx.enginelib` namespace.
+   - move implementations of the :ref:`zhensa.engines loader` to a new module in
+     the :py:obj:`zhensa.enginelib` namespace.
 
 -----
 
@@ -47,7 +47,7 @@ ENGINES_CACHE: ExpireCacheSQLite = ExpireCacheSQLite.build_cache(
         MAINTENANCE_PERIOD=60 * 60,  # 2h
     )
 )
-"""Global :py:obj:`searx.cache.ExpireCacheSQLite` instance where the cached
+"""Global :py:obj:`zhensa.cache.ExpireCacheSQLite` instance where the cached
 values from all engines are stored.  The `MAXHOLD_TIME` is 7 days and the
 `MAINTENANCE_PERIOD` is set to two hours."""
 
@@ -78,17 +78,17 @@ def maintenance(force: bool = True):
 class EngineCache:
     """Persistent (SQLite) key/value cache that deletes its values again after
     ``expire`` seconds (default/max: :py:obj:`MAXHOLD_TIME
-    <searx.cache.ExpireCacheCfg.MAXHOLD_TIME>`).  This class is a wrapper around
+    <zhensa.cache.ExpireCacheCfg.MAXHOLD_TIME>`).  This class is a wrapper around
     :py:obj:`ENGINES_CACHE` (:py:obj:`ExpireCacheSQLite
-    <searx.cache.ExpireCacheSQLite>`).
+    <zhensa.cache.ExpireCacheSQLite>`).
 
-    In the :origin:`searx/engines/demo_offline.py` engine you can find an
+    In the :origin:`zhensa/engines/demo_offline.py` engine you can find an
     exemplary implementation of such a cache other examples are implemented
     in:
 
-    - :origin:`searx/engines/radio_browser.py`
-    - :origin:`searx/engines/soundcloud.py`
-    - :origin:`searx/engines/startpage.py`
+    - :origin:`zhensa/engines/radio_browser.py`
+    - :origin:`zhensa/engines/soundcloud.py`
+    - :origin:`zhensa/engines/startpage.py`
 
     .. code: python
 
@@ -111,7 +111,7 @@ class EngineCache:
     show cache state::
 
         $ ./manage pyenv.cmd bash --norc --noprofile
-        (py3) python -m searx.enginelib cache state
+        (py3) python -m zhensa.enginelib cache state
 
         cache tables and key/values
         ===========================
@@ -190,7 +190,7 @@ class Engine(abc.ABC):  # pylint: disable=too-few-public-methods
     # Common options in the engine module
 
     engine_type: str
-    """Type of the engine (:ref:`searx.search.processors`)"""
+    """Type of the engine (:ref:`zhensa.search.processors`)"""
 
     paging: bool
     """Engine supports multiple pages."""
@@ -243,7 +243,7 @@ class Engine(abc.ABC):  # pylint: disable=too-few-public-methods
 
     engine: str
     """Name of the python file used to handle requests and responses to and from
-    this search engine (file name from :origin:`searx/engines` without
+    this search engine (file name from :origin:`zhensa/engines` without
     ``.py``)."""
 
     enable_http: bool

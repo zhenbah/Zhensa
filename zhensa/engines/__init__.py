@@ -161,8 +161,8 @@ def set_loggers(engine: "Engine|types.ModuleType", engine_name: str):
     modules = sys.modules.copy()
     for module_name, module in modules.items():
         if (
-            module_name.startswith("searx.engines")
-            and module_name != "searx.engines.__init__"
+            module_name.startswith("zhensa.engines")
+            and module_name != "zhensa.engines.__init__"
             and not hasattr(module, "logger")
         ):
             module_engine_name = module_name.split(".")[-1]

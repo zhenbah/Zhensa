@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: MIT
 # pylint: disable=invalid-name
-"""Bing-Videos: description see :py:obj:`searx.engines.bing`.
+"""Bing-Videos: description see :py:obj:`zhensa.engines.bing`.
 """
 
 import json

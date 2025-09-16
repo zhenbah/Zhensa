@@ -8,7 +8,7 @@ Overview
 ========
 
 The OpenAlex engine integrates the `OpenAlex`_ Works API to return scientific paper
-results using the :origin:`paper.html <searx/templates/simple/result_templates/paper.html>`
+results using the :origin:`paper.html <zhensa/templates/simple/result_templates/paper.html>`
 template. It is an "online" JSON engine that uses the official public API and does
 not require an API key.
 
@@ -32,7 +32,7 @@ Key features
 Configuration
 =============
 
-Minimal example for :origin:`settings.yml <searx/settings.yml>`:
+Minimal example for :origin:`settings.yml <zhensa/settings.yml>`:
 
 .. code:: yaml
 
@@ -96,5 +96,5 @@ Troubleshooting
 Implementation
 ===============
 
-.. automodule:: searx.engines.openalex
+.. automodule:: zhensa.engines.openalex
    :members:

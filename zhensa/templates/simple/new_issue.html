@@ -6,10 +6,10 @@
     <textarea name="body" class="issue-hide">{{- '' -}}
 
 **Version of Zhensa, commit number if you are using on master branch and stipulate if you forked Zhensa**
-{% if searx_git_url and searx_git_url != 'unknow' %}
-Repository: {{ searx_git_url }}
-Branch: {{ searx_git_branch }}
-Version: {{ searx_version }}
+{% if zhensa_git_url and zhensa_git_url != 'unknow' %}
+Repository: {{ zhensa_git_url }}
+Branch: {{ zhensa_git_branch }}
+Version: {{ zhensa_version }}
 <!-- Check if these values are correct -->
 
 {% else %}
@@ -27,7 +27,7 @@ include a link to the fork source code.
 {% endif %}
 **How did you install Zhensa?**
 <!-- Did you install Zhensa using the official wiki or using zhensa-docker
-or manually by executing the searx/webapp.py file? -->
+or manually by executing the zhensa/webapp.py file? -->
 **What happened?**
 <!-- A clear and concise description of what the bug is. -->
 

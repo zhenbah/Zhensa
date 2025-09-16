@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT
-"""Bing-News: description see :py:obj:`searx.engines.bing`.
+"""Bing-News: description see :py:obj:`zhensa.engines.bing`.
 
 .. hint::
 

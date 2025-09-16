@@ -7,12 +7,12 @@ import mock
 from zhensa.engines import json_engine
 from zhensa import logger
 
-from tests import SearxTestCase
+from tests import zhensaTestCase
 
 logger = logger.getChild('engines')
 
 
-class TestJsonEngine(SearxTestCase):  # pylint: disable=missing-class-docstring
+class TestJsonEngine(zhensaTestCase):  # pylint: disable=missing-class-docstring
     json = """
     [
         {

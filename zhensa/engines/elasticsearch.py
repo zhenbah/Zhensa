@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 """.. sidebar:: info
 
-   - :origin:`elasticsearch.py <searx/engines/elasticsearch.py>`
+   - :origin:`elasticsearch.py <zhensa/engines/elasticsearch.py>`
    - `Elasticsearch <https://www.elastic.co/elasticsearch/>`_
    - `Elasticsearch Guide
      <https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html>`_
@@ -126,7 +126,7 @@ def _simple_query_string_query(query):
 def _term_query(query):
     """
     Accepts one term and the name of the field.
-    searx format: "key:value" e.g. city:berlin
+    zhensa format: "key:value" e.g. city:berlin
     REF: https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-term-query.html
     """
 
@@ -141,7 +141,7 @@ def _term_query(query):
 def _terms_query(query):
     """
     Accepts multiple terms and the name of the field.
-    searx format: "key:value1,value2" e.g. city:berlin,paris
+    zhensa format: "key:value1,value2" e.g. city:berlin,paris
     REF: https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-terms-query.html
     """
 

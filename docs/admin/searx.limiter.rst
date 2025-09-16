@@ -13,5 +13,5 @@ Limiter
    :local:
    :backlinks: entry
 
-.. automodule:: searx.limiter
+.. automodule:: zhensa.limiter
    :members:

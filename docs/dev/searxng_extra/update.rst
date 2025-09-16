@@ -4,7 +4,7 @@
 
 :origin:`[source] <zhensa_extra/update/__init__.py>`
 
-Scripts to update static data in :origin:`searx/data/`
+Scripts to update static data in :origin:`zhensa/data/`
 
 .. _update_ahmia_blacklist.py:
 

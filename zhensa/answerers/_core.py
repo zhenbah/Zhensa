@@ -98,7 +98,7 @@ class AnswerStorage(dict):  # type: ignore
 
     def load_builtins(self):
         """Loads ``answerer.py`` modules from the python packages in
-        :origin:`searx/answerers`.  The python modules are wrapped by
+        :origin:`zhensa/answerers`.  The python modules are wrapped by
         :py:obj:`ModuleAnswerer`."""
 
         for f in _default.iterdir():
@@ -113,7 +113,7 @@ class AnswerStorage(dict):  # type: ignore
 
             if f.is_dir() and (f / "answerer.py").exists():
                 warnings.warn(
-                    f"answerer module {f} is deprecated / migrate to searx.answerers.Answerer", DeprecationWarning
+                    f"answerer module {f} is deprecated / migrate to zhensa.answerers.Answerer", DeprecationWarning
                 )
                 mod = load_module("answerer.py", str(f))
                 self.register(ModuleAnswerer(mod))
@@ -157,7 +157,7 @@ class AnswerStorage(dict):  # type: ignore
 
         for answerer in self[keyword]:
             for answer in answerer.answer(query):
-                # In case of *answers* prefix ``answerer:`` is set, see searx.result_types.Result
+                # In case of *answers* prefix ``answerer:`` is set, see zhensa.result_types.Result
                 answer.engine = f"answerer: {keyword}"
                 results.append(answer)
 

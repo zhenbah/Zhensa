@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # SPDX-License-Identifier: MIT
-"""Fetch currencies from :origin:`searx/engines/wikidata.py` engine.
+"""Fetch currencies from :origin:`zhensa/engines/wikidata.py` engine.
 
-Output file: :origin:`searx/data/currencies.json` (:origin:`CI Update data ...
+Output file: :origin:`zhensa/data/currencies.json` (:origin:`CI Update data ...
 <.github/workflows/data-update.yml>`).
 
 """
@@ -142,7 +142,7 @@ def main():
 
     # reduce memory usage:
     # replace lists with one item by the item.  see
-    # searx.search.processors.online_currency.name_to_iso4217
+    # zhensa.search.processors.online_currency.name_to_iso4217
     for name in db['names']:
         if len(db['names'][name]) == 1:
             db['names'][name] = db['names'][name][0]

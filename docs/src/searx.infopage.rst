@@ -1,8 +1,8 @@
-.. _searx.infopage:
+.. _zhensa.infopage:
 
 ================
 Online ``/info``
 ================
 
-.. automodule:: searx.infopage
+.. automodule:: zhensa.infopage
   :members:

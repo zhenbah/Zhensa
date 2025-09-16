@@ -19,10 +19,10 @@ const ROOT = "../../"; // root of the git repository
 
 const PATH = {
   brand: "src/brand/",
-  dist: resolve(ROOT, "searx/static/themes/simple/"),
+  dist: resolve(ROOT, "zhensa/static/themes/simple/"),
   modules: "node_modules/",
   src: "src/",
-  templates: resolve(ROOT, "searx/templates/simple/")
+  templates: resolve(ROOT, "zhensa/templates/simple/")
 } as const;
 
 const svg2svg_opts: Config = {

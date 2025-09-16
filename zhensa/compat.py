@@ -37,7 +37,7 @@ def limiter_fix_cfg(cfg, cfg_file):
         "category": DeprecationWarning,
         "filename": str(cfg_file),
         "lineno": 0,
-        "module": "searx.limiter",
+        "module": "zhensa.limiter",
     }
 
     for opt, msg in LIMITER_CFG_DEPRECATED.items():

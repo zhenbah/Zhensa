@@ -62,7 +62,7 @@ from the login (*~/.profile*):
 
 .. tip::
 
-   Open a second terminal for the configuration tasks and leave the ``(searx)$``
+   Open a second terminal for the configuration tasks and leave the ``(zhensa)$``
    terminal open for the tasks below.
 
 
@@ -81,7 +81,7 @@ Configuration
 To create a initial ``/etc/zhensa/settings.yml`` we recommend to start with a
 copy of the file :origin:`utils/templates/etc/zhensa/settings.yml`.  This setup
 :ref:`use default settings <settings use_default_settings>` from
-:origin:`searx/settings.yml` and is shown in the tab *"Use default settings"*
+:origin:`zhensa/settings.yml` and is shown in the tab *"Use default settings"*
 below. This setup:
 
 - enables :ref:`limiter <limiter>` to protect against bots
@@ -99,13 +99,13 @@ Modify the ``/etc/zhensa/settings.yml`` to your needs:
 
      To see the entire file jump to :origin:`utils/templates/etc/zhensa/settings.yml`
 
-  .. group-tab:: searx/settings.yml
+  .. group-tab:: zhensa/settings.yml
 
-     .. literalinclude:: ../../searx/settings.yml
+     .. literalinclude:: ../../zhensa/settings.yml
         :language: yaml
         :end-before: # hostnames:
 
-     To see the entire file jump to :origin:`searx/settings.yml`
+     To see the entire file jump to :origin:`zhensa/settings.yml`
 
 For a *minimal setup* you need to set ``server:secret_key``.
 

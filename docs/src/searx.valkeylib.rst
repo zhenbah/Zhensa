@@ -1,8 +1,8 @@
-.. _searx.valkey:
+.. _zhensa.valkey:
 
 ==============
 Valkey Library
 ==============
 
-.. automodule:: searx.valkeylib
+.. automodule:: zhensa.valkeylib
   :members:

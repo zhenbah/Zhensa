@@ -21,7 +21,7 @@ SQLite engine download the database:
 
 - https://liste.mediathekview.de/filmliste-v2.db.bz2
 
-and unpack into ``searx/data/filmliste-v2.db``.  To search the database use e.g
+and unpack into ``zhensa/data/filmliste-v2.db``.  To search the database use e.g
 Query to test: ``!mediathekview concert``
 
 .. code:: yaml
@@ -31,7 +31,7 @@ Query to test: ``!mediathekview concert``
     shortcut: mediathekview
     categories: [general, videos]
     result_type: MainResult
-    database: searx/data/filmliste-v2.db
+    database: zhensa/data/filmliste-v2.db
     query_str: >-
       SELECT title || ' (' || time(duration, 'unixepoch') || ')' AS title,
              COALESCE( NULLIF(url_video_hd,''), NULLIF(url_video_sd,''), url_video) AS url,

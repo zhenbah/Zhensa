@@ -11,4 +11,4 @@ developers.
    :maxdepth: 2
 
    update
-   standalone_searx.py
+   standalone_zhensa.py

@@ -1,33 +1,33 @@
-.. _searx.search:
+.. _zhensa.search:
 
 ======
 Search
 ======
 
-.. autoclass:: searx.search.models.EngineRef
+.. autoclass:: zhensa.search.models.EngineRef
   :members:
 
-.. autoclass:: searx.search.models.SearchQuery
+.. autoclass:: zhensa.search.models.SearchQuery
   :members:
 
-.. autoclass:: searx.search.Search
+.. autoclass:: zhensa.search.Search
 
   .. attribute:: search_query
-    :type: searx.search.SearchQuery
+    :type: zhensa.search.SearchQuery
 
   .. attribute:: result_container
-    :type: searx.results.ResultContainer
+    :type: zhensa.results.ResultContainer
 
-  .. automethod:: search() -> searx.results.ResultContainer
+  .. automethod:: search() -> zhensa.results.ResultContainer
 
-.. autoclass:: searx.search.SearchWithPlugins
+.. autoclass:: zhensa.search.SearchWithPlugins
   :members:
 
   .. attribute:: search_query
-    :type: searx.search.SearchQuery
+    :type: zhensa.search.SearchQuery
 
   .. attribute:: result_container
-    :type: searx.results.ResultContainer
+    :type: zhensa.results.ResultContainer
 
   .. attribute:: ordered_plugin_list
     :type: typing.List
@@ -35,4 +35,4 @@ Search
   .. attribute:: request
     :type: flask.request
 
-  .. automethod:: search() -> searx.results.ResultContainer
+  .. automethod:: search() -> zhensa.results.ResultContainer

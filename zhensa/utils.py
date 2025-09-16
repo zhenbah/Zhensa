@@ -37,8 +37,8 @@ if t.TYPE_CHECKING:
 logger = logger.getChild('utils')
 
 XPathSpecType: t.TypeAlias = str | XPath
-"""Type alias used by :py:obj:`searx.utils.get_xpath`,
-:py:obj:`searx.utils.eval_xpath` and other XPath selectors."""
+"""Type alias used by :py:obj:`zhensa.utils.get_xpath`,
+:py:obj:`zhensa.utils.eval_xpath` and other XPath selectors."""
 
 _BLOCKED_TAGS = ('script', 'style')
 
@@ -56,7 +56,7 @@ _FASTTEXT_MODEL: "fasttext.FastText._FastText | None" = None  # pyright: ignore[
 """fasttext model to predict language of a search term"""
 
 SEARCH_LANGUAGE_CODES = frozenset([zhensa_locale[0].split('-')[0] for zhensa_locale in sxng_locales])
-"""Languages supported by most zhensa engines (:py:obj:`searx.sxng_locales.sxng_locales`)."""
+"""Languages supported by most zhensa engines (:py:obj:`zhensa.sxng_locales.sxng_locales`)."""
 
 
 class _NotSetClass:  # pylint: disable=too-few-public-methods
@@ -75,7 +75,7 @@ def zhensa_useragent() -> str:
 def gen_useragent(os_string: str | None = None) -> str:
     """Return a random browser User Agent
 
-    See searx/data/useragents.json
+    See zhensa/data/useragents.json
     """
     return USER_AGENTS['ua'].format(
         os=os_string or choice(USER_AGENTS['os']),
@@ -294,7 +294,7 @@ def extract_url(xpath_results: list[ElementBase] | ElementBase | str | Number | 
 
     Example:
         >>> def f(s, search_url):
-        >>>    return searx.utils.extract_url(html.fromstring(s), search_url)
+        >>>    return zhensa.utils.extract_url(html.fromstring(s), search_url)
         >>> f('<span id="42">https://example.com</span>', 'http://example.com/')
         'https://example.com/'
         >>> f('https://example.com', 'http://example.com/')
@@ -307,7 +307,7 @@ def extract_url(xpath_results: list[ElementBase] | ElementBase | str | Number | 
         'https://example.com/path?a=1'
         >>> f('', 'https://example.com')
         raise lxml.etree.ParserError
-        >>> searx.utils.extract_url([], 'https://example.com')
+        >>> zhensa.utils.extract_url([], 'https://example.com')
         raise ValueError
 
     Raises:
@@ -422,9 +422,9 @@ def is_valid_lang(lang: str) -> tuple[bool, str, str] | None:
         (True, 'uk', 'ukrainian')
         >>> is_valid_lang('en')
         (True, 'en', 'english')
-        >>> searx.utils.is_valid_lang('Español')
+        >>> zhensa.utils.is_valid_lang('Español')
         (True, 'es', 'spanish')
-        >>> searx.utils.is_valid_lang('Spanish')
+        >>> zhensa.utils.is_valid_lang('Spanish')
         (True, 'es', 'spanish')
     """
     if isinstance(lang, bytes):
@@ -581,7 +581,7 @@ def eval_xpath(element: ElementBase, xpath_spec: XPathSpecType) -> t.Any:
 
 
 def eval_xpath_list(element: ElementBase, xpath_spec: XPathSpecType, min_len: int | None = None) -> list[t.Any]:
-    """Same as :py:obj:`searx.utils.eval_xpath`, but additionally ensures the
+    """Same as :py:obj:`zhensa.utils.eval_xpath`, but additionally ensures the
     return value is a :py:obj:`list`.  The minimum length of the list is also
     checked (if ``min_len`` is set)."""
 
@@ -599,10 +599,10 @@ def eval_xpath_getindex(
     index: int,
     default: t.Any = _NOTSET,
 ) -> t.Any:
-    """Same as :py:obj:`searx.utils.eval_xpath_list`, but returns item on
+    """Same as :py:obj:`zhensa.utils.eval_xpath_list`, but returns item on
     position ``index`` from the list (index starts with ``0``).
 
-    The exceptions known from :py:obj:`searx.utils.eval_xpath` are thrown. If a
+    The exceptions known from :py:obj:`zhensa.utils.eval_xpath` are thrown. If a
     default is specified, this is returned if an element at position ``index``
     could not be determined.
     """
@@ -700,7 +700,7 @@ def detect_language(text: str, threshold: float = 0.3, only_search_languages: bo
         probability.
 
     :param bool only_search_languages: If ``True``, returns only supported
-        Zhensa search languages.  see :py:obj:`searx.languages`
+        Zhensa search languages.  see :py:obj:`zhensa.languages`
 
     :rtype: str, None
     :returns:
@@ -732,7 +732,7 @@ def detect_language(text: str, threshold: float = 0.3, only_search_languages: bo
     conditions of Zhensa's locale model are:
 
     a. Zhensa's locale of a query is passed to the
-       :py:obj:`searx.locales.get_engine_locale` to get a language and/or region
+       :py:obj:`zhensa.locales.get_engine_locale` to get a language and/or region
        code that is used by an engine.
 
     b. Most of Zhensa's engines do not support all the languages from `language

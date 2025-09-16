@@ -9,20 +9,20 @@ from parameterized import parameterized
 
 import zhensa.search
 import zhensa.engines
-from tests import SearxTestCase
+from tests import zhensaTestCase
 
 
-class TinEyeTests(SearxTestCase):
+class TinEyeTests(zhensaTestCase):
 
     TEST_SETTINGS = "test_tineye.yml"
 
     def setUp(self):
         super().setUp()
-        self.tineye = searx.engines.engines['tineye']
+        self.tineye = zhensa.engines.engines['tineye']
         self.tineye.logger.setLevel(logging.INFO)
 
     def tearDown(self):
-        searx.search.load_engines([])
+        zhensa.search.load_engines([])
 
     def test_status_code_raises(self):
         response = Mock()

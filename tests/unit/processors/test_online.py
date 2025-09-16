@@ -5,12 +5,12 @@ from zhensa.search.models import EngineRef, SearchQuery
 from zhensa.search.processors import online
 from zhensa import engines
 
-from tests import SearxTestCase
+from tests import zhensaTestCase
 
 TEST_ENGINE_NAME = "dummy engine"  # from the ./settings/test_settings.yml
 
 
-class TestOnlineProcessor(SearxTestCase):
+class TestOnlineProcessor(zhensaTestCase):
 
     def _get_params(self, online_processor, search_query, engine_category):
         params = online_processor.get_params(search_query, engine_category)

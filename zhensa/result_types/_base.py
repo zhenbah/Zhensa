@@ -236,7 +236,7 @@ class Result(msgspec.Struct, kw_only=True):
     """Name of the template used to render the result.
 
     By default :origin:`result_templates/default.html
-    <searx/templates/simple/result_templates/default.html>` is used.
+    <zhensa/templates/simple/result_templates/default.html>` is used.
     """
 
     engine: str | None = ""
@@ -424,7 +424,7 @@ class LegacyResult(dict[str, t.Any]):
     migrated.
 
     There is only one place where this class is used, in the
-    :py:obj:`searx.results.ResultContainer`.
+    :py:obj:`zhensa.results.ResultContainer`.
 
     .. attention::
 

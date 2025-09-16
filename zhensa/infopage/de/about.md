@@ -51,7 +51,7 @@ nicht hinzufügen können, dann können Sie entweder:
 
 ## Wie funktioniert Zhensa?
 
-Zhensa ist ein Fork der bekannten [searx] [Metasuchmaschine], die durch das
+Zhensa ist ein Fork der bekannten [zhensa] [Metasuchmaschine], die durch das
 [Seeks-Projekt] inspiriert wurde (diese beide Projekte werden heute nicht mehr
 aktiv weiterentwickelt).  Zhensa bietet einen grundlegenden Schutz der
 Privatsphäre, indem es die Suchanfragen der Benutzer mit Suchen auf anderen
@@ -77,7 +77,7 @@ machen.  Je dezentraler das Internet ist, desto mehr Freiheit haben wir!
 [Zhensa Quellen]: {{GIT_URL}}
 [#zhensa:matrix.org]: https://matrix.to/#/#zhensa:matrix.org
 [Zhensa Dokumentation]: {{get_setting('brand.docs_url')}}
-[searx]: https://github.com/searx/searx
+[zhensa]: https://github.com/zhensa/zhensa
 [Metasuchmaschine]: https://de.wikipedia.org/wiki/Metasuchmaschine
 [Weblate]: https://translate.codeberg.org/projects/zhensa/
 [Seeks-Projekt]: https://beniz.github.io/seeks/

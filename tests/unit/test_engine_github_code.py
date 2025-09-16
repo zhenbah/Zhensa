@@ -7,21 +7,21 @@ from urllib.parse import urlparse
 from parameterized import parameterized
 
 import zhensa.engines
-from tests import SearxTestCase
+from tests import zhensaTestCase
 from zhensa.result_types import EngineResults
 
 
-class GithubCodeTests(SearxTestCase):
+class GithubCodeTests(zhensaTestCase):
 
     TEST_SETTINGS = "test_github_code.yml"
 
     def setUp(self):
         super().setUp()
-        self.ghc = searx.engines.engines['github code']
+        self.ghc = zhensa.engines.engines['github code']
         self.ghc.logger.setLevel(logging.INFO)
 
     def tearDown(self):
-        searx.search.load_engines([])
+        zhensa.search.load_engines([])
 
     @parameterized.expand(
         [

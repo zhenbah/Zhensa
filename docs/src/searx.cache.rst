@@ -1,8 +1,8 @@
-.. _searx.cache:
+.. _zhensa.cache:
 
 ======
 Caches
 ======
 
-.. automodule:: searx.cache
+.. automodule:: zhensa.cache
    :members:

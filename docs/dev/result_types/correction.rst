@@ -25,7 +25,7 @@ From this simple dict another dict is build up:
    {"url" : "!bang lorem ipsum ..", "title": "lorem ipsum .." }
 
 and used in the template :origin:`corrections.html
-<searx/templates/simple/elements/corrections.html>`:
+<zhensa/templates/simple/elements/corrections.html>`:
 
 title : :py:class:`str`
   Corrected search term.
