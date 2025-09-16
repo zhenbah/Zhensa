@@ -6,6 +6,19 @@
         <button id="clear_search" type="reset" aria-label="{{ _('clear') }}"><span class="hide_if_nojs">{{ icon_big('close') }}</span><span class="show_if_nojs">{{ _('clear') }}</span></button>
         <button id="send_search" type="submit" aria-label="{{ _('search') }}"><span class="hide_if_nojs">{{ icon_big('search') }}</span><span class="show_if_nojs">{{ _('search') }}</span></button>
         <div class="autocomplete hide_if_nojs"><ul></ul></div>
+        <div class="search-suggestions hide_if_nojs">
+          <div class="search-history" id="search-history">
+            <div class="suggestion-header">
+              {{ _('Recent searches') }}
+              <button id="clear-history" class="clear-history-btn" title="{{ _('Clear all history') }}">×</button>
+            </div>
+            <ul id="history-list"></ul>
+          </div>
+          <div class="trending-searches" id="trending-searches">
+            <div class="suggestion-header">{{ _('Trending') }}</div>
+            <ul id="trending-list"></ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
