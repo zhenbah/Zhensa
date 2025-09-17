@@ -1,0 +1,52 @@
+{
+  "name": "zhensa-browser",
+  "version": "1.0.0",
+  "description": "Zhensa Browser - A desktop application for the Zhensa search engine",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build-linux": "electron-builder --linux",
+    "build-win": "electron-builder --win",
+    "build-mac": "electron-builder --mac",
+    "dist": "electron-builder --publish=never"
+  },
+  "keywords": [
+    "search",
+    "browser",
+    "zhensa"
+  ],
+  "author": "Zhensa Team",
+  "license": "ISC",
+  "repository": "https://github.com/zhensa/zhensa",
+  "devDependencies": {
+    "electron": "^38.1.1",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.zhensa.browser",
+    "productName": "Zhensa Browser",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!dist/**/*",
+      "!app/package.json"
+    ],
+    "linux": {
+      "target": "AppImage"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    }
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.4.3",
+    "@capacitor/cli": "^7.4.3",
+    "@capacitor/core": "^7.4.3"
+  }
+}
