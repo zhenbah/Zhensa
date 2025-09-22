@@ -1,5 +1,5 @@
 # Indonesian translations for PROJECT.
-# Copyright (C) 2021 ORGANIZATION
+# Copyright (C) 2025 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 # Linerly <linerly@protonmail.com>, 2022, 2023, 2024.
