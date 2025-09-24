@@ -138,13 +138,21 @@ button.category_button {
 }
 
 .search_box {
-  border-radius: 0.8rem;
+  border-radius: 1rem;
   width: 100%;
   max-width: @search-width;
   display: inline-flex;
   flex-direction: row;
   white-space: nowrap;
   box-shadow: var(--color-search-shadow);
+  border: 2px solid var(--color-search-border);
+  transition: all 0.3s ease;
+  overflow: hidden;
+
+  &:focus-within {
+    box-shadow: 0 4px 12px rgba(0, 172, 193, 0.3);
+    border-color: var(--color-search-background-hover);
+  }
 }
 
 #clear_search {
@@ -178,29 +186,31 @@ html.no-js #clear_search.hide_if_nojs {
 #send_search {
   display: block;
   margin: 0;
-  padding: 0.8rem;
+  padding: 1rem;
   background: none repeat scroll 0 0 var(--color-search-background);
   border: none;
   outline: none;
   color: var(--color-search-font);
   font-size: 1.1rem;
   z-index: 100;
+  transition: background-color 0.3s ease;
 }
 
 #q {
   width: 100%;
   .ltr-padding-left(1rem);
   .ltr-padding-right(0) !important;
-  .ltr-rounded-left-corners(0.8rem);
+  .ltr-rounded-left-corners(1rem);
 }
 
 #send_search {
-  .ltr-rounded-right-corners(0.8rem);
+  .ltr-rounded-right-corners(1rem);
 
   &:hover {
     cursor: pointer;
     background-color: var(--color-search-background-hover);
-    color: var(--color-search-background);
+    color: var(--color-btn-font);
+    transform: scale(1.05);
   }
 }
 
@@ -285,6 +295,7 @@ html.no-js #clear_search.hide_if_nojs {
 
   .search_box {
     width: 100%;
+    border-radius: 0.5rem;
   }
 
   #q {
@@ -329,7 +340,7 @@ html.no-js #clear_search.hide_if_nojs {
     z-index: 2000;
 
     .search_box {
-      border-bottom: 1px solid var(--color-search-border);
+      border-bottom: 2px solid var(--color-search-border);
       width: 100%;
       border-radius: 0;
       box-shadow: none;

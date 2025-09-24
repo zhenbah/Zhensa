@@ -115,30 +115,12 @@ export default {
       svg2svg_opts
     ),
 
-    // Zhensa brand (static)
-    plg_svg2png([
-      { src: `${PATH.brand}/zhensa-wordmark.svg`, dest: `${PATH.dist}/img/favicon.png` },
-      { src: `${PATH.brand}/zhensa.svg`, dest: `${PATH.dist}/img/zhensa.png` }
-    ]),
-
     // -- svg
     plg_svg2svg(
       [
-        { src: `${PATH.brand}/zhensa.svg`, dest: `${PATH.dist}/img/zhensa.svg` },
+        { src: `${PATH.brand}/zhensa-logo.svg`, dest: `${PATH.dist}/img/zhensa-logo.svg` },
         { src: `${PATH.brand}/img_load_error.svg`, dest: `${PATH.dist}/img/img_load_error.svg` }
       ],
-      svg2svg_opts
-    ),
-
-    // -- favicon
-    plg_svg2svg(
-      [{ src: `${PATH.brand}/zhensa-wordmark.svg`, dest: `${PATH.dist}/img/favicon.svg` }],
-      svg2svg_favicon_opts
-    ),
-
-    // -- simple templates
-    plg_svg2svg(
-      [{ src: `${PATH.brand}/zhensa-wordmark.svg`, dest: `${PATH.templates}/zhensa-wordmark.min.svg` }],
       svg2svg_opts
     )
   ], // end: plugins

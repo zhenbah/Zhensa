@@ -6,23 +6,30 @@
 
 .index {
   text-align: center;
+  padding: 2rem 0;
+  margin: 2rem auto;
+  max-width: 90%;
 
   .title {
-    background: url("../img/zhensa.png") no-repeat;
-    min-height: 4rem;
-    margin: 4rem auto;
+    background: url("../brand/zhensa-logo.svg") no-repeat;
+    min-height: 6rem;
+    margin: 2rem auto;
     background-position: center;
     background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   h1 {
-    font-size: 4em;
+    font-size: 3.5em;
     visibility: hidden;
+    margin: 0;
   }
 
   #search,
   #search_header {
-    margin: 0 auto;
+    margin: 1rem auto;
     background: inherit;
     border: inherit;
     padding: 0;
@@ -31,12 +38,19 @@
 
   .search_filters {
     display: block;
-    margin: 1em 0;
+    margin: 1.5em 0;
   }
 
   .category label {
-    padding: 6px 10px;
+    padding: 8px 12px;
     border-bottom: initial !important;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .category label:hover {
+    background-color: var(--color-search-background-hover);
+    color: var(--color-btn-font);
   }
 }
 
