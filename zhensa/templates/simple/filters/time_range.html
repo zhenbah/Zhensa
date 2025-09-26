@@ -14,4 +14,23 @@
     <option id="time-range-year" value="year" {{ "selected" if time_range=="year" else ""}}>
         {{- _('Last year') -}}
     </option>{{- '' -}}
+    <option id="time-range-custom" value="custom" {{ "selected" if time_range=="custom" or time_range.startswith('custom:') else ""}}>
+        {{- _('Custom range') -}}
+    </option>{{- '' -}}
 </select>
+<div id="custom-date-range" style="display: {{ 'block' if time_range == 'custom' or time_range.startswith('custom:') else 'none' }};">
+    <label for="date_from">{{ _('From') }}:</label>
+    <input type="date" id="date_from" name="date_from" value="{{ date_from or '' }}">
+    <label for="date_to">{{ _('To') }}:</label>
+    <input type="date" id="date_to" name="date_to" value="{{ date_to or '' }}">
+</div>
+<script>
+document.getElementById('time_range').addEventListener('change', function() {
+    const customRange = document.getElementById('custom-date-range');
+    if (this.value === 'custom') {
+        customRange.style.display = 'block';
+    } else {
+        customRange.style.display = 'none';
+    }
+});
+</script>

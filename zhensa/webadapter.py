@@ -97,7 +97,21 @@ def parse_time_range(form: Dict[str, str]) -> Optional[str]:
     query_time_range = form.get('time_range')
     # check time_range
     query_time_range = None if query_time_range in ('', 'None') else query_time_range
-    if query_time_range not in (None, 'day', 'week', 'month', 'year'):
+    if query_time_range == 'custom':
+        date_from = form.get('date_from')
+        date_to = form.get('date_to')
+        if date_from and date_to:
+            # Validate dates
+            from datetime import datetime
+            try:
+                datetime.fromisoformat(date_from)
+                datetime.fromisoformat(date_to)
+                return f'custom:{date_from}:{date_to}'
+            except ValueError:
+                raise ZhensaParameterException('date_range', f'{date_from} to {date_to}')
+        else:
+            raise ZhensaParameterException('date_range', 'missing dates')
+    elif query_time_range not in (None, 'day', 'week', 'month', 'year'):
         raise ZhensaParameterException('time_range', query_time_range)
     return query_time_range
 

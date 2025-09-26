@@ -114,5 +114,41 @@ listen("submit", form, (event: Event) => {
     categoryValuesInput.value = categoryValues.join(",");
   }
 
+  // Show loading indicator
+  const sendButton = document.getElementById("send_search") as HTMLButtonElement;
+  if (sendButton) {
+    sendButton.classList.add("loading");
+    sendButton.disabled = true;
+  }
+
   form.submit();
+});
+
+// Keyboard shortcuts
+listen("keydown", qInput, (event: KeyboardEvent) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    submitIfQuery(qInput);
+  } else if (event.key === "Escape") {
+    qInput.value = "";
+    updateClearButton(qInput, document.getElementById("clear_search") as HTMLElement);
+  }
+});
+
+// Category navigation with arrow keys
+let currentCategoryIndex = -1;
+listen("keydown", document, (event: KeyboardEvent) => {
+  if (event.key === "ArrowDown" && event.altKey) {
+    event.preventDefault();
+    currentCategoryIndex = (currentCategoryIndex + 1) % categoryButtons.length;
+    categoryButtons.forEach((btn, idx) => {
+      btn.classList.toggle("selected", idx === currentCategoryIndex);
+    });
+  } else if (event.key === "ArrowUp" && event.altKey) {
+    event.preventDefault();
+    currentCategoryIndex = currentCategoryIndex <= 0 ? categoryButtons.length - 1 : currentCategoryIndex - 1;
+    categoryButtons.forEach((btn, idx) => {
+      btn.classList.toggle("selected", idx === currentCategoryIndex);
+    });
+  }
 });

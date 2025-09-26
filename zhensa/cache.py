@@ -5,7 +5,7 @@
 ----
 """
 
-__all__ = ["ExpireCacheCfg", "ExpireCacheStats", "ExpireCache", "ExpireCacheSQLite"]
+__all__ = ["ExpireCacheCfg", "ExpireCacheStats", "ExpireCache", "ExpireCacheSQLite", "ExpireCacheValkey"]
 
 import abc
 from collections.abc import Iterator
@@ -26,6 +26,13 @@ import msgspec
 from zhensa import sqlitedb
 from zhensa import logger
 from zhensa import get_setting
+
+try:
+    import valkey
+    VALKEY_AVAILABLE = True
+except ImportError:
+    VALKEY_AVAILABLE = False
+    valkey = None
 
 log = logger.getChild("cache")
 
@@ -168,15 +175,16 @@ class ExpireCache(abc.ABC):
         about the status of the cache."""
 
     @staticmethod
-    def build_cache(cfg: ExpireCacheCfg) -> "ExpireCacheSQLite":
+    def build_cache(cfg: ExpireCacheCfg) -> "ExpireCache":
         """Factory to build a caching instance.
 
-        .. note::
-
-           Currently, only the SQLite adapter is available, but other database
-           types could be implemented in the future, e.g. a Valkey (Redis)
-           adapter.
+        Uses Valkey if available and configured, otherwise SQLite.
         """
+        if VALKEY_AVAILABLE and cfg.db_url and (cfg.db_url.startswith('redis://') or cfg.db_url.startswith('valkey://')):
+            try:
+                return ExpireCacheValkey(cfg)
+            except Exception as e:
+                log.warning("Failed to initialize Valkey cache, falling back to SQLite: %s", e)
         return ExpireCacheSQLite(cfg)
 
     @staticmethod
@@ -416,3 +424,56 @@ class ExpireCacheSQLite(sqlitedb.SQLiteAppl, ExpireCache):
             for row in self.DB.execute(f"SELECT key, value, expire FROM {table}"):
                 cached_items[table].append((row[0], self.deserialize(row[1]), row[2]))
         return ExpireCacheStats(cached_items=cached_items)
+
+
+class ExpireCacheValkey(ExpireCache):
+    """Cache that manages key/value pairs in Valkey (Redis-compatible)."""
+
+    def __init__(self, cfg: ExpireCacheCfg):
+        if not VALKEY_AVAILABLE:
+            raise ImportError("valkey package is not available")
+        from zhensa.valkeydb import client as valkey_client
+        self.client = valkey_client()
+        if self.client is None:
+            raise RuntimeError("Valkey client not initialized")
+        self.cfg = cfg
+
+    def set(self, key: str, value: typing.Any, expire: int | None, ctx: str | None = None) -> bool:
+        try:
+            key = self._make_key(key, ctx)
+            value = self.serialize(value)
+            if len(value) > self.cfg.MAX_VALUE_LEN:
+                log.warning("ExpireCache.set(): key='%s' - value too big to cache (len: %s)", key, len(value))
+                return False
+            expire = expire or self.cfg.MAXHOLD_TIME
+            self.client.set(key, value, ex=expire)
+            return True
+        except Exception as e:
+            log.error("Error setting cache key %s: %s", key, e)
+            return False
+
+    def get(self, key: str, default: typing.Any = None, ctx: str | None = None) -> typing.Any:
+        try:
+            key = self._make_key(key, ctx)
+            value = self.client.get(key)
+            if value is None:
+                return default
+            if isinstance(value, bytes):
+                return self.deserialize(value)
+            return default
+        except Exception as e:
+            log.error("Error getting cache key %s: %s", key, e)
+            return default
+
+    def maintenance(self, force: bool = False, truncate: bool = False) -> bool:
+        # Valkey handles expiration automatically, no maintenance needed
+        return True
+
+    def state(self) -> ExpireCacheStats:
+        # Valkey doesn't provide easy way to list all keys with contexts
+        # Return empty stats for now
+        return ExpireCacheStats(cached_items={})
+
+    def _make_key(self, key: str, ctx: str | None) -> str:
+        ctx = ctx or self.normalize_name(self.cfg.name)
+        return f"{ctx}:{key}"

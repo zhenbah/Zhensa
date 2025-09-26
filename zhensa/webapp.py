@@ -647,15 +647,24 @@ def search():
         search_query, raw_text_query, _, _, selected_locale = get_search_query_from_webapp(
             sxng_request.preferences, sxng_request.form
         )
+        # Extract date_from and date_to for template
+        date_from = sxng_request.form.get('date_from')
+        date_to = sxng_request.form.get('date_to')
         search_obj = zhensa.search.SearchWithPlugins(search_query, sxng_request, sxng_request.user_plugins)
         result_container = search_obj.search()
 
     except ZhensaParameterException as e:
         logger.exception('search error: ZhensaParameterException')
-        return index_error(output_format, e.message), 400
+        return index_error(output_format, gettext('Invalid search parameters. Please check your query and try again.')), 400
+    except httpx.TimeoutException:
+        logger.exception('search error: Timeout')
+        return index_error(output_format, gettext('Search timed out. Please try again later.')), 504
+    except httpx.HTTPError as e:
+        logger.exception('search error: HTTP error')
+        return index_error(output_format, gettext('Network error occurred. Please try again.')), 502
     except Exception as e:  # pylint: disable=broad-except
         logger.exception(e, exc_info=True)
-        return index_error(output_format, gettext('search error')), 500
+        return index_error(output_format, gettext('An unexpected error occurred. Please try again or contact support if the problem persists.')), 500
 
     # 1. check if the result is a redirect for an external bang
     if result_container.redirect_url:
@@ -756,6 +765,8 @@ def search():
         selected_categories = search_query.categories,
         pageno = search_query.pageno,
         time_range = search_query.time_range or '',
+        date_from = date_from,
+        date_to = date_to,
         number_of_results = format_decimal(result_container.number_of_results),
         suggestions = suggestion_urls,
         answers = result_container.answers,

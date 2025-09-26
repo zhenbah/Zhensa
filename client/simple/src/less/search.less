@@ -212,6 +212,30 @@ html.no-js #clear_search.hide_if_nojs {
     color: var(--color-btn-font);
     transform: scale(1.05);
   }
+
+  &.loading {
+    position: relative;
+    color: transparent;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 1rem;
+      height: 1rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid var(--color-search-font);
+      border-top: 2px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+  }
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 .no-js #clear_search,
